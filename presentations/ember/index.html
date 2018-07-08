@@ -1,0 +1,1063 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>99 Reasons for Using Ember.js</title>
+
+    <meta name="description" content="A presentation on the Ember.js Framework, given at the Vienna.js Meetup July 30th, 2014">
+    <meta name="author" content="Stefan Haslinger">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="/assets/css/lato.css">
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/theme/stefan.css">
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' ); link.rel = 'stylesheet'; link.type = 'text/css'; link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );}
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h1>99 Reasons for Using Ember.js</h1>
+          <p>A talk given by <a href="http://stefan-haslinger.at">Stefan Haslinger</a></br>
+             at the <a href="http://www.meetup.com/viennajs/events/135052002/">Vienna.js Meetup July 30th, 2014</a><br>
+             online at <a href="http://at.mittenin.at/36">http://at.mittenin.at/36</a></p>
+        </section>
+
+        <section>
+          <p><img width="30%" src="images/stefan.jpg" alt="Stefan"></p>
+          <p><a href="https://twitter.com/informatom">@informatom</a></br>
+             <a href="mailto:stefan.haslinger@informatom.com">stefan.haslinger@informatom.com</a></br>
+              I'm 50% of <a href="http://mittenin.at">http://mittenin.at</a><br>
+              I'm 100% of <a href="http://informatom.com">http://informatom.com</a></p>
+        </section>
+
+        <!-- --- Rock Solid Foudation ---- -->
+        <section>
+          <h2>Part I</h2>
+          <h1>The Library</h1>
+        </section>
+
+        <section>
+          <h2>MVC Architecture</h2>
+          <p class="fragment">...not</p>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/concepts/core-concepts/">Core Concepts</a></h2>
+          <h3 class="fragment">RMC</h3>
+          <p class="fragment">Router - Model - Controller</p>
+          <p class="fragment">or even ...</p>
+          <h3 class="fragment">RMCVLTCT</h3>
+          <p class="fragment">Router - Model - Controller - View - Layout - Template - Components -Template</p>
+
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/routing/">Router</a></h2>
+          <pre>
+            <code data-trim>
+Contracting.Router.map(function() {
+  this.resource("contracts", { path: "/" });
+});
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>
+            <a href="http://emberjs.com/guides/routing/defining-your-routes">Routes</a> and
+            <a href="http://emberjs.com/guides/routing/defining-your-routes/#toc_resources">Resources</a>
+          </h2>
+          <pre>
+            <code data-trim>
+App.Router.map(function() {
+  this.resource('posts', { path: '/posts' }, function() {
+    this.route('new');
+  });
+});
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/routing/defining-your-routes/#toc_nested-resources">nested Resources</a></h2>
+          i.e. controllers can be nested
+          <pre>
+            <code data-trim>
+Contracting.Router.map(function() {
+  this.resource("contracts", { path: "/" }, function() {
+    this.resource("contract", { path: "/contract/:contract_id" }, function() {
+      this.resource("contractitem", { path: "/item/:contractitem_id" }, function() {
+        this.resource("consumableitem", { path: "/consumable/:consumableitem_id" });
+      });
+    });
+  });
+});
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/object-model/classes-and-instances/">Ember Object</a></h2>
+          <pre>
+            <code data-trim>
+App.Person = Ember.Object.extend({
+  say: function(thing) {
+    alert(thing);
+  }
+});
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/object-model/computed-properties/">Computed Properties</a></h2>
+          <pre>
+            <code data-trim>
+App.Person = Ember.Object.extend({
+  // these will be supplied by `create`
+  firstName: null,
+  lastName: null,
+
+  fullName: function() {
+    return this.get('firstName') + ' ' + this.get('lastName');
+  }.property('firstName', 'lastName')
+});
+
+var ironMan = App.Person.create({
+  firstName: "Tony",
+  lastName:  "Stark"
+});
+
+ironMan.get('fullName'); // "Tony Stark"
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/models/">Ember Model</a></h2>
+          <pre>
+            <code data-trim>
+App.Person = DS.Model.extend({
+  firstName: DS.attr(),
+  lastName: DS.attr(),
+  birthday: DS.attr()
+});
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/controllers/">Ember Controller</a></h2>
+          <pre>
+            <code data-trim>
+App.SongController = Ember.ObjectController.extend({
+  soundVolume: 1
+});
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/templates/actions/">Actions</a></h2>
+          <pre>
+            <code data-trim>
+App.PostController = Ember.ObjectController.extend({
+  isExpanded: false,
+
+  actions: {
+    expand: function() {
+      this.set('isExpanded', true);
+    },
+
+    contract: function() {
+      this.set('isExpanded', false);
+    }
+  }
+});
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Action Handler</h2>
+          <p class="fragment"><a href="http://emberjs.com/guides/templates/actions/#toc_action-bubbling">Actions are bubbling</a></p>
+          <img src="images/action-bubbling.png" alt="Action Bubbling">
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/controllers/representing-a-single-model-with-objectcontroller/#stq=&stp=0">Objectcontollers</a></h2>
+          for single Objects
+          <pre>
+            <code data-trim>
+App.SongController = Ember.ObjectController.extend({
+  soundVolume: 1
+});
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/controllers/representing-multiple-models-with-arraycontroller/">Arraycontrollers</a></h2>
+          for arrays of objects <br>
+          and Itemcontroller to refer to a single object's controller
+          <pre>
+            <code data-trim>
+App.SongsController = Ember.ArrayController.extend({
+  sortProperties: ['name', 'artist'],
+  sortAscending: true // false for descending,
+  itemController: 'song'
+});
+            </code>
+          </pre>
+adds template features like
+          <pre>
+            <code data-trim>
+{{#each controller}}
+  <li>{{fullName}}</li>
+{{/each}}
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/views/">Ember View</a></h2>
+          <pre>
+            <code data-trim>
+var view = Ember.View.create({
+  templateName: 'say-hello',
+  name: "Bob"
+});
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/views/defining-a-view/">Ember Template</a></h2>
+          <pre>
+            <code data-trim class="handlebars">
+<script type="text/x-handlebars" data-template-name="say-hello">
+  Hello, <b>{{view.name}}</b>
+</script>
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/templates/handlebars-basics/">Handlebars</a></h2>
+          <pre>
+            <code data-trim class="handlebars">
+{{#if person}}
+  Welcome back, <b>{{person.firstName}} {{person.lastName}}</b>!
+{{else}}
+  Please log in.
+{{/if}}
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/understanding-ember/run-loop/">Run Loop</a></h2>
+          <pre>
+            <code data-trim>
+Ember.run.queues
+// => ["sync", "actions", "routerTransitions", "render", "afterRender", "destroy"]
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/object-model/observers/">Observers</a></h2>
+          <pre>
+            <code data-trim>
+Person = Ember.Object.extend({
+  firstName: null,
+  lastName: null,
+
+  fullName: function() {
+    var firstName = this.get('firstName');
+    var lastName = this.get('lastName');
+
+    return firstName + ' ' + lastName;
+  }.property('firstName', 'lastName'),
+
+  fullNameChanged: function() {
+  }.observes('fullName').on('init')
+});
+
+var person = Person.create({
+  firstName: 'Yehuda',
+  lastName: 'Katz'
+});
+
+person.set('firstName', 'Brohuda'); // observer will fire
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/views/handling-events/">Event Handling</a></h2>
+            Bubbling and <a href="http://emberjs.com/guides/views/handling-events/#toc_sending-events">sending</a>
+          <pre>
+            <code data-trim>
+App.ClickableView = Ember.View.extend({
+  click: function(evt) {
+    alert("ClickableView was clicked!");
+    this.get('controller').send('turnItUp', 11);
+  }
+});
+            </code>
+          </pre>
+          <pre>
+            <code data-trim>
+{{#view App.ClickableView}}
+This is a clickable area!
+{{/view}}
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/object-model/bindings/">Data Binding</a></h2>
+          <pre>
+            <code data-trim>
+wife = Ember.Object.create({
+  householdIncome: 80000
+});
+
+husband = Ember.Object.create({
+  wife: wife,
+  householdIncome: Ember.computed.alias('wife.householdIncome')
+});
+
+husband.get('householdIncome'); // 80000
+
+husband.set('householdIncome', 90000);
+wife.get('householdIncome'); // 90000
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/routing/#toc_logging-route-changes">Logging</a></h2>
+          <pre>
+            <code data-trim>
+App = Ember.Application.create({
+  LOG_TRANSITIONS: true
+});
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/debugging/">Debugging Features</a></h2>
+          <pre>
+            <code data-trim>
+{{log record}}
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/routing/query-params/">Query Params</a></h2>
+          http://example.com/articles?sort=ASC&page=2
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/enumerables/">Enumerables</a></h2>
+          <pre>
+            <code data-trim>
+var words = ["goodbye", "cruel", "world"];
+
+var emphaticWords = words.map(function(item) {
+  return item + "!";
+});
+// ["goodbye!", "cruel!", "world!"]
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/blog/2014/07/07/ember-1-6-0-and-ember-1-7-0-beta-released.html">1.6 is out</a></h2>
+          <p class="fragment">rewritten to use ES6 modules</p>
+          <small class="fragment">1.6+ builds are now transpiled by the es6-module-transpiler into AMD <br>
+                                  and use a small AMD loader to handle loading the transpiled modules</small>
+        </section>
+
+        <!-- --- 2. Ecosystem ---- -->
+        <section>
+          <h2>Part 2</h2>
+          <h1>The Ecosystem</h1>
+        </section>
+
+        <section>
+          <h2>Easy <a href="http://rubyonrails.org/">Ruby On Rails</a> Integration</h2>
+        </section>
+
+        <section>
+          <h2><a href="https://github.com/emberjs/ember-rails">Ember Rails</a></h2>
+        </section>
+
+        <section>
+          <h2><a href="https://emberkit.com/">Emberkit</a></h2>
+          commercial, pricy <br>
+          <a href="http://vimeo.com/98276162">Presentation on Youtube</a>
+        </section>
+
+        <section>
+          <h2><a href="https://github.com/emberjs/data">Ember Data</a></h2>
+          <pre>
+            <code data-trim>
+App.Store = DS.Store.extend();
+            </code>
+          </pre>
+          <pre>
+            <code data-trim>
+this.store.find('blogPost');
+this.store.find('blogPost', 142);
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/models/defining-models/#toc_defining-relationships">Relations</a> between Models</h2>
+          <pre>
+            <code data-trim>
+App.BlogPost = DS.Model.extend({
+  title: DS.attr(),
+  createdAt: DS.attr('date'),
+
+  comments: DS.hasMany('comment')
+});
+
+App.Comment = DS.Model.extend({
+  body: DS.attr(),
+  username: DS.attr(),
+
+  post: DS.belongsTo('blogPost')
+});
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/models/#toc_automatic-caching">Caching</a></h2>
+          <img src="images/finding-loaded-record-diagram.png" alt="finding a loaded record"><br>
+          finding a record already loaded
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/models/the-rest-adapter/">Ember Rest Adapter</a></h2>
+          <pre>
+            <code data-trim>
+var post = store.find('post', 1);
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/api/data/classes/DS.ActiveModelAdapter.html">Active Model Adapter</a></h2>
+          <pre>
+            <code data-trim>
+App.FamousPerson = DS.Model.extend({
+  firstName: DS.attr('string'),
+  lastName: DS.attr('string'),
+  occupation: DS.attr('string')
+});
+            </code>
+          </pre>
+          expects JSON in the form of
+          <pre>
+            <code data-trim>
+{
+  "famous_person": {
+    "first_name": "Barack",
+    "last_name": "Obama",
+    "occupation": "President"
+  }
+}
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="https://github.com/rails-api/active_model_serializers">Active Model Serializer</a></h2>
+          <pre>
+            <code data-trim class="ruby">
+class PostSerializer < ActiveModel::Serializer
+  attributes :title, :body
+end
+
+class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+    render json: @posts
+  end
+end
+            </code>
+          </pre>
+          creates JSON suitable for Active Model Adapter
+          <pre>
+            <code data-trim>
+{
+  "posts":
+    [
+      { "title": "Post 1", "body": "Hello!" },
+      { "title": "Post 2", "body": "Goodbye!" }
+    ]
+}
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://epf.io/">EPF</a></h2>
+          Ember Persistance Framework <br>
+          <img src="images/rest_sync.svg" alt="RESR Sync"> <br>
+          syncing between Server, Store and Client
+        </section>
+
+        <section>
+          <h2>Social</h2>
+          <p>Plays nicely with other libraries <br>
+          (e.g. <a href="http://getbootstrap.com/">Bootstrap</a>)</p>
+        </section>
+
+        <section>
+          <h2>Runs nicely in JSBIN</h2>
+          <a href="http://emberjs.jsbin.com">Emberjs - JSBIN</a>
+          <img src="images/datepicker.png" alt="JSBIN Demo">
+        </section>
+
+        <section>
+          <h2><a href="http://coffeescript.org/">Coffeescript</a></h2>
+          <pre>
+            <code data-trim>
+Contracting.Contract = DS.Model.extend
+  contractitems: DS.hasMany("contractitem",
+    async: true
+  )
+
+  term: DS.attr("number")
+  startdate: DS.attr("date")
+  createdAt: DS.attr("date")
+  updatedAt: DS.attr("date")
+
+  enddate: (->
+    moment(@get("startdate")).add("months", @get("term"))
+                             .subtract "days", 1
+  ).property("startdate", "term")
+
+  positions: Ember.computed.mapBy('contractitems', 'position')
+  maxposition: Ember.computed.max('positions')
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emberscript.com/">Emberscript</a></h2>
+          <pre>
+            <code data-trim class="coffee">
+class PostsController extends Ember.ArrayController
+
+  trimmedPosts: ~>
+    @content?.slice(0, 3)
+
+  +observer content.@each
+  postsChanged: ->
+    console.log('changed')
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emblemjs.com/">Emblem.js</a></h2>
+          <pre>
+            <code data-trim>
+p Introducing Emblem.js: a new templating language
+  that compiles to Handlebars.js
+
+ul
+  each person in people
+    li = person.name
+  li Indentation-based (like Slim, Jade, HAML, etc.)
+  li Compiles to Handlebars; full compatibility with
+     both custom and built-in Handlebars helpers
+
+section.ember-features
+  h1 class=foo The class name of this element is bound to `foo`
+  p class=isActive:flashing:inactive Ember.js bound css classes
+
+  a click="doIt" href="#" Hello, how are you doing, #{name}?
+
+#footer: ul.menu-items: each menu_items: li: a.menu-link href=url: link_text
+
+if something
+  p something was true!
+else
+  p something was false!
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Can be <a href="http://emberjs.com/guides/testing/">tested</a></h2>
+          <p><a href="http://qunitjs.com/">QUnit</a> + <a href="http://emberjs.com/guides/testing/test-helpers/">Helpers</a></p>
+          The computed property
+          <pre>
+            <code data-trim>
+App.SomeThing = Ember.Object.extend({
+  foo: 'bar',
+  computedFoo: function(){
+    return 'computed ' + this.get('foo');
+  }.property('foo')
+});
+            </code>
+          </pre>
+          can be unit tested in a few lines of code
+          <pre>
+            <code data-trim>
+module('Unit: SomeThing');
+
+test('computedFoo correctly concats foo', function() {
+  var someThing = App.SomeThing.create();
+  someThing.set('foo', 'baz');
+  equal(someThing.get('computedFoo'), 'computed baz');
+});
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/routing/asynchronous-routing/#sts=A Word on Promises...">Promises</a></h2>
+          can be used seperately as <a href="https://github.com/tildeio/rsvp.js">RSVP.js</a>
+          <pre>
+            <code data-trim>
+var promise = fetchTheAnswer();
+
+promise.then(fulfill, reject);
+
+function fulfill(answer) {
+  console.log("The answer is " + answer);
+}
+
+function reject(reason) {
+  console.log("Couldn't get the answer! Reason: " + reason);
+}
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Promises with concurrency</h2>
+          explained in Stefan Penner's talk <a href="https://www.youtube.com/watch?v=eHomHs3PrP8">The Promise Land</a>
+        </section>
+
+        <section>
+          <h2>Build Tools</h2>
+          <p class="fragment"><a href="http://www.ember-cli.com/">Ember CLI</a></p>
+        </section>
+
+        <section>
+          <h2>Extensible</h2>
+        </section>
+
+        <section>
+          <h2><a href="http://emberaddons.com/">Ember Addons</a></h2>
+        </section>
+
+        <section>
+          <h2><a href="https://github.com/indexiatech/ember-components">Ember Components</a></h2>
+        </section>
+
+        <section>
+          <h2><a href="https://github.com/jamesarosen/ember-i18n">Ember.I18n</a></h2>
+          <pre>
+            <code data-trim>
+Em.I18n.translations = {
+  'user': {
+    'edit': {
+      'title': 'Edit User'
+    },
+    'followers': {
+      'title': {
+        'one': 'One Follower',
+        'other': 'All {{count}} Followers'
+      }
+    }
+  },
+  'button': {
+    'add_user': {
+      'title': 'Add a user',
+      'text': 'Add',
+      'disabled': 'Saving...'
+    }
+  }
+};
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><a href="https://addepar.github.io/#/ember-table/overview">Ember Table</a></h2>
+          <img src="images/ember_table.png" alt="">
+        </section>
+
+        <section>
+          <h2><a href="https://addepar.github.io/#/ember-charts/overview">Ember Charts</a></h2>
+          <img src="images/ember_charts.png" alt="">
+        </section>
+
+        <section>
+          <h2><a href="https://addepar.github.io/#/ember-widgets/overview">Ember Widgets</a></h2>
+          <img src="images/ember_widgets.png" alt="">
+        </section>
+
+        <section>
+          <h2><a href="https://indexiatech.github.io/ember-forms/#/overview">Ember Forms</a></h2>
+          <img src="images/ember_forms.png" alt="">
+        </section>
+
+        <section>
+          <h2><a href="https://ember-addons.github.io/bootstrap-for-ember/">Bootstrap for Ember</a></h2>
+          <img src="images/growl_notifications.png" alt="">
+        </section>
+
+        <section>
+          <h2><a href="https://vestorly.github.io/torii/">Torii</a></h2>
+          <img src="images/torii.png" alt="">
+        </section>
+
+        <section>
+          <h2>supported by <a href="http://de.cdnjs.com/libraries/ember.js">CDNJS</a></h2>
+          <p>Requires minimal Webspace 'cause of Cloudflare</p>
+        </section>
+
+        <section>
+          <h2>Ember Inspector</h2>
+          <a href="https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi">for Chrome</a> &
+          <a href="https://addons.mozilla.org/de/firefox/addon/ember-inspector/">for Firefox</a>
+          <img src="images/ember_inspector.png" alt="">
+        </section>
+
+        <section>
+          <h2>Building Chrome Extensions</h2>
+          <p>YouTube Video: <a href="https://www.youtube.com/watch?v=NtkpDL2yKGo">Building Chrome Extensions With EmberJS</a></p>
+        </section>
+
+        <!-- --- 3. Philosophy --- -->
+
+        <section>
+          <h2>Part 3</h2>
+          <h1>The Philosophy behind</h1>
+        </section>
+
+        <section>
+          <h2>Convention over Configuration</h2>
+          e.g. <a href="http://emberjs.com/guides/concepts/naming-conventions/">naming conventions</a>
+        </section>
+
+        <section>
+          <h2>Clean <a href="http://emberjs.com/guides/object-model/classes-and-instances/">Object</a> Orientation</h2>
+        </section>
+
+        <section>
+          <h2>Single Page Apps</h2>
+        </section>
+
+        <section>
+          <h2>Stable <a href="http://emberjs.com/api/">API</a></h2>
+          <p>... since Ember 1.0 is out</p>
+        </section>
+
+        <section>
+          <h2>Clean <a href="http://emberjs.com/guides/routing/specifying-the-location-api/">Browser History</a></h2>
+        </section>
+
+        <section>
+        <p>Goes forward to ...</p>
+          <h2><a href="https://github.com/tildeio/htmlbars">HTMLBARS</a></h2>
+          This is our ideal, right?
+          <pre>
+            <code data-trim class="lang-hbs">
+<div class="{{foo}}">{{bar}}</div>
+            </code>
+          </pre>
+          but this is what we have to do in Ember today <br>
+          <img src="images/hbs.png" alt=""><br>
+          With HTMLBars, we get our ideal syntax!
+          <pre>
+            <code data-trim class="lang-hbs">
+<div class="{{foo}}">{{bar}}</div>
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <p>Will be compatible to ...</p>
+          <h2><a href="http://www.w3.org/TR/components-intro/">Web Components</a></h2>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/components/">Components</a></h2>
+          <p>... can be built already</p>
+          <pre>
+            <code data-trim>
+<script type="text/x-handlebars" id="components/blog-post">
+  <h1>Blog Post</h1>
+  <p>Lorem ipsum dolor sit amet.</p>
+</script>
+            </code>
+          </pre>
+          can be called:
+          <pre>
+            <code data-trim class="html">
+<h1>My Blog</h1>
+{{#each}}
+  {{blog-post}}
+{{/each}}
+            </code>
+          </pre>
+
+        </section>
+
+        <section>
+          <h2>No transactions</h2>
+          <p>... any more</p>
+        </section>
+
+        <section>
+          <h2>Super readable code</h2>
+          <pre>
+            <code data-trim class="coffee">
+Contracting.Contract = DS.Model.extend
+  contractitems: DS.hasMany("contractitem",
+    async: true
+  )
+
+  term: DS.attr("number")
+  startdate: DS.attr("date")
+  createdAt: DS.attr("date")
+  updatedAt: DS.attr("date")
+
+  enddate: (->
+    moment(@get("startdate")).add("months", @get("term"))
+                             .subtract "days", 1
+  ).property("startdate", "term")
+
+  positions: Ember.computed.mapBy('contractitems', 'position'),
+  maxposition: Ember.computed.max('positions')
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Robust <a href="http://emberjs.com/security/">Security Policy</a></h2>
+        </section>
+
+        <!-- --- 4. Friendly Community --- -->
+
+        <section>
+          <h2>Part 4</h2>
+          <h1>The Community</h1>
+        </section>
+
+        <section>
+          <h2>Friendly and inclusive <a href="http://emberjs.com/community/">Community</a></h2>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/">Ember Guides</a></h2>
+          <img src="images/guides.png" alt="">
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/api/">API</a> Documentation</h2>
+          <img src="images/api.png" alt="">
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/team/">Ember Core Team</a></h2>
+          <img src="images/core_team.png" alt="">
+        </section>
+
+        <section>
+          <h2>Yehuda Kats</h2>
+          <p><a href="http://yehudakatz.com/">Katz Got Your Tongue?</a></p>
+          <img src="images/yehuda_katz.jpg" alt="">
+        </section>
+
+        <section>
+          <p>Member of ...</p>
+          <h2> W3C TAG</h2>
+          <p><a href="http://www.w3.org/2001/tag/">Technical Architecture Group</a></p>
+          <img src="images/tag.png" alt="">
+        </section>
+
+        <section>
+          <h2><a href="https://emberfest.eu/">Ember Fest 2014</a></h2>
+          <img src="images/ember_fest.png" alt="">
+        </section>
+
+        <section>
+          <h2>Videos</h2>
+          <p>Lots of videos already up, <br>e.g.
+          <a href="https://www.youtube.com/watch?v=cp1Jk92ve2s&list=PLE7tQUdRKcyaOyfBnAndJxQ9PNVmKva0d">Emberconf 2014 Videos</a></p>
+        </section>
+
+        <section>
+          <h2><a href="http://emberconf.com/">Ember Conf</a></h2>
+          <img src="images/ember_conf.png" alt="">
+        </section>
+
+        <section>
+          <h2>Stackoverflow </h2>
+          10,812 <a href="https://stackoverflow.com/questions/tagged/ember.js">Questions tagged with Ember.js</a><br>
+          as of July 27th, 2014
+        </section>
+
+        <section>
+          <h2>IRC Channel</h2>
+          <p>irc.freenode.net #emberjs</p>
+        </section>
+
+        <section>
+          <h2><a href="http://www.discourse.org/">Discourse</a></h2>
+          <img src="images/discourse_logo.png" alt="">
+        </section>
+
+        <section>
+          <h2><a href="http://discuss.emberjs.com">Ember Discussion Forum</a></h2>
+          <img src="images/discourse.png" alt="">
+        </section>
+
+        <section>
+          <h2>Lots of company support</h2>
+          <p>Through use and support: <a href="http://emberjs.com/ember-users/">Ember Users</a></p>
+          Yahoo! - Living Social - Zendesk - Groupon - Travis CI - Boxee - Thoughtbot - Runtastic - Code School
+        </section>
+
+        <section>
+          <h2><a href="http://emberweekly.com/">Ember Weekly</a></h2>
+        </section>
+
+        <section>
+          <h2>Books</h2>
+          <p>The first books are out</p>
+        </section>
+
+        <section>
+          <h2><a href="http://www.rockandrollwithemberjs.com/">Rock and Roll with Ember.js</a></h2>
+          <img src="images/rock'n_roll.png" alt="">
+        </section>
+
+        <section>
+          <h2><a href="http://builtwithember.io/">Built with Ember</a></h2>
+        </section>
+
+        <section>
+          <h2><a href="https://emberflare.com">Ember Flare</a></h2>
+          Community driven place for all things Ember.js
+        </section>
+
+        <section>
+          <h2>Tutorials</h2>
+          <p>e.g. <a href="http://ember.vicramon.com/">Vic Ramon's ember Tutorial</a></p>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com/guides/getting-started/">Todo MVC Demo</a></h2>
+          build by the core team <br>
+          <img src="images/todo_mvc.png" alt="">
+        </section>
+
+        <section>
+          <h2>Jobs</h2>
+          <p><a href="http://discuss.emberjs.com/category/job-postings">Job Postings @ Ember Discussion Formum</a></p>
+          <img src="images/jobs.png" alt="">
+        </section>
+
+        <section>
+          <h2>Me</h2>
+          <p>You can talk to me about Ember!</p>
+        </section>
+
+        <section>
+          <h2>Envy</h2>
+          <p>A whole lot of envy from the Angular Community ;-)</p>
+        </section>
+
+        <section>
+          <img src="images/tomster.jpg" alt="Tomster"><br>
+          Tomster
+        </section>
+
+        <section>
+          <h2>Online Hangout</h2>
+          <a href="http://emberjshangout.com/">Ember.js Hangout</a>, on
+          <a href="https://www.youtube.com/user/emberjshangout">YouTube</a> and
+          <a href="https://twitter.com/emberjshangout">@emberjshangout</a>
+        </section>
+
+        <section>
+          <h2><a href="http://www.meetup.com/Ember-js-Linz/">Ember.js Linz Meetup</a></h2>
+        </section>
+
+        <section>
+          <img src="images/ember_vienna.jpeg" alt="">
+          <h2><a href="http://www.meetup.com/Ember-js-Vienna-Meetup/">Ember.js Vienna Meetup</a></h2>
+          <a href="https://twitter.com/emberjsvienna">@emberjsvienna</a>
+        </section>
+
+        <section>
+          <h2>Next Meetup </h2>
+          <p><a href="http://www.meetup.com/Ember-js-Vienna-Meetup/events/193665472/">Tuesday, August 5th, 18:30</a>
+          @ <a href="http://www.sektor5.at/">sektor5</a></p>
+        </section>
+
+        <section>
+          <h2>This Presentation</h2>
+          <p>... with lots of ressources can be found at<br>
+            <a href="http://at.mittenin.at/36">http://at.mittenin.at/36</a></p>
+            <br><br>
+          <h3>Thanks for having me!</h3>
+          <p><a href="http://stefan-haslinger.at">http://stefan-haslinger.at</a> - <a href="https://twitter.com/informatom">@informatom</a></p>
+        </section>
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+      Reveal.initialize({
+        slideNumber: true,
+        controls: true, progress: true, history: true, center: true,
+        theme: Reveal.getQueryHash().theme, transition: Reveal.getQueryHash().transition || 'default',
+
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+        ]
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+
+    <title>Der Zauberlehrling - Wie Sie wieder die Kontrolle über Ihre Daten gewinnen</title>
+    <meta name="description" content="Präsentation über den kontrollierten Umgang mit Big Data">
+    <meta name="author" content="Mag.Stefan Haslinger">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print">
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+<body><div class="reveal"><div class="slides">
+<!-- ##### Hier beginnen die Folien ##### -->
+
+<section>
+  <h1>Der Zauberlehrling</h1>
+   <blockquote>
+    Wie Sie wieder mit einfachen Mitteln<br>
+    die Kontrolle über Ihre Daten zurück gewinnen.
+  </blockquote>
+
+  <p>Eine Präsentation für die CON.ECT Informunity<br/>
+  <a href="http://www.conect.at/conect-eventmanagement/veranstaltungen/informunity/detaildarstellung/?no_cache=1&tx_posseminar_pievent%5Bmode%5D=DETAIL&tx_posseminar_pievent%5Bitem%5D=764">Big Data im Praxiseinsatz & Informationsmanagement</a><br/>
+  am Montag, den 13. Mai 2013</p>
+  <p>
+    <small>
+      <a href="http://creativecommons.org/licenses/by-sa/3.0/at/">
+        <img style="border-width:0"
+             src="/img/cc/88x31.png" />
+      </a><br />
+      <a href="http://www.informatom.com/presentations/bigdata/index.html">
+        Der Zauberlehrling
+      </a>
+      von <a href="mailto:stefan.haslinger@mittenin.at">Stefan Haslinger</a>
+      steht unter einer
+      <a href="http://creativecommons.org/licenses/by-sa/3.0/at/">
+        Creative Commons Namensnennung - Weitergabe unter gleichen Bedingungen
+        3.0 Österreich Lizenz
+      </a>.
+    </small>
+  </p>
+</section>
+
+<section>
+  <blockquote cite="Der Zauberlehrling, Johann Wolfgang von Goethe">
+    Stehe! stehe! denn wir haben<br/>
+    deiner Gaben vollgemessen! -<br/>
+    Ach, ich merk es! Wehe! wehe!<br/>
+    Hab ich doch das Wort vergessen!
+  </blockquote>
+
+  <p>Mag. Stefan Haslinger /
+  <a href="http://twitter.com/informatom">@informatom</a><br/>
+  <a href="mailto:stefan.haslinger@mittenin.at">stefan.haslinger@mittenin.at</a> /
+  +43 680 213 3030</p>
+</section>
+
+<section>
+  <h3> Stefan Haslinger </h2>
+  <p><img width=200 src="img/stefan.jpg"></p>
+  <p><ul>
+    <li>Firmeninhaber <a href="http://www.informatom.com">Informatom</a>
+    </li>
+    <li>Freelancer für KMUs und Konzerne</li>
+    <li>Architekt und Entwickler von Webanwendungen<br/> mit
+      <a href="http://www.mittenin.at">mittenin.at</a>
+    </li>
+    <li>Promotor
+      <ul>
+        <li>freier Software</li>
+        <li>agiler Softwareentwicklung</li>
+        <li>agiler Prozessbeschreibung</li>
+        <li>Ruby On Rails Web-Framework</li>
+</section>
+
+<section>
+  <h2>Werdegang</h2>
+  <ul>
+    <li>Mittelschullehrer</li>
+    <li>Systemadministrator<br/> an Kuffner Sternwarte und Planetarium</li>
+    <li>wissenschaftlicher Mitarbeiter<br/> am Institut für Kernphysik der TU Wien</li>
+    <li>Lektor am Technikum</li>
+    <li>Teamleiter der Urania Sternwarte</li>
+    <li>IT-Mitarbeiter eines Edelstahl-Großhändlers</li>
+  </ul></p>
+</section>
+
+<section>
+  <h2>Entwicklung</h2>
+  <h3>Firmen entwicklen sich</h1>
+  <ul>
+    <span class="fragment">... in ihren Prozessen</span><br>
+    <span class="fragment">... durch Ihre Mitarbeiter</span><br/>
+    <span class="fragment">... durch die Fluktuation der Mitarbeiter</span><br/>
+    <span class="fragment">... durch Fusionen</span>
+  </ul>
+</section>
+
+<section>
+  <h2>Das Wachstum</h2>
+  <h4>
+    <span class="fragment fade-in">
+        <span class="fragment fade-out">"Systeme"</span>
+    </span>
+  </h4>
+  <p>
+    <span class="fragment">[( Stammdaten </span>
+    <span class="fragment">+ Bewegungsdaten )</span>
+  </p>
+  <p class="fragment">* Anzahl d. Geschäftsprozesse</p>
+  <p class="fragment">* Anzahl der Systeme</p>
+
+  <h4>
+    <span class="fragment fade-in">
+      <span class="fragment fade-out"> + "Dokumente"</span>
+    </span>
+  </h4>
+  <p>
+    <span class="fragment">+ Files</span>
+    <span class="fragment"> + Kommunikationsdaten ]</span>
+  </p>
+  <p><span class="fragment">* Mal Anzahl der Mitarbeiter</span>
+  <span class="fragment">* Zeit</span></p>
+    <h4>
+      <span class="fragment fade-in">
+        <span class="fragment fade-out"> - ???</span>
+      </span>
+    </h4>
+  <p>
+    <span class="fragment">- (Aufräumen +</span>
+    <span class="fragment">unabsichtliches Löschen)</span>
+  </p>
+</section>
+
+<section>
+  <h2>Die Datenquellen</h2>
+  <ul>
+    <li class="fragment">Systeme</li>
+    <li class="fragment">Dateien</li>
+    <li class="fragment">Papier</li>
+    <li class="fragment">Wissen</li>
+</section>
+
+<section>
+
+  <h2>Systeme</h2>
+  <ul>
+    <li class="fragment">ERP</li>
+    <li class="fragment">BI</li>
+    <li class="fragment">HR</li>
+    <li class="fragment">CRM</li>
+    <li class="fragment">Projektmanagement</li>
+    <li class="fragment">Billing</li>
+    <li class="fragment">Ticket</li>
+    <li class="fragment">Archiv</li>
+    <li class="fragment">CMS - Intranet</li>
+    <li class="fragment">Firmen - Website</li>
+    <li class="fragment">Online - Shop</li>
+    <li class="fragment">Logs </br>&rArr; Mitarbeitervereinbarung</li>
+    <span class="fragment">... ?</span>
+</section>
+
+<section>
+  <h2>Dateien</h2>
+  <ul>
+    <li class="fragment">Kalkulationsblätter</li>
+    <li class="fragment">Textdokumente</li>
+    <li class="fragment">Präsentationen</li>
+    <li class="fragment">Schulungsmaterialien</li>
+    <li class="fragment">Memos</li>
+    <li class="fragment">E-Mails</li>
+    <li class="fragment">Policies</li>
+    <li class="fragment">Compliance Richtlinien</li>
+    <span class="fragment">... ?</span>
+  </ul>
+</section>
+
+<section>
+  <h2>Papier</h2>
+  <ul>
+    <li class="fragment">Telefonnotizen</li>
+    <li class="fragment">Gesprächsprotokolle</li>
+    <li class="fragment">Post-ITs</li>
+    <li class="fragment">Flipcharts</li>
+    <li class="fragment">Aushänge</li>
+    <li class="fragment">Verträge</li>
+    <li class="fragment">Handbücher</li>
+    <span class="fragment">... ?</span>
+  </ul>
+</section>
+
+<section>
+  <h2>Wissen</h2>
+  <ul>
+    <li class="fragment">Verhaltensnormen und -muster</li>
+    <li class="fragment">Best practices</li>
+    <li class="fragment">Know how</li>
+    <li class="fragment">Erinnerungen</li>
+    <li class="fragment">unbewusstes Wissen</li>
+    <li class="fragment">Gespräche</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Anzahl der Kommunikationskanäle</h2>
+  <p class="fragment">Bei 2 Kommunikationspartnern</p>
+  <ul>
+    <li class="fragment">
+      Bei 10 Mitarbeitern <span class="fragment">&rArr; 45</span>
+    </li>
+    <li class="fragment">
+      Bei 100 Mitarbeitern <span class="fragment">&rArr; 4950</span>
+    </li>
+    <li class="fragment">
+      Bei 1000 Mitarbeitern <span class="fragment">&rArr; 499 500 ~ 1/2 Million</span>
+    </li>
+  </ul>
+
+  <p class="fragment">Bei 6 Kommunikationspartnern</p>
+  <ul>
+    <li class="fragment">
+      Bei 10 Mitarbeitern <span class="fragment">&rArr; 210</span>
+    </li>
+    <li class="fragment">
+      Bei 100 Mitarbeitern <span class="fragment">&rArr; 1 192 052 400 ~ 1 Milliarde</span>
+    </li>
+    <li class="fragment">
+      Bei 1000 Mitarbeitern
+      <span class="fragment">&rArr; 1 368 173 298 991 500 ~ 1 Billiarde</span>
+    </li>
+  </ul>
+  <p>Koordinierte Publikation von Information<br/> als einziger Ausweg.</p>
+
+  <ul class="fragment">
+    Link:
+    <li>Wikipedia-Seite zum Binomialkoeffizient<br/>
+      <a href="http://at.mittenin.at/27">http://at.mittenin.at/27</a>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>Haben Sie den Überblick?</h2>
+  <p>
+    <span class="fragment">... über diese Daten?</span><br>
+    <span class="fragment">... über Ihre Termine?</span><br>
+    <span class="fragment">... über Ihre Aufgaben?</span><br/>
+    <span class="fragment">... die heute noch anstehen?</span><br>
+    <span class="fragment">... oder morgen?</span></br>
+    <span class="fragment">... die schon erledigt sein sollten?</span></br>
+    <span class="fragment">Haben sie effizienten Zugriff?</span></br>
+  </p>
+</section>
+
+<section>
+  <h1><font>UN-AN-GE-NEHM ? </font></h1>
+  <p span class="fragment">Wollen Sie daran etwas ändern?</p>
+  <p span class="fragment">Wirklich?</p>
+</section>
+
+<section>
+  <h1>1. Keine Panik</h1>
+  <span class="fragment fade-in">Es folgen <span class="fragment fade-out">10</span>
+  <span class="fragment fade-in">9</span><br/>
+  Strategien zur Rückgewinnung der Kontrolle</span></p>
+</section>
+
+<section>
+  <h1>2. Getting<br/> Things Done</h1>
+  <p class="fragment">Selbstmanagement-Methode<br/>
+  entwickelt von David Allen</p>
+  <ul>
+    <li class="fragment">Sammeln aller Tätigkeiten<br/> außerhalb des Gehirns</li>
+    <li class="fragment">Durcharbeiten</li>
+    <li class="fragment">Organisieren</li>
+    <li class="fragment">wöchentliches Durchsehen </li>
+    <li class="fragment">Durchführen</li>
+  </ul>
+  <p>&nbsp;</p>
+  <ul class="fragment">
+    Quellen:
+    <li>Wikipedia-Artikel:
+      <a href="http://at.mittenin.at/17">http://at.mittenin.at/17</a>
+    </li>
+    <li>David Allens Webseite:
+      <a href="http://at.mittenin.at/18"># 18</a>
+    </li>
+    <li>Buch: Wie ich die Dinge geregelt kriege:
+      <a href="http://at.mittenin.at/19"># 19</a>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <p>... Erleichterung ...</p>
+  <ul>
+    <li class="fragment">Sync to Bits</li>
+    <li class="fragment">Sync to Paper</li>
+    <li class="fragment">das Gehirn entfällt als Point of Failure</li>
+  </ul>
+</section>
+
+<section>
+  <h1>3. Prozesse</h1>
+  <p class="fragment">Übernehmen Sie die Kontrolle über <b>Ihre</b> Geschäftsprozesse</p>
+  <ul>
+    <li class="fragment">Gibt es eine Prozessbeschreibung?</li>
+    <span class="fragment">... eine aktuelle?</span><br>
+    <span class="fragment">
+      ... so, wie die Prozesse gelebt werden,<br/> nicht nur wie sie sein sollten?
+    </span><br/>
+    <span class="fragment">... in Form eines BPMN Diagramms?</span><br/>
+    <span class="fragment">... im Prozesshandbuch?</span><br/>
+    <li class="fragment">Sind die Verantwortlichkeiten klar?</li>
+    <li class="fragment">Daten sind ohne die Kenntnis der Prozesse nutzlos</li>
+    <span class="fragment">... da nicht verifizierbar</span><br>
+    </li>
+    <li class="fragment">Spinoff: Schulungsmaterial</li>
+  </ul>
+  <p>&nbsp;</p>
+  <ul class="fragment">
+    Links:
+    <li>KMU-Manifest: <a href="http://at.mittenin.at/20"># 20</a></li>
+    <li>Wikipedia-Seite zu BPMN:
+      <a href="http://at.mittenin.at/26"># 26</a></li>
+    <li>Tibco Business Studio: <a href="http://at.mittenin.at/28"># 28</a>
+  </ul>
+</section>
+
+<section>
+  <h1>4. Vereinfachung</h1>
+    <ul>
+    <li class="fragment">Wo haben sich Prozesse <b>nicht</b> bewährt?</li>
+    <li class="fragment">Können diese Prozesse vereinfacht werden?</li>
+    <li class="fragment">Einfachere Prozesse haben <br/>
+      einfachere Datenstrukturen zur Folge</li>
+    <li class="fragment">Binden Sie die Ausführenden ein</br/>
+    <li class="fragment">Beispiel: WM</li>
+  </ul>
+</section>
+
+<section>
+  <h1>4. Stillegung</h1>
+    <ul>
+    <li class="fragment">Wo haben sich Prozesse überholt?</li>
+    <li class="fragment">... oder rechnen sich nicht?</li>
+    <li class="fragment">Stillgelegte Prozesse erzeugen keine Daten</li>
+    <li class="fragment">Wann haben Sie zuletzt einen Prozess abgebaut?</li>
+    <li class="fragment">Viele Prozesse bedeuten nicht zwangsweise hohe Komplexität</li>
+  </ul>
+</section>
+
+<section>
+
+  <h1>5. Systeme</h1>
+  <ul>
+    <li class="fragment">Lernen Sie die Datenmodelle kennen</li>
+    <li class="fragment">Bilden die Systeme auch die Prozesse<br/> wie erwartet ab?</li>
+    <li class="fragment">Verlassen Sie sich im Zweifel<br/> nicht auf die GUI!</li>
+  </ul>
+</section>
+
+<section>
+  <h1>Analyse</h1>
+  <ul>
+    <li class="fragment">Verbinden Sie sich im Zweifel<br/>
+      mit einem OR-Mapper zur Datenbank<br/>
+      und schauen Sie direkt auf die Daten</li>
+    <li class="fragment">z.B. Active Record von Ruby on Rails</li>
+    <li class="fragment">Abstrahiert SQL-Syntax unterschiedlichster DBMS</li>
+    <li class="fragment">Eignet sich ausgezeichnet für
+    <ul>
+      <li class="fragment">BI-Analysen</li>
+      <li class="fragment">Ad-Hoc-Reporting</li>
+      <li class="fragment">Aggregierung</li>
+    </ul>
+    </li>
+  </ul>
+
+  <ul class="fragment">
+    <br/>Links:
+    <li>Active Record Entwurfsmuster bei Wikipedia:
+      <a href="http://at.mittenin.at/21"># 21</a>
+    </li>
+    <li>Rails Guides: Active Record Query Interface:
+      <a href="http://at.mittenin.at/22"># 22</a>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>Beispiel</h2>
+  <h3>active record abfrage</h3>
+
+  Max hat Bestellungen freigegeben.
+  Ich möchte die Postleitzahlen der Lieferadressen eben dieser Bestellungen sehen.
+
+  <pre><code>
+@baskets = Basket.where(:approver_id => User.where(:name => "Max").first)
+@baskets.each do |basket|
+  puts basket.delivery_address.city.zipcode
+end
+  </code></pre>
+</section>
+
+<section>
+  <h1>6. Aggregierung</h1>
+  <blockquote>
+  Was messbar ist: Messen<br/>
+  Was nicht messbar ist: Messbar machen
+  </blockquote>
+  <br/>
+  <ul>
+    <li class="fragment">Verschriftlichen Sie die KPIs</li>
+    <li class="fragment">Verfolgen Sie die Werte</li>
+    <li class="fragment">10
+      <span class="fragment">... nicht 100
+        <span class="fragment">... oder 1000</span>
+      </span>
+    </li>
+    <li class="fragment">Das Gleiche gilt für BI-Berichte</li>
+    <li class="fragment">Kein Reporting um des Reportings willen</li>
+  </ul>
+</section>
+
+<section>
+  <h1>7. Dateien</h1>
+  <ul>
+    <li class="fragment" data-fragment-index=2>Sichten Sie Ihre Dateien</li>
+    <li class="fragment" data-fragment-index=3>
+      Transferieren Sie bei dieser Gelegenheit Infomationen:
+    </li>
+    <span class="fragment" data-fragment-index=6>
+      ... in Ihre persönliche Dokumentation
+    </span><br>
+    <span class="fragment" data-fragment-index=5>... ins Intranet</span><br/>
+    <span class="fragment" data-fragment-index=4>... ins Internet</span><br/>
+    <ul>
+      <li class="fragment" data-fragment-index=4>auf die Firmenwebseite</li>
+      <li class="fragment" data-fragment-index=4>auf den Corporate Blog</li>
+    </ul>
+    <li class="fragment">Löschen Sie Duplikate</li>
+    <li class="fragment">Versionieren sie die verbliebenen Dateien</li>
+  </ul>
+  <ul>
+    Links:
+    <li class="fragment" data-fragment-index=6>
+      Guerilla Wiki - Tiddlywiki: <a href="http://at.mittenin.at/23"># 23</a> oder<br/>
+      4 Tiddlywiki basierte GTD Systeme <a href="http://at.mittenin.at/29"># 29</a>
+    </li>
+    <li class="fragment" data-fragment-index=5>
+      Redmine: <a href="http://at.mittenin.at/24"># 24</a>
+    </li>
+    <li class="fragment" data-fragment-index=4>
+      8 Tips for choosing a SEO-friendly CMS:
+        <a href="http://at.mittenin.at/25"># 25</a>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2>Dateitypen</h2>
+  <p><q class="fragment">Können Sie noch Quark X-Press Files öffnen?</q></p>
+  <ul>
+    <li class="fragment">verwenden Sie offene oder zumindest<br/>textbasierte Datentypen</li>
+    <li class="fragment">Trennen Sie Daten und Präsentation</li>
+    <li class="fragment">Diese Präsentation
+      <ul>
+        <li class="fragment">umfasst keine 15 Kilobytes HTML-Text</li>
+        <li class="fragment">ist schnell über jedes Netzwerk übertragbar</li>
+        <li class="fragment">enthält keine versteckten Informationen</li>
+        <li class="fragment">ist jederzeit aktuell im Internet aufrufbar</li>
+        <li class="fragment">kann auch als .pdf exportiert werden</li>
+      </ul>
+    </li>
+  </ul>
+  <div class="fragment">
+    <ul>
+      Link:
+      <li>HTML Presentation Framework - Reveal.js: <a href="http://at.mittenin.at/30"># 30</a></li>
+    </ul>
+  </span>
+</section>
+
+
+<section>
+  <h1>8. E-Mail</h1>
+  <ul>
+    <li class="fragment">Widerstehen Sie zwanghaftem Archivieren</li>
+    <li class="fragment">Was 1 Jahr nicht mehr benötigt wurde ...</li>
+    <li class="fragment">Übertragen Sie gegebenenfalls Inhalte<br/>
+      komprimiert in die Dokumentation</li>
+    <li class="fragment">Halten Sie auch die Signatur kurz</li>
+    <li class="fragment">Senden Sie keine HTML-Mails sondern plain ASCII</li>
+    <span class="fragment">... niemand ist interessiert an Ihrem Logo</span><br/>
+    <span class="fragment"><font face="Comic Sans MS">... oder Memos in Comic Sans</font><//span>
+  </ul>
+</section>
+
+<section>
+  <h1>9. Löschen</h1>
+  <ul>
+    <li class="fragment">Löschen Sie nicht mehr Benötigtes</li>
+    <li class="fragment">Auch hier, was älter ist als 1 Jahr ...</li>
+    <li class="fragment">Ausnahme: gesetzlich vorgesehene Archivierung</li>
+    <li class="fragment">Welche Inhalte erstellen Sie stets neu?</li>
+  </ul>
+</section>
+
+<section>
+  <p class="fragment">Damit wären wir eigentlich fertig<br/>
+  <span class="fragment">und können einen Kaffee trinken,</span><br/>
+  <span class="fragment">doch noch ist das nicht von Bestand &#9786;</span></p>
+</section>
+
+
+<section>
+  <h1>10. Ziele</h1>
+  <ul>
+    <li class="fragment">Stellen Sie Ihre eigenen Ziele auf</li>
+    <li class="fragment">Verschriftlichen sie diese</li>
+    <li class="fragment">Verifizieren Sie regelmäßig,<br> ob Sie sie selbst einhalten</li>
+  </ul>
+</section>
+
+<section>
+  <h2>und die Zukunft?</h2>
+  <p class="fragment">Schreiben Sie mir am 1.September,<br/>
+     was aus Ihrem Projekt geworden ist:</p>
+  <p>
+    <strong class="fragment">stefan.haslinger@mittenin.at</strong></br>
+    <strong class="fragment">+43 680 213 3030</strong>
+  </p>
+  <p>&nbsp;</p>
+  <h3 class="fragment">Danke für Ihre Zeit!</h3>
+
+</section>
+
+<!-- ##### Hier enden die Folien ##### -->
+<section><! --Fix for Bug in Chrome Print --></section></div></div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+<script>
+  Reveal.initialize({
+    controls: true,
+    overview: true,
+    minScale: 0.2,
+    maxScale: 1.0,
+    margin: 0.1,
+    progress: true,
+    history: true,
+    center: true,
+    width: 1024,
+    height: 768,
+    theme: Reveal.getQueryHash().theme,
+    transition: Reveal.getQueryHash().transition || 'default',
+    dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/showdown.js',
+        condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js',
+        condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true,
+        callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true,
+        condition: function() { return !!document.body.classList; } },
+      { src: 'plugin/notes/notes.js', async: true,
+        condition: function() { return !!document.body.classList; } }
+    ]
+  });
+
+</script></body></html>

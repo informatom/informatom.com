@@ -1,0 +1,11 @@
+source 'https://rubygems.org'
+
+gem 'volt', '0.8.26'
+gem 'volt-bootstrap'
+gem 'volt-bootstrap-jumbotron-theme'
+gem 'volt-user-templates'
+
+platform :mri do
+  gem 'thin', '~> 1.6.0'
+  gem 'bson_ext', '~> 1.9.0'
+end

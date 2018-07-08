@@ -1,0 +1,103 @@
+<nav class="navbar is-white container" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://informatom.com">
+      <img src="{{ site.url }}/img/logo.png" alt="Informatom Logo" />
+    </a>
+
+    <a role="button"
+       class="navbar-burger"
+       data-target="navMenu"
+       aria-label="menu"
+       aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div class="navbar-menu" id="navMenu">
+    <div class="navbar-start">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" href="#">Willkommen</a>
+        <div class="navbar-dropdown is-boxed">
+          <div class="navbar-item">
+            <a href="{{ site.url }}/schultern-von-riesen">nani gigantium .. wer?</a>
+          </div>
+          <div class="navbar-item">
+            <a href="{{ site.url }}/stack">Der Ruby on Rails Stack</a>
+          </div>
+          <div class="navbar-item">
+            <a href="{{ site.url }}/elixir">Der Elixir und Phoenix Stack</a>
+          </div>
+          <div class="navbar-item">
+            <a href="{{ site.url }}/entwicklung">Entwicklung</a>
+          </div>
+          <div class="navbar-item">
+            <a href="{{ site.url }}/beratung">Beratung</a>
+          </div>
+          <div class="navbar-item">
+            <a href="{{ site.url }}/schulung">Schulung</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-item has-dropdown is-hoverable ">
+        <a class="navbar-link" href="#">Podcasts</a>
+        <div class="navbar-dropdown is-boxed">
+          <div class="navbar-item">
+            <a href="https://layer8.informatom.com">Layer 8</a>
+          </div>
+          <div class="navbar-item">
+            <a href="https://aua-uff-co.de/">Aua-Uff-Code!</a>
+          </div>
+          <div class="navbar-item">
+            <a href="https://podcast.stefan-haslinger.at/">Stefan will's wissen</a>
+          </div>
+          <div class="navbar-item">
+            <a href="https://3-schweinehun.de/">3 Schweinehunde</a>
+          </div>
+          <hr class="navbar-divider" />
+          <div class="navbar-item">
+            <a href="https://panoptikum.io/">Panoptikum</a>
+          </div>
+          <div class="navbar-item">
+            <a href="https://jekyll-octopod.github.io/">jekyll-octopod</a>
+          </div>
+          <hr class="navbar-divider" />
+          <div class="navbar-item">
+            <a href="https://www.podcasterei.at">Podcasting Meetup</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-item">
+        <a href="{{ site.url }}/presentations">Talks</a>
+      </div>
+      <div class="navbar-item">
+        <a href="{{ site.url }}/screencasts">Screencasts</a>
+      </div>
+      <div class="navbar-item">
+        <a href="https://www.twitter.com/informatom">Twitter
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+      <div class="navbar-item">
+        <a href="{{ site.url }}/kontakt">Kontakt</a>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <form class="field has-addons" action="/search.html" method="get" role="search">
+          <div class="control">
+            <input class="input" type="search" placeholder="Suchbegriff" id="search-box"
+                   name="query"/>
+          </div>
+          <div class="control">
+            <button type="submit" class="button is-primary">Suchen</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>

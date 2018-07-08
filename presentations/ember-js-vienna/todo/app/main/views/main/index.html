@@ -1,0 +1,26 @@
+<:Body>
+  <table class="table">
+   {{ _todos.each do |todo| }}
+     <tr>
+       <td>
+         <input type="checkbox"
+                checked="{{ todo._complete }}"/>
+        </td>
+       <td class="{{ if todo._complete }}complete{{ end }}">
+         {{ todo._label }}
+        </td>
+       <td>
+         <button e-click="_todos.delete(todo)">x</button>
+       </td>
+     </tr>
+   {{ end }}
+  </table>
+
+  <form e-submit="add_todo" role="form">
+    <div class="form-group">
+      <label>Todo</label>
+      <input class="form-control"
+             type="text"
+             value="{{ page._new_todo._label}}" />
+    </div>
+  </form>

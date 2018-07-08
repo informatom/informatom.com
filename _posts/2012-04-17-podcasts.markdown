@@ -1,0 +1,61 @@
+---
+layout: post
+title: Podcasts
+date: 2012-04-17 08:00:00 +0200
+---
+
+Ich liebe, es Podcasts zu hören, seien es fachspezifische
+Podcasts zu den Themen Ruby on Rails, Javascript, oder Linux oder auch
+einfach nur Podcasts mit guter Musik.
+
+Auf dieser Seite werde ich die Podcasts sammeln, die ich zumindest für
+längere Zeit selbst gehört habe und jene, die Leser empfehlen. Sollten
+Sie mir Podcasts empfehlen wollen, so bitte ich Sie, dies in einem
+Kommentar zu tun.
+
+Zum Hören der Podcasts verwende ich entweder mein Samsung Galaxy S2
+(natürlich Android Ice Cream Sandwich als Betriebssystem <i class="fa fa-smile-o"></i> ) oder
+meinen Sansy Clip. Der ist mittlerweile an die 10 Jahre alt, sein Akku
+hält noch immer mindests 10 Stunden durch. Zum Verwalten der Podcasts
+verwende ich Beyondpost als Podcatcher am Handy, am Desktop habe ich
+früher Gpodder verwendet.
+
+### Links
+
+-   [Beyond Pod](http://www.beyondpod.mobi/android/index.htm)
+-   [Gpodder](http://gpodder.org/)
+
+### Freie Software
+
+-   [Floss Weekly](http://twit.tv/show/floss-weekly)
+-   [SE Radio](http://ratholeradio.org/)
+
+### Linux
+
+-   [Linux Outlaws](http://sixgun.org/linuxoutlaws/)
+-   [Ubuntu UK Podcast](http://podcast.ubuntu-uk.org/)
+-   [Linux Link Tech Show](http://www.thelinuxlink.net/tllts/)
+-   [Linux Log](http://linux.quicksurf.com/)
+-   [Lugradio](http://www.lugradio.org/)
+-   [Radio Tux](http://www.radiotux.de/)
+-   [The Linux Box](http://www.thelinuxbox.org/)
+-   [The Linux Link](http://www.thelinuxlink.net/)
+-   [Linux Action Show](http://www.linuxactionshow.com/)
+
+### Javascript
+
+-   [Javscript Jabber](http://javascriptjabber.com/)
+-   [The Javscript Show](http://javascriptshow.com/)
+
+### Ruby
+
+-   [Ruby Freelancers](http://rubyfreelancers.com/)
+-   [Ruby Rogues](http://rubyrogues.com/)
+-   [Ruby 5](http://ruby5.envylabs.com/)
+-   [The Ruby Show](http://rubyshow.com/)
+
+### non-IT
+
+-   [Neues vom
+    Kanguruh](http://www.fritz.de/media/podcasts/serien/neues_vom_kaenguru.html)
+-   [Rathole Radio](http://ratholeradio.org)

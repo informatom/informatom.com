@@ -1,0 +1,4 @@
+- rsync task
+
+rsync -ravzPR --delete . stefan@mittenin.at:/var/www/informatom.com
+

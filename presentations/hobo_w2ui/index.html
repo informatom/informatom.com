@@ -1,0 +1,585 @@
+---
+layout: presentation
+title: W2UI to the rescue
+---
+class: center, middle
+
+# W2UI to the rescue
+I built this awesome app, but my customer cannot use it
+---
+# The Story...
+---
+background-image: url(images/products.png)
+---
+background-image: url(images/filters.png)
+---
+background-image: url(images/property_group.png)
+---
+background-image: url(images/property.png)
+---
+background-image: url(images/value.png)
+---
+background-image: url(images/product1.png)
+---
+background-image: url(images/product2.png)
+---
+class: center, middle
+
+# ... ?
+# .. ?
+# . ?
+---
+class: center, middle
+
+# Usabili.what?
+
+Let's build a useable UI!
+---
+class: center, middle
+
+
+# W2UI to the rescue
+
+plus a
+
+## Fancy Tree
+---
+With these I built
+
+# A more Sophisticated GUI ...
+
+for another "relationship mess":
+* Webpages are in a hierarchy
+* PageTemplate belongs to Webpage
+* Webpage has many ContentElements (aka Images, Texts, Documents)
+* through Placeholders (Tags)
+  ```xml
+  <container name="main_content"/>
+  <photo name="logo"/>
+  <document name="data_sheet"/>
+  ```
+To find one of 1000+ content elements ...
+* ContentElement belongs to a Folder
+---
+background-image: url(images/content_manager.png)
+---
+background-image: url(images/content_manager_empty.png)
+---
+# W2UI gives us ...
+
+... within 60K of Javascript
+---
+# Layouts
+
+![Layout](images/layout.png)
+---
+# Grids
+
+![Grid](images/grid.png)
+---
+# Forms
+
+![Form](images/form.png)
+---
+# Toolbars
+
+![Toolbar](images/toolbar.png)
+---
+# Sidebars
+
+![Sidebar](images/sidebar.png)
+---
+# Popups
+
+![Popup](images/popup.png)
+---
+# Overlays
+
+aka Tooltips
+
+![Overlay](images/overlay.png)
+---
+# Treewidget
+
+## provided by Fancytree
+
+![Fancytree](images/fancytree.png)
+---
+# Draggable and Droppable
+
+provided by JQueryUI
+<video width="848" height="240" controls>
+  <source src="images/dragdrop.ogv" type="video/ogg">
+</video>
+---
+# Tutorial!
+
+Let's learn the basics by building a simple UI,
+consisting of an "explorer"
+It should have
+* a tree for the ProductCategories on the left
+* a detail grid for the Products on the right
+---
+# My Stack
+
+* Hobo
+* Ruby On Rails
+* Ruby
+
+I want to seperate things out
+
+so - we generate a subsite Productmanager
+---
+# Subsite Controller
+
+in `/app/controllers/productmanager/contentmanager_site_controller.rb`
+
+```ruby
+class Productmanager::ProductmanagerSiteController < ApplicationController
+
+  before_filter :productmanager_required
+
+  private
+
+  def productmanager_required
+    redirect_to user_login_path unless logged_in? && current_user.administrator?
+  end
+
+end
+```
+---
+# FrontController
+
+in `/app/controllers/productmanager/front_controller.rb`
+
+```ruby
+class Productmanager::FrontController < Productmanager::ProductmanagerSiteController
+
+  respond_to :html, :json, :js
+
+  def index; end
+
+end
+```
+---
+# Namespace + Route
+
+in `config/routes.rb`
+
+```ruby
+  namespace :productmanager do
+  end
+
+  get 'productmanager' => 'productmanager/front#index', :as => 'productmanager_front'
+```
+---
+# Generating the page tag
+
+Instead of a view and a layout, we redefine and simplify the standard page tag
+
+in `/var/rails/mercator/app/views/taglibs/productmanager/productmanager.dryml`
+```xml
+<def tag='page'>
+  <html>
+    <head>
+      <title><%= strip_tags app_name %></title>
+
+      <%= csrf_meta_tag %>
+      <stylesheet name='#{subsite}'/>
+
+      <javascript name='#{subsite}'/>
+      <javascript name="productmanager/index.js" />
+    </head>
+
+    <body param>
+      <div id="productmanager" style="height: 100%"></div>
+    </body>
+
+    <script>
+      var csrf_token = "<%= form_authenticity_token %>"
+    </script>
+  </html>
+</def>
+```
+---
+# DRYML
+
+Hobo has it's own templating engine DRYML.
+
+Tags are either called like this:
+```xml
+<tag attr1 attr2/>
+```
+or if they have params
+```xml
+<tag attr1 attr2>
+  <param1:>param content</param1:>
+  <param2:>more param content</param2:>
+</tag>
+```
+
+* So DRYML is an XHTML-extension.
+* Similar to the now famous web components, but to be used serverside.
+* Compiled to .erb like in standard Rails
+* Which is then compiled to HTML, also like in Rails
+---
+# `<page>` revisited
+
+This tag serves us as layout.
+
+We call it in the view
+`app/views/productmanager/front/index.dryml`
+```xml
+<page/>
+```
+
+DRYML can be used in any Rails project by importing the dryml gem.
+
+You remember?
+  ```xml
+  <container name="main_content"/>
+  <photo name="logo"/>
+  <document name="data_sheet"/>
+  ```
+
+From now on no Hobo specific stuff, I promise ;-)
+---
+# Compiling the Assets
+
+in `app/assets/javascripts/productmanager.js`
+
+```javascript
+//= require application
+//= require hobo_w2ui
+//= require contentmanager/jquery.fancytree-all.min
+```
+
+I have written a small hobo_w2ui gem to integrate assets easily
+(and a bit more...)
+
+in `app/assets/stylesheets/productmanager.scss`
+
+```css
+/*
+ *= require jquery-ui/redmond
+ *= require admin/ui.fancytree.min
+ *= require hobo_w2ui
+ */
+```
+---
+Hurray, the ground is paved:
+
+![empty screen](images/empty.png)
+---
+Let's start with a layout:
+
+![Layout](images/layout.png)
+---
+#Layout
+
+in `app/assets/javascripts/productmanager/index/layout.js.erb`
+
+```javascript
+$(function () {
+  $('#productmanager').w2layout({
+    name: 'productmanager',
+    panels: [
+      { type: 'top',
+        title: '<%= I18n.t("mercator.product_manager.title") %>',
+        size: 58, resizable: true, content: "Top"
+      },
+      { type: 'left', size: '20%', resizable: true, content: "Left" },
+      { type: 'main', resizable: true, content: "Main" },
+      { type: 'right', size: '20%', resizable: true, content: "Right" }
+    ],
+    onRender: function(event) {
+      event.onComplete = function () {
+      }
+    }
+  })
+})
+```
+---
+And load the layout in the asset pipeline
+
+in `app/assets/javascripts/productmanager/index.js`
+
+```javascript
+//= require productmanager/index/layout
+```
+---
+background-image: url(images/layout2.png)
+---
+# Category Tree
+
+Let's load the Category tree in the left pane
+---
+We change the layout a bit
+
+```javascript
+$(function () {
+  $('#productmanager').w2layout({
+    name: 'productmanager',
+    panels: [
+      { type: 'top',
+        title: '<%= I18n.t("mercator.product_manager.title") %>',
+        size: 58, resizable: true, content: "Top"
+      },
+*     { type: 'left', size: '20%', resizable: true, content: "<div id='categoryTree'></div>" },
+      { type: 'main', resizable: true, content: "Main" },
+      { type: 'right', size: '20%', resizable: true, content: "Right" }
+    ],
+    onRender: function(event) {
+      event.onComplete = function () {
+*       categoryTree()
+      }
+    }
+  })
+})
+```
+
+* Ruby - style ; , {}
+* event driven / 'functional'
+---
+This file has to be required from the asset pipeline
+
+in `app/assets/javascripts/productmanager/index.js`
+
+```javascript
+//= require productmanager/index/layout
+*//= require productmanager/index/categoryTree.js.erb
+```
+---
+We generate the tree
+
+in `app/assets/javascripts/productmanager/index/categoryTree.js.erb`
+
+```javascript
+function categoryTree() {
+  $("#categoryTree").fancytree({
+    source: { url: "/productmanager/front/show_categorytree" },
+  })
+}
+```
+could have done this in the layout ...
+
+We call here an action, that does not exist yet ...
+---
+For the new action we need a route
+
+in `config/routes.rb`
+
+```ruby
+  namespace :productmanager do
+*   get 'front/show_categorytree' => 'front#show_categorytree'
+  end
+```
+---
+And the action itself:
+
+in `app/controllers/productmanager/front_controller.rb`
+
+```ruby
+class Productmanager::FrontController < Productmanager::ProductmanagerSiteController
+
+  respond_to :html, :json, :js
+
+  def index; end
+
+* def show_categorytree
+*   render json: childrenarray(objects: Category.arrange(order: :position),
+*                              name_method: :name_with_status).to_json
+
+protected
+
+  def childrenarray(objects: nil, name_method: nil, folder: false)
+    childrenarray = []
+    objects.each do |object, children|
+*     childhash = Hash["title"  => object.send(name_method), "key" => object.id, "folder" => folder]
+      if children.any?
+        childhash["children"] = childrenarray(objects: children, name_method: name_method, folder: folder)
+      end
+      childrenarray << childhash
+    end
+    return childrenarray
+  end
+end
+```
+
+Category.arrange is provided by the ancestry gem, but ...
+---
+where title_with_status is a small helper in the model:
+
+`app/models/category.rb`
+
+```ruby
+  def name_with_status
+    if state == "active"
+      name
+    else
+      (name + " <em style='color: green'>" + I18n.t("mercator.states.#{state}") + "</em>").html_safe
+    end
+  end
+```
+---
+background-image: url(images/tree2.png)
+---
+# Next step
+
+On click of a category a grid in the middle pane should display the corresponding products.
+---
+background-image: url(images/grid.png)
+---
+We expand the layout:
+
+```javascript
+$(function () {
+  $('#productmanager').w2layout({
+    name: 'productmanager',
+    panels: [
+      // ...
+*     { type: 'main', resizable: true, content: "<div id='productsgrid'></div>" },
+      // ...
+    ],
+    onRender: function(event) {
+      event.onComplete = function () {
+        categoryTree()
+*       productsGrid()
+      }
+    }
+  })
+})
+```
+---
+And declare the Grid
+
+```javascript
+function productsGrid() {
+  $('#productsgrid').w2grid({
+    name: 'productsgrid',
+    multiSelect : false,
+    method: 'GET',
+    show: { toolbar: true, footer: true },
+
+    columns: [
+      { field: 'recid', caption: '<%= I18n.t("attributes.id") %>', size: '50px',
+        sortable: true, hidden: true , attr: "align=center" },
+      // ...
+      { field: 'title_en', caption: '<%= I18n.t("attributes.title") %> EN', size: '150px',
+        sortable: true, hidden: true },
+      // ...
+      { field: 'novelty', caption: '<%= I18n.t("attributes.novelty") %>', size: '50px', attr: "align=center",
+        render: function (record) {
+          return record.novelty ? '<icon class="fa fa-lg fa-check">' : '<icon class="fa fa-close">'
+        }
+      },
+      { field: 'created_at', caption: '<%= I18n.t("attributes.created_at") %>', size: '130px',
+        sortable: true, hidden: true, render: 'datetime:yyyy-mm-dd|hh24:mm:ss' }
+    ],
+
+    searches: [
+      { field: 'number', caption: '<%= I18n.t("attributes.number") %>', type: 'text' },
+      { field: 'name_de', caption: '<%= I18n.t("attributes.name") %> DE', type: 'text' },
+      // ...
+    ],
+    sortData: [{ field: 'number', direction: 'ASC' }],
+  })
+}
+```
+---
+background-image: url(images/grid_displayed.png)
+---
+So let's load the data on click:
+
+```javascript
+function categoryTree() {
+  $("#categoryTree").fancytree({
+    source: { url: "/productmanager/front/show_categorytree" },
+*   click: function(event, data) {
+*     if (data.node.key) {
+*       w2ui.productsgrid.load('/productmanager/front/show_products/' + data.node.key)
+*     }
+*   }
+  })
+}
+```
+
+Wait! This calls the action show_products,
+that's still missing ...
+---
+# Route
+
+in `config/routes.rb`
+
+```ruby
+  namespace :productmanager do
+    get 'front/show_categorytree' => 'front#show_categorytree'
+*   get 'front/show_products/:id' => 'front#show_products'
+  end
+  ```
+---
+# Action
+
+in `app/controllers/productmanager/front_controller.rb`
+```ruby
+  def show_products
+    category = Category.find(params[:id])
+
+    products = category.products
+    render json: {
+      status: "success",
+      total: products.count,
+      records: products.collect {
+        |product| {
+          recid: product.id,
+          number: product.number,
+          title_de: product.title_de,
+# ...
+          long_description_de: ActionController::Base.helpers.strip_tags(product.long_description_de),
+# ...
+          created_at: product.created_at.utc.to_i*1000,
+# ...
+        }
+      }
+    }
+  end
+```
+---
+background-image: url(images/grid_rendered.png)
+---
+We only transfer the actual data without any boiler plate html
+
+![Data](images/data.png)
+
+which makes it pretty fast:
+
+![Speed](images/speed.png)
+---
+We get column selection for free:
+
+![Columns](images/columns.png)
+---
+And local search in the memory for free
+
+![Search](images/search.png)
+---
+That's enough for today,
+
+if you are interested in a continuation,
+episode 2 could contain
+
+- Ajax deep dive (handling 100 thousands of data sets - instead of thousands)
+- Active model serializer usage
+- Drag and Drop
+- Integration with Hobo and Rails standard actions
+
+pick 2 at most ;-)
+
+Find this presentation at:
+http://at.mittenin.at/38
+
+Thanks!
+
+# mailto:`stefan@informatom.com`
+
+# twitter: `@informatom`

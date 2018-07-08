@@ -1,0 +1,95 @@
+---
+layout: post
+title: Hochzeit
+date:   2014-06-23 08:00:00 +0200
+---
+
+## Ember-Rails
+
+Unter Hochzeit versteht man in der Automobilindustrie die Vereinigung
+von Fahrgestell, Motor und Karosserie, die zunächst als Komponenten
+hergestellt wurden.
+
+So eine ähnliche Hochzeit stand nun für unsere in Ember.js geschriebene
+Client-Applikation der Vertragskalkulation mit dem restlichen
+Webshopsystem ins Haus.
+
+Zur Integration der beiden gibt es das Ember-Rails Gem:
+<https://github.com/emberjs/ember-rails>
+
+Es stellt das Asset Handling komplett unter die Kontrolle der Rails
+Asset Pipeline. Die Umstellung diesbezüglich, sowohl für Entwicklungs-
+als auch für Produktivumgebung, war in etwas mehr als einem Tag zu
+schaffen. Hier haben wir wieder alle als Team am gleichen Problem
+gearbeitet, da wir diese Integration für eine wesentliche Komponente mit
+Zukunftsfolgen halten.
+
+Zuvor haben wir noch sämtliches Javascript der Applikation einheitlich
+auf Coffeescript umgestellt. Dies hat zwar mehr Konsistenzgründe als
+realen Nutzen, war aber immerhin eine gute Übung zur Festigung unseres
+CoffeeScript-Know Hows.
+
+Die Kopplung der Datenmodelle zwischen Frontend und Backend ist
+implementiert, wir können nun alle Daten automatisch im Hintergrund
+übertragen, wenn dies vom Vertriebsmitarbeiter angefordert wird.
+
+Promises
+--------
+
+Wir müssen hier kurz auf das Konzept der Promises zu sprechen kommen, da
+es für uns alle neu ist. Bei asynchroner Programmierung erhält man als
+Rückgabewert auf einen Funktionsaufruf nicht des ermittelte Ergebnis,
+wenn dieses denn in Folge ermittelt worden ist, sondern nur ein Objekt,
+eben ein Promise, dieses aber unmittelbar ohne Zeitverzögeruung. Es
+handelt sich dabei quasi um ein Versprechen auf einen Rüchgabewert, die
+eigentliche Funktion wird asynchron, man könnte sagen im Hintergrund,
+ausgeführt. Ein Promise wird in Folge im Erfolgsfall erfüllt (fulfilled)
+oder im Fehlerfall zurückgewiesen (rejected), z.B. wenn der Server die
+Anfrage nicht akzeptiert. Auf Fehler- und Erfolsfall kann dann synchron
+geantwortet werden.
+
+Dieses Konzept zu verstehen, ist ein Schritt, es erfolgreich zu
+verwenden und das Behandeln der Promises richtig zu implementieren ein
+weiterer. Selten ist uns bisher ein Programmierparadigma so fundamental
+vorgekommen, vergleichbar etwa mit Objektorientierung oder dem MVC
+Pattern. Es ermöglich eine völlig neue Art der funktionalen
+Programmierung, im Internet teilweise "reaktive Programmierung"
+genannt.
+
+Immer wieder waren wir - bei falscher asynchroner Implementierung -
+überrascht keine Rückgabewerte zu erhalten, dabei haben wir diese durch
+Ignorierung der Promises einfach ignoriert oder das Ergebnis nicht
+synchron abgewartet.
+
+Single Page Apps
+----------------
+
+Ember.js Applikationen sind typischerweise Single Page Apps, so auch
+unsere Applikation. In derartigen Applikationen ist es üblich, nur
+geänderte Bildschirmbereiche zu aktualisieren, nicht aber von einer
+Sicht auf eine andere zu wechseln, was wir allerdings noch derzeit
+machen. Wir senden den Benutzer zwischen der Vertragsliste,
+
+<hr/>
+![Vertragsliste](/img/blog/vertragsliste.png){:style="max-width: 100%"}
+<hr/>
+
+der Einzelansicht eines Vertrages mit seinen Positionen und der
+
+<hr/>
+![Vertrag](/img/blog/vertrag.png){:style="max-width: 100%"}
+<hr/>
+
+Einzelansicht einer Vertragsposition mit ihren Verbräuchen hin und her.
+
+<hr/>
+![Vertragsposition](/img/blog/position.png){:style="max-width: 100%"}
+<hr/>
+
+Das ist eigentlich für Single Page Apps unüblich und wir beschließen
+dieses Verhalten zu ändern.
+
+Bei aller Begeisterung für unsere neue Applikation stellen wir im Test
+in der Wochenbesprechung fest, dass Positionen nicht gelöscht werden
+können und Änderungen nicht am Server persistiert werden. Es gibt noch
+einiges zu tun!

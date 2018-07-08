@@ -1,0 +1,9 @@
+.reveal {
+  font-family: "Ubuntu Condensed", sans-serif;
+}
+
+.reveal pre code {
+  margin-top : -30px; 
+  margin-bottom : -50px;  
+  max-height: 600px;
+}

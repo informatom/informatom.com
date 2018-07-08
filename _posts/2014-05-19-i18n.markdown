@@ -1,0 +1,66 @@
+---
+layout: post
+title: I18n
+date:   2014-05-19 08:00:00 +0200
+---
+
+## Internationalisierung
+
+Die Abkürzung I18n steht in der Softwareentwicklung für
+Internationalisierung, die Gestaltung einer Software, sodass sie ohne
+Änderung in eine weitere Sprache übersetzt werden kann. Unter L10n
+versteht man dann die Lokalisierung, also die eigentliche Übersetzung.
+Wir haben während der gesamten Entwicklungszeit darauf geachtet, alle
+Internationalisierungsfunktionen von Hobo und Rails zu verwenden, sodass
+es uns in dieser Woche möglich war, die Software komplett zweisprachig
+zu machen und ins Englische zu übersetzen.
+
+Die Benutzer, also sowohl Kunden, als auch Vertriebsmitarbeiter, -leiter
+oder Administratoren können nun jederzeit die Sprache der Applikation
+wechseln
+
+### Sprachwechsler
+
+<hr/>
+![I18n](/img/blog/i18n.png){:style="max-width: 100%"}
+<hr/>
+
+Die Applikation ist nicht nur seitens des Benutzerinterfaces
+mehrsprachig, sie ist auch hinsichtlich der Stammdaten zweisprachig
+ausgelegt. So können z.B. Artikelbezeichnungen und die Inhalte der
+Webseiten des CMS-Tails (Content Management System) in Deutsch und
+Englisch hinterlegt werden.
+
+### Englische Administration mehrsprachiger Stammmdaten
+
+<hr/>
+![English Administration](/img/blog/english_admin.png){:style="max-width: 100%"}
+<hr/>
+
+Sollten kundenseitig weitere Sprachen gewünscht werden, so ist dies
+ebenfalls möglich.
+
+Es sind dazu 650 Worte und Phrasen zu übersetzen, was für einen mit der
+Materie vertrauten Übersetzer in ein bis zwei Tagen machbar ist.
+
+In einem weiteren Schritt würden wir für die übersetzungsrelevanten
+Stammdaten weitere Spalten in der Datenbank generieren,
+
+die dann im Benutzerinterface mit den Übersetzungen der Stammdaten
+befüllt werden können.
+
+Somit haben wir nun eine komplett zweisprachige Anwendung vor uns.
+
+### Englisches Interface in Shop
+
+<hr/>
+![English UI](/img/blog/english_ui.png){:style="max-width: 100%"}
+<hr/>
+
+Weiteres
+--------
+
+-   Bei Komplettangeboten gibt es nun Rabatte auf Kopf- und
+    Positionsebene
+-   Ein Fehler im Bereich des Adresshandlings in Komplettangeboten wurde
+    behoben.

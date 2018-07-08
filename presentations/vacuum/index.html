@@ -1,0 +1,254 @@
+---
+layout: presentation
+title: Horor Vacui
+---
+class: center, middle, inverse
+
+# Horor Vacui
+
+### Being an Imposter and Procrastinator with Passion
+
+### Getting in Shape und Adhearing to GDPR using Ruby
+
+---
+
+# Story time!
+
+* Podcast addict
+* Guilty of having written 2 CMS's
+* [Layer 8](https://layer8.informatom.com/) in 2013
+* lost motivation (or passion?) after 3 regular episodes
+* starting podcasting again 3 y ago joining [Biertaucher](http://spielend-programmieren.at/de:podcast:biertaucher:start)<br/>
+  (de facto dead after 322 episodes)
+* started a new podcast on coding [Aua Uff Code!](https://aua-uff-co.de/) two years ago
+* series of episodes on %
+---
+
+# Digression
+
+* From Nand to Tetris<br/>
+  (Haha! no link, go to show notes!)
+* Logic gates -> ALU -> sequential logic -> Assembler
+* Confession: No formal degree<br/>
+  (not even true: high school teacher of it)
+* but no Bacc or Mas
+* self taught
+* worked 7+ years in SAP
+* running my own company with it, so not too bad :-)
+* (not really) imposter, more an inferiority complex
+* Podcast is a(nother) way of compensating
+
+---
+
+# Learning addict
+
+* Ruby, especially Rails (oo)
+* Elixir, Phoenix (fp)
+* Running [Panoptikum.io](https://panoptikum.io/) and wrote my first parser
+* have probably coded in 40+ languages
+* From Nand to Tetris
+* currently binge watching [Destroy all Software](https://www.destroyallsoftware.com/screencasts)<br/>
+  sometimes over engineered, tdd, howto build malloc, parser, regular grammar, proper testing, isolation
+
+---
+
+# Back to Ruby
+
+* Picked up [jekyll octopod](https://jekyll-octopod.github.io/)
+* Updated it
+* Maintaining it ever since
+* it generates static sites (see later)
+
+---
+
+# 3 Schweinehunde
+
+* Attended Conference for Sciene Podcasting
+* Started another Podcast [3 Schweinehunde](https://3-schweinehun.de/)
+* Way more Success!
+
+---
+
+# Time for another confession
+
+
+* goal: not so much: getting in shape
+* actually: loosing weight
+
+---
+
+background-image: url(img/weight.png)
+
+---
+
+# Time for your confessions
+
+* Who wants to get in better shape?
+* Who wants to loose weight?
+* Who wants to be a better coder?
+* Who wants to make a confession publicly?
+
+---
+
+# Digression
+
+* Weight tracker [bmi.mittenin.at](https://bmi.mittenin.at/)
+* You can track yourself!
+* Rails app
+* Open source
+* for me on github - Link on Webpage
+
+---
+
+# Back to Ruby!
+
+* 3 Schweinehunde also hosted with jekyll-octpod
+* so no app log
+* but webserver log!
+* Used [GoAccess](https://goaccess.io/)
+* Even published the [stats](https://3-schweinehun.de/stats/report_episodes.html)
+* Mini confession: meanwhile they are plain wrong :-)
+* Because they are not adhearing to GDPR regulations
+* Podcasters are addicted to stats
+
+---
+
+# New Project Anonymizer
+
+* Aggregating records from Apache logs
+** on a daily bases
+** on episode level
+
+* Rails 5.2 app
+* Pushed before:<br/>
+  Schreibe Objekte: 100% (264/264), 43.29 KiB | 0 bytes/s, Fertig.
+* "Confession": I uploaded my credentials to Github :-)
+
+---
+
+# Auth and encrypted credentials
+
+* Using Basic auth for admin:
+
+```ruby
+http_basic_authenticate_with name: "admin",
+  password: Rails.application.credentials.basicauth[:pass],
+  except: :report
+```
+
+* Using encrypted credentials
+
+```ruby
+Rails.application.configure do
+  ...
+  config.require_master_key = true
+end
+```
+---
+
+# Some database stuff
+
+
+* Using SQLite
+* first one database record (hard disk write) per request
+* then one database record (hard disk write) per aggregation
+
+* First improvement:
+  * Load
+  * aggregate in Memory
+  * truncate (* later...)
+  * save
+
+* Weird fear of losing data
+
+---
+
+# More database stuff
+
+* Actually no truncate in SQLite, but delete_all is fine :-)
+* Yes, you could Delete, Drop and recreate
+
+* Second: don't store off requests, aggregate immediately
+
+* Then: configure logrotation
+---
+
+# Digression
+
+* and confession
+* I was afraid of SQL
+* I read the full [Postgres manual](https://www.postgresql.org/docs/manuals/)<br/>
+  (imposter + procrastinator)
+* Shoutout and thanks to @nuclearsquid, <br/>
+  but it took me three years to start reading it...
+* if I can get it, you can, too (English imposter)
+
+---
+
+# More database stuff
+
+* File grew
+
+* Who has not used VACUUM in the last year?
+* Who does not now? (read the config!)
+* The 'database defrag'
+* The Vacuum trick
+
+```
+ActiveRecord::Base.connection.execute("VACUUM")
+
+```
+
+* cool: rebuilds database file
+---
+
+# Another confession
+
+* Using [Chartkick](https://www.chartkick.com/)
+* single episodes with 900+ downloads (yeah!)
+* Stats can be viewed [here](https://statistik.informatom.com/)
+
+# Bonus tipp
+
+* Have a look at the Passenger (app server) config
+
+```
+MAX_POOL_SIZE = 6
+```
+
+.. and suddenly some monitoring issues are gone :-)
+
+---
+
+
+# My personal conclusions
+
+* being self taught is fine
+* learning is fun
+* running is fun (most of the times)
+* loosing weight is tough (but can be done)
+* there are backlashes
+* be my own metric is better
+
+
+* don't listen to other people's advice<br/>
+  especially not at the end of a talk :-)
+
+# Join 3 Schweinehunde!
+
+* [follow me](https://www.strava.com/athletes/2912755) on Strava
+* I am super slow, you can easily beat me! :-)
+
+
+
+
+
+---
+
+class: center, middle
+
+# Thanks!
+
+[@informatom](https://twitter.com/informatom)
+
+Slides: http://informatom.com/presentations/vacuum

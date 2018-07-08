@@ -1,0 +1,393 @@
+---
+layout: presentation
+title: Join the Ruby Line
+---
+class: center, middle, inverse
+# Join the Ruby Line
+### a.k.a. Why I love Ruby
+### a.k.a. Ruby für PHP developers
+Stefan Haslinger
+---
+background-image: url(images/ruby_line.jpg)
+---
+class: center, middle, inverse
+# I want to ...
+# ~~teach you Ruby~~
+# provide hooks in the Ruby ecosystem
+---
+background-image: url(images/brake.jpg)
+---
+background-image: url(images/matz.jpg)
+# Yukihiro Matsumoto a.k.a. "Matz"
+---
+background-image: url(images/developer_happiness.jpg)
+---
+background-image: url(images/school.jpg)
+---
+background-image: url(images/try_ruby.png)
+---
+# Some 1 Liners
+
+```bash
+2.2.0 :001 > "I am a text".reverse
+ => "txet a ma I"
+
+2.2.0 :002 > (1..10).map{|number| Math.sqrt(number)}
+ => [1.0, 1.4142135623730951, 1.7320508075688772, 2.0, 2.23606797749979, 2.449489742783178,
+     2.6457513110645907, 2.8284271247461903, 3.0, 3.1622776601683795]
+
+2.2.0 :003 > (1..1000).inject{|sum,n| sum + n }
+ => 500500
+
+2.2.0 :004 > (1..1000).inject(:+)
+ => 500500
+
+2.2.0 :005 > [14, 35, -7, 46, 98].min
+ => -7
+
+# in Try Ruby, you can't require, so just in irb
+2.2.0 :006 > require 'prime'
+ => true
+2.2.0 :007 > Prime.first 5
+ => [2, 3, 5, 7, 11]
+
+2.2.0 :008 > 99.prime_division
+ => [[3, 2], [11, 1]]
+```
+---
+background-image: url(images/rails_for_zombies.png)
+---
+
+# How to try Ruby - Links
+
+* [try_ruby](http://tryruby.org/)
+* [Rails for Zombies](http://railsforzombies.org/)
+* [Ruby Installer](http://rubyinstaller.org/) for Windows
+* [Rails Installer](http://railsinstaller.org/en) for Windows
+* [RVM](https://rvm.io/) for Linux and Mac
+* [rbenv](https://github.com/sstephenson/rbenv) for Linux and Mac
+* Interactive_Ruby_Shell: [irb](http://en.wikipedia.org/wiki/Interactive_Ruby_Shell)
+---
+background-image: url(images/why.png)
+# _why_the_lucky_stiff
+---
+background-image: url(images/why_presenting.png)
+---
+background-image: url(images/chunky_bacon.png)
+---
+# _why's Poignant Guide to Ruby
+<br/>
+<audio controls preload="none"> <source src="audio/why1.mp3" type="audio/mpeg"> </audio><br/>
+<audio controls preload="none"> <source src="audio/why2.mp3" type="audio/mpeg"> </audio><br/>
+<audio controls preload="none"> <source src="audio/why3.mp3" type="audio/mpeg"> </audio><br/>
+<audio controls preload="none"> <source src="audio/why4.mp3" type="audio/mpeg"> </audio><br/>
+<audio controls preload="none"> <source src="audio/why5.mp3" type="audio/mpeg"> </audio><br/>
+<audio controls preload="none"> <source src="audio/why6.mp3" type="audio/mpeg"> </audio><br/>
+<audio controls preload="none"> <source src="audio/why7.mp3" type="audio/mpeg"> </audio><br/>
+<audio controls preload="none"> <source src="audio/why8.mp3" type="audio/mpeg"> </audio><br/>
+---
+background-image: url(images/hackety_hack.png)
+---
+# _why, one more time
+
+* [Hackety Hack](http://www.hackety.com/)
+* Video: [Why presenting Hachety Hack](https://vimeo.com/5047563)
+* a sad thing: _why has disappeared
+
+## The printer spooler story
+
+via https://en.wikipedia.org/wiki/Why_the_lucky_stiff
+
+_In April 2013, a complete book attributed to Jonathan Gillette was digitally released via the website whytheluckystiff.net and the GitHub repository cwales. It was presented as individual files of PCL (Printer Command Language) without any instruction on how to assemble the print outs into a book. Based on timestamps from the git repository, Steve Klabnik compiled the pages [...].  Although no authorship is claimed in either the book or the git repository, the writing style and content are remarkably comparable to that of Jonathan Gillette [...]_
+---
+background-image: url(images/whyday.png)
+---
+class: center, middle, inverse
+# Frameworks
+---
+class: center, middle, inverse
+# Stack 1
+---
+background-image: url(images/rack.png)
+---
+background-image: url(images/christian.neukirchen.jpg)
+# Christian Neukirchen
+---
+background-image: url(images/ror.png)
+---
+background-image: url(images/dhh.jpeg)
+# David Heinemeier Hansson a.k.a. 'DHH'
+---
+background-image: url(images/hobo.png)
+---
+class: center, middle
+# Bryan Larson
+# current maintainer:<br/>Ignacio Huerta
+---
+background-image: url(images/alicia.png)
+---
+class: center, middle, inverse
+# Alicia Sevilla
+http://www.aliciasevilla.com/
+<audio controls preload="none"> <source src="audio/alicia.mp3" type="audio/mpeg"> </audio>
+<br/><br/>
+Ignacio's Girlfriend composes and plays music for <br/>
+getting a mind like water.
+
+She's currently looking for advice and projects<br/> in the film / game / composition world.
+<br/><br/>
+Contact: alicia@aliciamusica.com
+---
+class: center, middle, inverse
+# Stack 2
+---
+background-image: url(images/rack.png)
+---
+background-image: url(images/sinatra.png)
+<br/><br/><br/><br/><br/>
+<audio controls preload="none"> <source src="audio/myway.mp3" type="audio/mpeg"> </audio><br/>
+---
+background-image: url(images/padrino.png)
+---
+class: center, middle, inverse
+# and many more
+---
+background-image: url(images/camping.png)
+---
+background-image: url(images/shoes.jpg)
+---
+background-image: url(images/lotus.png)
+---
+# A bit of Controversy
+
+* [Rails is monolith](http://david.heinemeierhansson.com/posts/33-myth-4-rails-is-a-monolith) by DHH
+* [TDD is dead - Long live testing.](http://david.heinemeierhansson.com/2014/tdd-is-dead-long-live-testing.html) by DHH
+* [Rails is Omakase](http://david.heinemeierhansson.com/2012/rails-is-omakase.html) by DHH
+
+The talk why I decided to try Ruby and Ruby on Rails
+
+* [Unlearn your MBA](http://ecorner.stanford.edu/authorMaterialInfo.html?mid=2351) by DHH
+---
+background-image: url(images/volt.png)
+---
+background-image: url(images/ryan_stout.jpg)
+# Ryan Stout
+---
+# Framework Links
+
+* [Rack](http://rack.github.io/) -> [Ruby On Rails](http://rubyonrails.org/) -> [Hobo]
+* [Rack](http://rack.github.io/) -> [Sinatra](http://www.sinatrarb.com/) > [Padrino]
+* [Volt](http://voltframework.com/)
+* [Lotus](http://lotusrb.org/)
+* [Camping](http://camping.io/) (if you want to be crazy)
+* [Shoes](http://shoesrb.com/)
+* (don’t use Merb, it's deprecated and merged into Rails)
+---
+# The simplest webapp ever
+
+```bash
+stefan@aristoteles:~$ gem install sinatra
+Successfully installed sinatra-1.4.5
+Parsing documentation for sinatra-1.4.5
+Installing ri documentation for sinatra-1.4.5
+Done installing documentation for sinatra after 28 seconds
+1 gem installed
+
+stefan@aristoteles:~$ ruby -r sinatra -e 'get ("/does_ruby_rock?") {"Sure!"}'
+[2015-03-10 09:57:31] INFO  WEBrick 1.3.1
+[2015-03-10 09:57:31] INFO  ruby 2.2.0 (2014-12-25) [x86_64-linux]
+== Sinatra/1.4.5 has taken the stage on 4567 for development with backup from WEBrick
+[2015-03-10 09:57:31] INFO  WEBrick::HTTPServer#start: pid=4785 port=4567
+
+127.0.0.1 - - [10/Mar/2015 09:57:45] "GET /does_ruby_rock HTTP/1.1" 200 5 0.0036
+localhost - - [10/Mar/2015:09:57:45 CET] "GET /does_ruby_rock? HTTP/1.1" 200 5
+- -> /does_ruby_rock?
+```
+---
+background-image: url(images/hello_world.png)
+### ... the "hello world of webapps"
+### ... hello world examples are stupid
+### ... so let's ride on
+---
+class: center, middle, inverse
+# Testing
+---
+background-image: url(images/rspec.png)
+---
+background-image: url(images/test_unit.png)
+---
+background-image: url(images/cucumber.png)
+---
+background-image: url(images/capybara.png)
+---
+Testing-Links:
+
+# TDD
+
+## Unit Testing
+
+* [rspec](http://rspec.info/)
+* [test-unit](http://test-unit.github.io/)
+
+## BDD
+
+* [cucumber](https://cukes.info/)
+* [capybara](http://jnicklas.github.io/capybara/)
+
+## Pair Programming
+
+* [Pair Program With Me](https://github.com/avdi/ppwm#readme)
+* [The Changelog Podcast #90 on pair programming](http://5by5.tv/changelog/90)
+---
+class: center, middle, inverse
+# Screencasts
+---
+background-image: url(images/railscasts.png)
+---
+## Screencasts Links
+
+* [Railscasts](http://railscasts.com/)
+* [Go Rails](https://gorails.com/)
+* [Ruby Tapas($)](http://www.rubytapas.com/)
+
+another sad thing:
+Railscasts's Ryan Bates suffers burnout
+---
+class: center, middle, inverse
+# Community
+---
+background-image: url(images/vienna_rb.png)
+---
+# Links Community
+
+* [vienna-rb](http://vienna-rb.at/)
+
+  Come over, always awesome!
+
+* [Ruby Habits](http://www.meetup.com/RubyHabits)
+
+  The new kid on the block
+---
+class: center, middle, inverse
+# Hosting
+---
+background-image: url(images/heroku.png)
+---
+class: center, middle, inverse
+#Podcasts
+---
+background-image: url(images/rogues.png)
+---
+# Podcast Links
+
+* [Ruby Rogues](http://rubyrogues.com/)
+* [Ruby 5](https://ruby5.codeschool.com/)
+* [The Ruby on Rails Podcast](http://5by5.tv/rubyonrails)
+
+## News
+
+* [Ruby Weekly](http://rubyweekly.com/)
+---
+class: center, middle, inverse
+# Books
+---
+background-image: url(images/programming_ruby.png)
+---
+# Links - Books
+
+* [The Humble Little Ruby Book](http://www.humblelittlerubybook.com/)
+* [Programming Ruby](http://ruby-doc.com/docs/ProgrammingRuby/)
+* [The Ruby on Rails Tutorial](https://www.railstutorial.org/)
+* [Learn Ruby the Hard Way](http://learnrubythehardway.org/book/)
+* [Why’s Guide to Ruby](http://mislav.uniqpath.com/poignant-guide/) the book from the soundtrack before ...
+---
+class: center, middle, inverse
+Shameless Self Promotion
+
+# Mercator
+
+A Guided Selling System
+
+= Webshop + Consulting Module
+---
+# A Huge Ecosystem
+
+* Find a list of more than 100 Gem's I'm using
+
+  https://github.com/informatom/mercator/wiki/Quellenverzeichnis-DE
+
+  _everything_ is on Github
+---
+class: center, middle, inverse
+# Readable Code / DEMO
+---
+# A TODO App as a simple example
+
+1) We create a brand new project
+
+```bash
+volt new
+```
+using the Volt framework
+---
+2) Let's add some view code:
+```html
+<:Body>
+  <table class="table">
+   { { _todos.each do |todo| } }
+     <tr>
+       <td>
+         <input type="checkbox"
+                checked="{ { todo._complete } }"/>
+        </td>
+       <td class="{ { if todo._complete } }complete{ { end } }">
+         { { todo._content } }
+        </td>
+       <td>
+         <button e-click="_todos.delete(todo)">x</button>
+       </td>
+     </tr>
+   { { end } }
+  </table>
+
+  <form e-submit="add_todo" role="form">
+    <div class="form-group">
+      <label>Todo</label>
+      <input class="form-control"
+             type="text"
+             value="{{ page._new_todo._content}}" />
+    </div>
+  </form>
+```
+I omit the css for `complete`...
+---
+3) ... and add some code to the default controller:
+
+```ruby
+class MainController < Volt::ModelController
+  model :store
+
+  def add_todo
+      _todos << page._new_todo
+      page._new_todo = {}
+  end
+#...
+end
+```
+
+4) There is no step 4!
+---
+class: center, middle, inverse
+# DEMO TIME!
+---
+# Contact me!
+
+* Stefan Haslinger
+* stefan.haslinger@informatom.com
+* @informatom
+* +43 680 213 3030
+* http://informatom.com
+
+* This presentation: http://at.mittenin.at/43
+
+# Questions?

@@ -1,0 +1,153 @@
+---
+layout: presentation
+title: Mr. 100 000 Volts
+---
+class: center, middle
+
+# Mr. 100 000 Volts
+---
+class: center, middle
+# Happy
+
+Rails
+
+Hobo
+
+Mercator
+---
+class: center, middle, inverse
+# .xls
+---
+class: center, middle
+# -> Clientside MVC
+---
+class: center, middle
+# Regex
+---
+class: center, middle
+# Ember.js
+---
+class: center, middle, inverse
+#  MVC?
+---
+class: center, middle
+#  more like RMCV
+## Router - Model - Controller - View
+---
+class: center, middle
+#  or even RMCVLTCT
+Router - Model - Controller - View - Layout - Template - Components -Template
+---
+class: center, middle, inverse
+#  Async?
+---
+class: center, middle
+#  ~~Request / Response~~
+#  Promises!
+---
+class: center, middle, inverse
+#  Asset Pipeline?
+---
+class: center, middle
+#  Ember-Rails
+#  Ember-cli
+---
+class: center, middle, inverse
+#  Persistance?
+---
+class: center, middle
+#  Ember-Data +
+#  Active record serializer
+(Request / Respone again + Promises)
+---
+class: center, middle, inverse
+#  Update?
+---
+class: center, middle
+Looked into Angular.js as well ...
+---
+class: center, middle, inverse
+#  Nope!
+---
+class: center, middle
+# Conclusion?
+---
+class: center, middle
+# It's cool...
+# It's a lot to learn...
+# It works...
+---
+class: center, middle, inverse
+#  Javascript!
+---
+class: center, middle
+# and Ruby?
+---
+class: center, middle
+# Volt
+---
+I wrote a view:
+---
+```html
+<:Body>
+  <table class="table">
+   { { _todos.each do |todo| } }
+     <tr>
+       <td>
+         <input type="checkbox"
+                checked="{ { todo._complete } }"/>
+        </td>
+       <td class="{ { if todo._complete } }complete{ { end } }">
+         { { todo._content } }
+        </td>
+       <td>
+         <button e-click="_todos.delete(todo)">x</button>
+       </td>
+     </tr>
+   { { end } }
+  </table>
+
+  <form e-submit="add_todo" role="form">
+    <div class="form-group">
+      <label>Todo</label>
+      <input class="form-control"
+             type="text"
+             value="{{ page._new_todo._content}}" />
+    </div>
+  </form>
+```
+---
+... and a controller:
+---
+```ruby
+class MainController < Volt::ModelController
+  model :store
+
+  def add_todo
+      _todos << page._new_todo
+      page._new_todo = {}
+  end
+#...
+end
+```
+---
+class: center, middle, inverse
+# DEMO!
+---
+class: center, middle, inverse
+shameless self promotion...
+# Mercator
+The Austrian Guided Selling Solution
+
+http://mercator.informatom.com
+---
+class: center, middle
+That's it!
+
+Find this presentation at:
+
+http://at.mittenin.at/40
+
+mailto:`stefan@informatom.com`
+
+twitter: `@informatom`

@@ -1,0 +1,4 @@
+# robots.txt zu https://www.informatom.com.org/
+
+User-agent: *
+Disallow: /presentations/turbolinks/img/

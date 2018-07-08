@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/informatom
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://informatom.com
+  * I am informatom (https://keybase.io/informatom) on keybase.
+  * I have a public key ASBlQz063oeZVZlOt9FzOcgoNP7LORbUFQtO5cd5TG4tJwo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "012065433d3ade879955994eb7d17339c82834fecb3916d4150b4ee5c7794c6e2d270a",
+            "host": "keybase.io",
+            "kid": "012065433d3ade879955994eb7d17339c82834fecb3916d4150b4ee5c7794c6e2d270a",
+            "uid": "d61743049a663559b3a19d35b34ea119",
+            "username": "informatom"
+        },
+        "service": {
+            "hostname": "informatom.com",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.14"
+    },
+    "ctime": 1458256357,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1458256322,
+        "hash": "50bda1afd916196c9e6bd01113613dd37b3482bd433b633ca7fc2b748991bb6bcadccdf84e7f8da13127fe97c1e1b0627474ea15d5df1436ca1ccbc33b0b60e0",
+        "seqno": 411185
+    },
+    "prev": "29967771bc69a71d72969dc04e6981d0a6dd8cec97ca18e22340e09d17640072",
+    "seqno": 8,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+g6Rib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgZUM9Ot6HmVWZTrfRcznIKDT+yzkW1BULTuXHeUxuLScKp3BheWxvYWTFAvh7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwNjU0MzNkM2FkZTg3OTk1NTk5NGViN2QxNzMzOWM4MjgzNGZlY2IzOTE2ZDQxNTBiNGVlNWM3Nzk0YzZlMmQyNzBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwNjU0MzNkM2FkZTg3OTk1NTk5NGViN2QxNzMzOWM4MjgzNGZlY2IzOTE2ZDQxNTBiNGVlNWM3Nzk0YzZlMmQyNzBhIiwidWlkIjoiZDYxNzQzMDQ5YTY2MzU1OWIzYTE5ZDM1YjM0ZWExMTkiLCJ1c2VybmFtZSI6ImluZm9ybWF0b20ifSwic2VydmljZSI6eyJob3N0bmFtZSI6ImluZm9ybWF0b20uY29tIiwicHJvdG9jb2wiOiJodHRwczoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMTQifSwiY3RpbWUiOjE0NTgyNTYzNTcsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTQ1ODI1NjMyMiwiaGFzaCI6IjUwYmRhMWFmZDkxNjE5NmM5ZTZiZDAxMTEzNjEzZGQzN2IzNDgyYmQ0MzNiNjMzY2E3ZmMyYjc0ODk5MWJiNmJjYWRjY2RmODRlN2Y4ZGExMzEyN2ZlOTdjMWUxYjA2Mjc0NzRlYTE1ZDVkZjE0MzZjYTFjY2JjMzNiMGI2MGUwIiwic2Vxbm8iOjQxMTE4NX0sInByZXYiOiIyOTk2Nzc3MWJjNjlhNzFkNzI5NjlkYzA0ZTY5ODFkMGE2ZGQ4Y2VjOTdjYTE4ZTIyMzQwZTA5ZDE3NjQwMDcyIiwic2Vxbm8iOjgsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RArfI6agrPVbfF4T6VVVs36Z1/KAgsenIHSiSSZDx9ecTr2t7tSOt80qhd1GEquD3fGTxIWdjZkxY1gYX7ZPcDDahzaWdfdHlwZSCjdGFnzQICp3ZlcnNpb24B
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/informatom
+
+==================================================================
+

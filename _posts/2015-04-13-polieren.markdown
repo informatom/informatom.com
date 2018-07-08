@@ -1,0 +1,35 @@
+---
+layout: post
+title: Polieren
+date:   2015-04-13 08:00:00 +0200
+---
+
+## Vermischtes
+
+Auch diese Woche konnten wir wieder einige Verbesserungen durchführen.
+
+-   Wir sind nun in der Lage, mit einer vom Kunden bereitgestellten
+    Schriftartendatei, serverseitig PDFs zu erzeugen.
+-   Wir haben mit einem Referenzkunden weitere Tests und
+    Schulungen durchgeführt.
+-   Für einen Referenzkunden wurden einige Änderungen am Design der
+    Seite durchgeführt.
+-   Im Administrationsbereich werden der zuletzt gewählte Baustein, das
+    zuletzt gewählte Verzeichnis und die zuletzt gewählte Webseite in
+    der Session gespeichert, um unabhängig vom Navigationsweg diese
+    Elemente beim Aufruf des Contentmanagers vorselektieren zu können.
+
+### Automatische Anwahl der zuletzt selektierten Webseite, des Verzeichnisses und des Bausteins
+
+<hr/>
+![Selektion](/img/blog/selektion.png){:style="max-width: 100%"}
+<hr/>
+
+-   Der Webseitenstatus ist nun unmittelbar aus dem
+    Contentmanager änderbar.
+-   Es gibt für den Berater aus der Konversation einen Link zur
+    Berarbeitung des Userprofils.
+-   Bei der Angebotsanlage wurde das Grundformular mehrspaltig angelegt,
+    um die Eingabe einfacher zu gestalten.
+-   Ein Fehler in der Preisfindung bei der Angebotslegung wurde
+    behoben.

@@ -1,0 +1,18 @@
+title: Stefan Haslinger | Informatom EDV-Dienstleistungen e.U.
+email: stefan.haslinger@informatom.com
+description: >
+   Webseite der Informmatom EDV-Dienstleistungen a.k.a. Stefan Haslinger
+baseurl: ""
+
+url: "https://www.informatom.com"
+twitter_username: informatom
+github_username:  informatom
+
+# Build settings
+markdown: kramdown
+theme: jekyll-bulma
+plugins:
+  - jekyll-feed
+
+monthly_archive:
+  path: "archiv"

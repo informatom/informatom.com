@@ -1,0 +1,51 @@
+---
+layout: post
+title: Jobs
+date:   2014-07-25 08:00:00 +0200
+---
+
+## Datenimport
+
+Die letzte Woche stand im Zeichen des Datenimport, die Daten des ersten
+Referenzsystems werden nun regelmäßig aus den Fremdsystemen befüllt, das
+bedeutet
+
+-   die Stammdaten sind aus dem alten Webshop komplett übernommen, hier
+    ist keine weitere Aktualisierung nötig
+-   der Produktkatalog wird aus dem ERP aktualisiert
+-   die Relationen zwischen Hardware und passendem Zubehör kommen
+    täglich aus der Zubehördatenbank
+-   Produkteigenschaften werden aus aus Icecat Webservice por
+    Delta-Update täglich aktualisiert
+-   die Suchmaschine wird kontinuierlich aktualisiert, das heißt
+    Produkte und Kategorien werden reindiziert
+
+Exception Notification
+----------------------
+
+Um die Stabilität des Imports zu garantieren, werden wir ab sofort über
+Exceptions in der Applikation benachrichtigt. Exceptions heißen auf
+Deutsch Ausnahmefehler und stellen Fehlersituationen dar, die bei der
+Programmierung nicht antizipiert wurden. Die Information über Exceptions
+beschränkt sich nicht nur auf Fehlersituationen in Jobs, sondern Fehler
+an jeder Stelle in der Anwendung. Wir erhalten in dieser Information
+auch zum Beispiel die Benutzeridentifikation, die Abfrageparameter und
+die Stelle im Programmcode, an der der Fehler aufgetreten ist.
+
+Das hilft uns bei der Behebung des Fehlers, indem wir die Situation
+nachstellen können. Wir können nun den Benutzer informieren, dass wir an
+der Behebung des Fehlers arbeiten, was die Kundenzufriedenheit steigert.
+Nach Behebung können wir den Benutzer etwa per E-Mail von der
+Instandsetzung informieren.
+
+### Simulation einer Fehlersituation
+
+<hr/>
+![Exception](/img/blog/exception.png){:style="max-width: 100%"}
+<hr/>
+
+Weiteres
+--------
+
+-   Die Formatierung des Suchfeldes macht in manchen Browsern
+    Schwierigkeiten, wir denken aber, das Problem gelöst zu haben.

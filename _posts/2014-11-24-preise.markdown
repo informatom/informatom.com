@@ -1,0 +1,68 @@
+---
+layout: post
+title: Preise
+date:   2014-11-24 08:00:00 +0200
+---
+
+Im Zuge unserer Serie bessere Administrationsinterfaces zu
+erstellen war diese Woche die Inventar- und Preispflege an der Reihe.
+
+### Bestands- und Preispflege
+
+<hr/>
+![Bestands- und Preispflege](/img/blog/bestands-_und_preispflege.png){:style="max-width: 100%"}
+<hr/>
+
+Wir haben wieder ein ähnliches mehrspaltiges Interface mit W2UI
+erstellt, wie auch bei den zuletzt gebauten Administrationssichten.
+
+-   In der linken Spalte können die Attribute des Produktes
+    geändert werden.
+-   In der mittleren Spalte werden im oberen Grid alle Inventare
+    (oder Bestände) zum Produkt dargestellt.
+-   Wählt man einen Bestand im Grid aus, werden im Formular darunter die
+    Attribute des Bestandes dargestellt.
+-   Diese Attribute können verändert werden, der Bestand, wird er nicht
+    von Preisen referenziert, auch gelöscht werden.
+-   Weiters können neue Bestände angelegt werden.
+-   Bei Selektion eines Bestandes werden im Grid oben in der rechten
+    Spalte die zugehörigen Preise dargestellt.
+-   Analog zu den Beständen werden bei Selektion eines Preises seine
+    Attribute im Formular unten in der dritten Spalte dargestellt.
+-   Diese sind wieder editier- und speicherbar.
+-   Preise können gelöscht und neu angelegt werden, wenn ein Inventar
+    zur Zuordnung selektiert ist.
+-   Da in unseren Referenzsystemen die meisten Artikel nur einen Bestand
+    und einen Preis haben, selektieren wir bei Start des Pricemanagers
+    automatisch den ersten Bestand und den ersten Preis, um die
+    Attribute instantan überprüfen zu können.
+
+### Grid Einstellungen
+
+<hr/>
+![Grid Settings](/img/blog/grid_settings.png){:style="max-width: 100%"}
+<hr/>
+
+Ein nettes Feature von W2UI, das wir bei der Pflege von Daten zu
+schätzen gelernt haben, ist die Möglichkeit, die dargestellten Spalten
+und deren Breiten pro Widget in einem Cookie im Browser zu speichern.
+
+Vermischtes
+-----------
+
+-   Wir haben diese Woche noch eine Optimierung in der Wertepflege
+    angebracht, indem wir klassische N+1 Abfragen optimiert haben.
+    Darunter versteht folgendes ungeschickte Verhalten: Wir haben
+    zunächst ein Produkt von der Datenbank gelesen, dann dazu die
+    entsprechenden N Stück Werte und im nächsten Schritt die
+    entsprechenden Eigenschaften und Eigenschaftengruppen. Formuliert
+    man die Abfrage entsprechend anders, kann man all diese Daten in
+    einem Schritt von der Datenbank lesen.<br/>
+    Die eigentliche Belastung der Datenbank reduziert sich damit von
+    etwa 75 Millisekunden auf etwa 2 Millisekunden.
+
+-   Eine entsprechende Optimierung haben wir für den Kategorienbaum im
+    Produktmanager durchgeführt. Mit ihm können nun auch der
+    Produktkategorien umsortiert werden. Wieder sind wir mit dem im
+    Projekt erworbenen Wissen um rund zwei Größenordnungen (also einen
+    Faktor 100) schneller, als wir das noch letztes Jahr gewesen wären.
