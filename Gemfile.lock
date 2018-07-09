@@ -1,7 +1,7 @@
 PATH
   remote: ../jekyll-bulma
   specs:
-    jekyll-bulma (0.1)
+    jekyll-bulma (0.2)
       jekyll (~> 3.8)
 
 GEM
