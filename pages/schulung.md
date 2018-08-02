@@ -4,6 +4,12 @@ layout: page
 permalink: schulung/
 ---
 
+<div class="columns">
+  <div class="column is-one-third" markdown="1">
+![Stefan Haslinger]({{ site.url }}/img/home/stefan-gross.jpg)
+  </div>
+
+  <div class="column" markdown="1">
 Ich stelle gerne meine **jahrelange Lehrerfahrung** in Firmen,
 Fachhochschulen, Mittelschulen und öffentlichen Bildungseinrichtungen
 Ihrem Team zur Verfügung. **Einzelunterricht, Kleingruppenarbeit, Seminar, Übung** oder
@@ -22,6 +28,8 @@ astronomisches Wissen näher gebracht. An der Urania Sternwarte war ich
 für den Aufbau des Teams nach der Wiedereinführung verantwortlich. Später habe ich am
 der Fachhochschule Technikum Wien Betriebssysteme unterrichtet. Wieder
 danach folgten Schulungen und Vorträge an Betrieben unterschiedlicher Größe.
+  </div>
+</div>
 
 Ich habe mir damit im Laufe der Jahre ein Portfolio an unterschiedlichen
 Vortrags- und Unterrichtsstilen und -methoden erarbeitet. Diese

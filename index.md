@@ -70,7 +70,6 @@ interessanter TCO (total cost of ownership).
 
 [![Stefan Haslinger]({{ site.url }}/img/home/stefan.jpg){:class="thumbnail center-block"}]({{ site.url }}/schulung)
 
-
 Ich stelle gerne meine jahrelange Lehrerfahrung in Firmen, Fachhochschulen, Mittelschulen und
 öffentlichen Bildungseinrichtungen Ihrem Team zur Verfügung.
 Einzelunterricht, Kleingruppenarbeit, Seminar, Übung oder Vortrag – alles ist möglich.
