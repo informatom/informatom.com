@@ -25,5 +25,6 @@ permalink: presentations/
 * [Turbolinks](turbolinks): Findings '16 bei der [vienna-rb](http://www.vienna-rb.at/) Meetup-Gruppe
 * [Termux - Ruby on Android](termux): bei der [vienna-rb](http://www.vienna-rb.at/) Meetup-Gruppe
 * [Horor Vacui - getting in shape and following GDPR using Ruby](vacuum) : bei der [vienna-rb](http://www.vienna-rb.at/) Meetup-Gruppe
+* [Tracker](tracker) : bei der [vienna-rb](http://www.vienna-rb.at/) Meetup-Gruppe
 
 &nbsp;

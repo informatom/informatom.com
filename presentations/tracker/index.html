@@ -1,0 +1,83 @@
+---
+layout: presentation
+title: Tracker
+---
+class: center, middle, inverse
+
+# Tracker
+
+a self hosted activity tracker with full privacy control
+
+---
+# The story behind 3 Schweinehunde
+
+* [Ganzohr 2017](https://www.uibk.ac.at/congress/ganzohr2017/)
+* [3 Schweinehunde Podcast](https://3-schweinehun.de/)
+* [Strava](https://www.strava.com/clubs/3schweinehunde)
+
+* Talk at Vienna-rb [Horor Vacui](https://www.informatom.com/presentations/vacuum/#1)
+* was more on GDPR and log file analysis
+
+---
+# 2018
+
+* lost weight and good progress in winter and spring
+* not much progress during summer (actual regression)
+* [Ganzohr 2018](https://wissenschaftspodcasts.de/blog/wisspod/ganzohr2018-programm-online/)
+* In preperation:
+  * Started with interval training
+  * Increased training frequency to 4 times a week
+  * Started a running log for discussions with the trainer
+
+* I'm quite a privacy nerd and I love static sites, so I developed tracker
+
+What is it?
+
+---
+# The Plan
+
+* Wanted to play with [Open Streetmap](https://www.openstreetmap.org) and
+  [Leaflet](https://leafletjs.com/) for a long time
+* Want to try out a new plotting library: [Taucharts](https://www.taucharts.com/)
+* Using [Jekyll](https://jekyllrb.com/) as a base
+* Data comes from a [Garmin Forerunner 235](https://buy.garmin.com/de-AT/AT/p/529988)
+
+---
+# Code!
+
+* Fit file format: [Fit SDK](https://www.thisisant.com/resources/fit/)
+* Gem [fit-parser](https://github.com/zhublik/fit_parser)
+
+* Not a lot of code necessary to create posts from fit files:
+  [Activity Parser](https://github.com/haslinger/tracker/blob/master/activity-parser.rb)
+
+* creating the Map and the Plots from the posts yaml files:
+  [Map Layout](https://github.com/haslinger/tracker/blob/master/_layouts/map.html)
+
+* Code on [Github](https://github.com/haslinger/tracker/)
+* Working [Demo Site](https://haslinger.github.io/tracker/)
+
+---
+# Future
+
+* 10k advent run in December 2nd in Mödling
+* 15k at the relay run in April 7th (but we are only 2 so far ...)
+* 1/2 marthon in October in Munich
+
+---
+# Call to action
+
+Who wants to get in (better) shape?
+
+Start running regularly and join in for the 6km or the 9km distance!
+
+---
+class: center, middle
+
+# Thanks!
+
+[@informatom](https://twitter.com/informatom)
+
+Slides: http://informatom.com/presentations/tracker
+
+Keep on running! 😃
