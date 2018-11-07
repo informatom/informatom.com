@@ -29,16 +29,17 @@ a self hosted activity tracker with full privacy control
   * Increased training frequency to 4 times a week
   * Started a running log for discussions with the trainer
 
-* I'm quite a privacy nerd and I love static sites, so I developed tracker
+* I'm quite a privacy nerd and I love static sites, so I developed my own fitness tracker
 
 What is it?
 
 ---
 # The Plan
 
-* Wanted to play with [Open Streetmap](https://www.openstreetmap.org) and
-  [Leaflet](https://leafletjs.com/) for a long time
-* Want to try out a new plotting library: [Taucharts](https://www.taucharts.com/)
+* Wanted to play with [Open Streetmap](https://www.openstreetmap.org)
+* ... and [Leaflet](https://leafletjs.com/) for a long time
+* found the nice water color [tiles](http://maps.stamen.com/#watercolor/12/37.7706/-122.3782) by Stamen
+* Wanted to try out a new plotting library: [Taucharts](https://www.taucharts.com/)
 * Using [Jekyll](https://jekyllrb.com/) as a base
 * Data comes from a [Garmin Forerunner 235](https://buy.garmin.com/de-AT/AT/p/529988)
 
@@ -58,18 +59,165 @@ What is it?
 * Working [Demo Site](https://haslinger.github.io/tracker/)
 
 ---
+# Activity parser
+
+```ruby
+require "fit"
+require 'yaml'
+require 'pry'
+
+Dir.foreach("ACTIVITY") do |in_file|
+  next if in_file == '.' or in_file == '..'
+
+  fit_file = Fit.load_file("ACTIVITY/" + in_file)
+
+  records =
+    fit_file.records
+            .select{ |r| r.content.record_type != :definition }
+            .map{ |r| r.content }
+            .select{ |r| r[:raw_position_lat]}
+```
+---
+```ruby
+points =
+  records.map{ |r|
+    {"datetime"   => Time.at(r.raw_timestamp + 631065600),
+     "time"       => r.raw_timestamp - records[0].raw_timestamp,
+     "lat"        => r.raw_position_lat * 180.0 / 2**31,
+     "long"       => r.raw_position_long * 180.0 / 2**31,
+     "distance"   => r.raw_distance / 100,
+     "altitude"   => (r.raw_altitude / 5.0 - 500).round(1),
+     "speed"      => (r.raw_speed * 3.6 / 1000).round(1),
+     "heart_rate" => r[:raw_heart_rate] ? r.raw_heart_rate.to_i : 0,
+     "cadence"    => r[:raw_cadence] ? r.raw_cadence * 2 : 0}}
+
+front_matter =
+  {"layout" => "map",
+               "title" => "Aktivität am " +
+                          datetime.strftime("%d.%m.%Y") +
+                          " um " +
+                          datetime.strftime("%k:%M"),
+               "date" => datetime,
+               "points" => points}
+```
+---
+
+```ruby
+  File.open("_posts/" +
+            datetime.strftime("%Y-%m-%d-%H-%M") +
+            ".md", 'w') do  |out_file|
+    out_file.puts(front_matter.to_yaml)
+    out_file.puts("---")
+    out_file.puts("Any comments on the run follow here.")
+  end
+end
+```
+---
+# Map and Plots
+
+```html
+<link rel="stylesheet" type="text/css"
+      href="{{ site.url }}{{ site.baseurl }}/css/leaflet.css"/>
+<link rel="stylesheet" type="text/css"
+      href="{{ site.url }}{{ site.baseurl }}/css/taucharts.min.css">
+
+<script type="text/javascript"
+        src="{{ site.url }}{{ site.baseurl }}/js/leaflet.js">
+</script>
+<script type="text/javascript"
+        src="{{ site.url }}{{ site.baseurl }}/js/tile.stamen.js">
+</script>
+<script type="text/javascript"
+        src="{{ site.url }}{{ site.baseurl }}/js/d3.min.js">
+</script>
+<script type="text/javascript"
+        src="{{ site.url }}{{ site.baseurl }}/js/taucharts.min.js">
+</script>
+```
+---
+```html
+<div id="mapid"
+     class="border shadow margin-large"
+     style="height: 600px;"></div>
+
+<script>
+  var layer = new L.StamenTileLayer("watercolor");
+  var map = new L.Map("mapid", {
+        center: new L.LatLng({{ page.points.first.lat }},
+                             {{ page.points.first.long }}),
+        zoom: 12
+      });
+  map.addLayer(layer);
+
+  var path = L.polyline([
+    {% for point in page.points -%}
+      [{{ point.lat }}, {{ point.long}}],
+    {% endfor -%}
+    ], {color: 'blue', weight: 3, opacity: 0.5, smoothFactor: 1});
+  path.addTo(map);
+</script>
+
+<!-- 4 times: -->
+<div id='chart1' style="height: 300px;"></div>
+```
+---
+```html
+<script>
+var data = [
+  {% for point in page.points -%}
+    { distance: {{ point.distance }},
+      altitude: {{ point.altitude }},
+      speed: {{ point.speed }},
+      heart_rate: {{ point.heart_rate }},
+      cadence: {{ point.cadence }},
+      time: {{ point.time }} },
+  {% endfor -%}
+]
+
+function tooltip() { return [
+  new Taucharts.api.plugins.get('tooltip')(
+    { fields: ['distance', 'altitude', 'speed',
+               'heart_rate', 'cadence', 'time'],
+      formatters: {
+        distance:   {format: function (n) { return (n + " m") }},
+        altitude:   {format: function (n) { return (n + " m") }},
+        speed:      {format: function (n) { return (n + " km/h") }},
+        heart_rate: {format: function (n) { return (n + "/min") }},
+        cadence:    {format: function (n) { return (n + "/min") }},
+        time:       {format: function (n) { return (n + " s") }}
+      }
+    }
+  )
+]}
+```
+---
+```html
+  <!-- 4 times: -->
+  new Taucharts.Chart(
+    { data: data,
+      type: 'line',
+      x: 'distance',
+      y: 'altitude',
+      guide: {color: {brewer: ['#AEEC97']}},
+      plugins: tooltip() }
+  ).renderTo('#chart1')
+</script>
+```
+# Demo!
+
+* Code on [Github](https://github.com/haslinger/tracker/)
+* Working [Demo Site](https://haslinger.github.io/tracker/)
+---
 # Future
 
 * 10k advent run in December 2nd in Mödling
 * 15k at the relay run in April 7th (but we are only 2 so far ...)
 * 1/2 marthon in October in Munich
 
----
 # Call to action
 
-Who wants to get in (better) shape?
-
-Start running regularly and join in for the 6km or the 9km distance!
+* Who wants to get in better shape?
+* Start running regularly and join in for the 6km or the 9km distance!
 
 ---
 class: center, middle
