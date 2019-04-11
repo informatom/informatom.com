@@ -65,9 +65,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jekyll (~> 3.8.3)
+  jekyll (~> 3.8.5)
   jekyll-bulma!
-  jekyll-feed (~> 0.6)
+  jekyll-feed (~> 0.12.1)
 
 BUNDLED WITH
    1.17.1
