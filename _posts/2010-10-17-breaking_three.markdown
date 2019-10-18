@@ -4,7 +4,7 @@ title: Breaking Three
 date:   2019-10-17 08:00:00 +0200
 ---
 
-12.Oktober, 13:35. Da stehe ich nun im Englischen Garten in München und habe
+13.Oktober, 13:35. Da stehe ich nun im Englischen Garten in München und habe
 noch ziemlich genau 5 Minuten Zeit bis zum Start. Zum Start des Münchner
 Halbmarathons. Und das alles nur wegen Dominik. Der nicht hier ist.
 
