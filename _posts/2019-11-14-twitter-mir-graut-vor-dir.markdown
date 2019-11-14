@@ -4,7 +4,7 @@ title:  Twitter, mir graut vor Dir!
 date:   2019-11-14 14:00:00 +0200
 ---
 
-Ich fuhr gerade mit einem Zug durch Deutschland, als ich auf Twitter über einen Post auf einen
+Ich fuhr neulich mit einem Zug durch Deutschland, als ich auf Twitter über einen Post auf einen
 Benutzer stieß, der systematisch andere Benutzer auf das Übelste herabwürdigte. Ich hatte 
 derart Übles schon länger nicht mehr gesehen, sodass ich mich genötigt sah, der Benutzer
 zu melden. 
