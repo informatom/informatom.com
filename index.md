@@ -88,5 +88,5 @@ die enterprise-ready ist.
 ### Der Elixir und Phoenix Stack
 
 Aus sehr ähnlichen Gründen, aus denen ich 2010 auf Ruby on Rails gesetzt habe, habe ich 2016 begonnen, einen
-[weiteren Stack]((/elixir)) für meine Entwicklungen zu lernen und zu verwenden.
+[weiteren Stack](/elixir) für meine Entwicklungen zu lernen und zu verwenden.
 </div></div></section>
