@@ -1,5 +1,5 @@
 ---
-title: Entwicklung
+title: Software Entwicklung
 layout: page
 permalink: entwicklung/
 ---

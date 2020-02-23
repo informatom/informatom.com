@@ -1,5 +1,5 @@
 ---
-title: Stefan Haslinger / Informatom EDV-Dienstleistungen e.U.
+title: Stefan Haslinger <br/> Informatom EDV-Dienstleistungen e.U.
 layout: page
 ---
 
