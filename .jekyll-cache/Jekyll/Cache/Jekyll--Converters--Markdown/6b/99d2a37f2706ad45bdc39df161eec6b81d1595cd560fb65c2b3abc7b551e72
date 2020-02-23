@@ -1,0 +1,108 @@
+I"a<table class="table is-striped">
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td>Stefan Haslinger</td>
+    </tr>
+    <tr>
+      <td>Qualifikation</td>
+      <td>Mag.rer.nat. Ph/M LA, wissenschaftliche Betreuung, Systemadministrator, Lektor, Mittelschullehrer</td>
+    </tr>
+    <tr>
+      <td>Persönliches</td>
+      <td>24.5.1972 in Wien, Österreicher, ledig</td>
+    </tr>
+    <tr>
+      <td>Kontakt</td>
+      <td>mail@stefan-haslinger.at, 0680 213 30 30, ICQ 479773550</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><img src="http://localhost:4000/img/haslinger.jpg" alt="Stefan Haslinger" /></td>
+    </tr>
+    <tr>
+      <td>seit 02/2011</td>
+      <td><strong>Gründer</strong> der Informatom EDV-Dienstleistungen e.U. Entwicklung von Webanwendungen mit Ruby on Rails. Kooperation mit Michael Stranka unter der Marke mittenin.at http://mittenin.at</td>
+    </tr>
+    <tr>
+      <td>04/2007-03/2012</td>
+      <td>zunächst <strong>EDV-Mitarbeiter</strong>, dann <strong>Abteilungsleiter Stellvertreter EDV</strong>, zuletzt <strong>Academy Manager</strong> bei Bogner Edelstahl: http://www.bogner.co.at<br />SAP, insbesondere WM-, MM-, SD-Customizing, ABAP-Reporting;  Intranet, Ticketing, Projektmanagement WM-MDE-Applikationen</td>
+    </tr>
+    <tr>
+      <td>02/2005-06/2007</td>
+      <td><strong>Lektor</strong> Technikum-Wien: http://www.technikum-wien.at/<br /> Lektorat Betriebssysteme Studiengang Wirtschaftsinformatik</td>
+    </tr>
+    <tr>
+      <td>01/2005-03/2007</td>
+      <td><strong>wissenschaftliche und pädagogische Betreuung</strong> und <strong>Systemadministration</strong> Urania Sternwarte: http://www.urania-sternwarte.at <br /> Curriculumentwicklung, Personalleitung 10 Lektoren, astronomische Vorträge, Führungen und Schulungen, Sternwartentechnik, IT</td>
+    </tr>
+    <tr>
+      <td>06/2001-03/2007</td>
+      <td><strong>Systemadministrator</strong> Planetarium Wien: http://www.planetarium-wien.at <br /> alle IT-Systeme und IT-Schulungen</td>
+    </tr>
+    <tr>
+      <td>01/2001-03/2007</td>
+      <td><strong>Systemadministrator</strong> und <strong>Lektor</strong> Kuffner Sternwarte: http://www.kuffner.ac.at <br /> alle IT-Systeme und IT-Schulungen, Lektorat astronomische Kurse</td>
+    </tr>
+    <tr>
+      <td>09/2000-06/2004</td>
+      <td><strong>Mittelschullehrer</strong> BRG Wien 16: http://www.rg16.asn-wien.ac.at <br /> Informatik, Mathematik, Physik, Kustodiat EDV (60 Workstations, 5 Server)</td>
+    </tr>
+    <tr>
+      <td>10/1999-08/2000</td>
+      <td><strong>wissenschaftlicher Mitarbeiter</strong> Institut für Kernphysik, Technische Universität Wien: http://kph.tuwien.ac.at <br /> Systementwickler Content-Management-System mit Arbeitsaufenthalten in Amsterdam, Debrecen, Sheffield und Genf, Serveradministration</td>
+    </tr>
+    <tr>
+      <td>08/1998-09/1999</td>
+      <td><strong>Zivildiener</strong> Österreichischer Blindenverband, Abteilung Sozialarbeit: http://www.braille.at <br /> Betreuung und Schulung Blinder und Erblindender</td>
+    </tr>
+    <tr>
+      <td>08/1990-04/1998</td>
+      <td><strong>Student</strong> Technische Universität Wien: http://www.tuwien.ac.at <br /> Lehramtsstudium Physik und Mathematik mit Auszeichnung, erster Studienabschnitt Technische Physik, Studienrichtungsvertreter Lehramt Physik und Doktoratsstudium Lehramt</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="skills">Skills</h3>
+
+<table class="table is-striped">
+  <tbody>
+    <tr>
+      <td>Fremdsprache</td>
+      <td>Englisch, verhandlungssicher, mit internationaler Arbeitspraxis</td>
+    </tr>
+    <tr>
+      <td>Führerschein</td>
+      <td>Klasse B</td>
+    </tr>
+    <tr>
+      <td>Teamleitung</td>
+      <td>Führungsteam Urania Sternwarte, 15 Personen</td>
+    </tr>
+    <tr>
+      <td>Curriculumentwicklung</td>
+      <td>auf Fachhochschulniveau (Betriebssysteme), zur Volksbildung (Astronomie), auf Mittelschulniveau (Mathematik, Physik, EDV)</td>
+    </tr>
+    <tr>
+      <td>Gruppendynamik</td>
+      <td>Seminare an der Hochschülerschaft der Technischen Universität Wien</td>
+    </tr>
+    <tr>
+      <td>Betriebssysteme</td>
+      <td>Server- und Clientadministration: Linux (alle gängigen Distributionen, alle Dienste), Windows (alle Versionen, alle Dienste), BSD, Open Solaris; alle in Verwendung und Unterricht</td>
+    </tr>
+    <tr>
+      <td>Anwendungssoftware</td>
+      <td>SAP, diverse Officepakete, Desktoppublishing, Bildbearbeitung, Videoschnitt, CAD, Mastering von Datenträgern</td>
+    </tr>
+    <tr>
+      <td>Programmiersprachen</td>
+      <td>Web 2.0: Ruby (on Rails), Elixir (+ Phoenix), PHP, Perl, Java, CSS, Javascript, HTML, Bash, C, Basic, Pascal, ABAP u.a.m; in Verwendung und Unterricht</td>
+    </tr>
+    <tr>
+      <td>Dienste</td>
+      <td>diverse Contentmangementsysteme, diverse Wikisoftware mit Referenzinstallationen, SMTP, POP, IMAP, FTP, SSH, SCP, VPN, Telnet; alle in Betreuung und Unterricht</td>
+    </tr>
+  </tbody>
+</table>
+:ET

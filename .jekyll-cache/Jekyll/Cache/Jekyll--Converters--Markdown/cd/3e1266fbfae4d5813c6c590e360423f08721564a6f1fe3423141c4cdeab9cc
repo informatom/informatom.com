@@ -1,0 +1,81 @@
+I"�
+<h2 id="für-die-remote-teilnehmer_innen">für die Remote-Teilnehmer_innen</h2>
+
+<ul>
+  <li><a href="https://hangouts.google.com/call/35hyaowjhfaqtdjja7qcdexzhqe">Google Hangout</a></li>
+  <li>ist ab 10:00 offen und ich habe auf meinem Tisch eine Freisprecheinrichtung stehen, sodass Ihr einfach in den Raum sprechen könnt</li>
+</ul>
+
+<h3 id="ort">Ort</h3>
+
+<ul>
+  <li>1220 Wien, Breitenleerstraße 400/27</li>
+</ul>
+
+<div>
+  <script defer="defer" type="text/javascript" src="https://www.wien.gv.at/stadtplan/ApiGetViennaGisMap.ctrl?containerWidth=800&amp;containerHeight=800&amp;centerContainer=1&amp;lang=de&amp;bookmark=5rjORpvGbUYVwB5EFMgaRO5RphlRnKnmkev2pn4Mpr4C&amp;bmadr=">
+  </script>
+</div>
+
+<h3 id="anfahrt-mit-öffis">Anfahrt mit Öffis</h3>
+
+<ul>
+  <li>mit der U1 bis zum Kagraner Platz</li>
+  <li>Von dort mit dem Bus 24A bis zur Station Agrarweg</li>
+  <li>20 Meter zurück gehen und dann in die Seitenstrasse 27 Häuser weit bis zum rosafarbenen Haus mit der Nummer 27</li>
+</ul>
+
+<h2 id="programmvorschlag">Programmvorschlag</h2>
+
+<p>… in absteigender Intensität</p>
+
+<ul>
+  <li>für diejenigen, die Webanwendungen programmieren lernen wollen oder Rails lernen wollen
+    <ul>
+      <li><a href="http://railsgirls.com/files/vienna/install">Installationsanleitung Ruby und Ruby on Rails</a></li>
+      <li><a href="http://railsgirls.com/files/vienna/tutorial_1">Ruby on Rails Tutorial</a>
+<br /><br /></li>
+    </ul>
+  </li>
+  <li>für Horst (der Jekyll lernen wollte), aber auch für andere interessant, die sich weniger für
+Webanwendungen interessieren, sondern nur (komplexere, statische) Websites erstellen wollen
+    <ul>
+      <li><a href="https://jekyll-octopod.github.io/">Jekyll-Octopod</a>
+<br /><br /></li>
+    </ul>
+  </li>
+  <li>wer erstmal noch nix installieren will:
+    <ul>
+      <li><a href="http://tryruby.org/levels/1/challenges/0">Try Ruby</a></li>
+      <li><a href="http://railsforzombies.org/">Rails for Zombies</a>
+<br /><br /></li>
+    </ul>
+  </li>
+  <li>wer nur die Erstellung von einzelnen Webseiten lernen will
+    <ul>
+      <li><a href="http://www.w3schools.com/bootstrap/">Bootstrap Tutorial</a>
+<br /><br /></li>
+    </ul>
+  </li>
+  <li>wer nichtmal tippen will:
+    <ul>
+      <li><a href="http://poignant.guide/book/chapter-3.html">A Quick (and Hopefully Painless) Ride Through Ruby</a> (with Cartoon Foxes)
+<br /><br /></li>
+    </ul>
+  </li>
+  <li>wer auch nicht lesen mag:
+    <ul>
+      <li>geht schwimmen oder faulenzt einfach :-).</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="das-wichtigste">das Wichtigste</h2>
+
+<p>… ist, dass es Spaß macht. Wenn es das nicht tut, bitte melden und wir schauen, wie wir das ändern können.</p>
+
+<ul>
+  <li>Für Essen und Trinken ist gesorgt</li>
+  <li><strong>Laptop mitnehmen!</strong></li>
+</ul>
+:ET

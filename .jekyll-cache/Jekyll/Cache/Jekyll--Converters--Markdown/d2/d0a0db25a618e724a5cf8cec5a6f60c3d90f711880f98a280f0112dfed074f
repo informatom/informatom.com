@@ -1,0 +1,50 @@
+I"}	<p>Immer wieder lese ich Artikel, dass es schwer sei Ruby on Rails
+unter Linux Mint oder Ubuntu zu installieren. Dass dem nicht so ist, möchte ich mit diesem Blogpost zeigen. Durch die Verwendung von rvm
+lässt sich die gewünschte Ruby-Version explizit auswählen bzw. auch
+mehrere Ruby-Versionen sind parallel installierbar.</p>
+
+<p>Curl und git installieren</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install curl git-core
+</code></pre></div></div>
+
+<p>Abhändigkeiten vorinstallieren:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install bash curl git-core build-essential bison openssl libreadline6 libreadline6-dev zlib1g zlib1g-dev libssl-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev curl git-core libyaml-dev libxslt-dev autoconf libmysqlclient16-dev libreadline5
+</code></pre></div></div>
+
+<p>Installation rvm (Ruby Version Manager):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash -s stable &lt; &lt;(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
+</code></pre></div></div>
+
+<p>Am Ende der <code>/home/(username)/.profile</code> und der <code>/home/(username)/.bashrc</code>
+fügt man ein (Ersteres war bei mir das letzte Mal automatisch erledigt) :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[ -s \"$HOME/.rvm/scripts/rvm\" ]] &amp;&amp; . \"$HOME/.rvm/scripts/rvm\"  # This loads RVM into a shell session.
+</code></pre></div></div>
+
+<p>Dann startet man die Shell neu und überprüft:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type rvm | head -n1
+</code></pre></div></div>
+
+<p>Die Ausgabe muss lauten: <em>rvm ist eine Funktion</em>, sonst ist rvm nicht korrekt lauffähig!</p>
+
+<p>Ruby 1.9.2 installieren:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rvm install ruby-1.9.2
+</code></pre></div></div>
+
+<p>Ruby 1.9.2 standardmäßig verwenden</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rvm --default 1.9.2
+</code></pre></div></div>
+
+<p>Die aktuelle, stabile Version von Rails installieren:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install rails
+</code></pre></div></div>
+
+<p>Fertig!</p>
+:ET

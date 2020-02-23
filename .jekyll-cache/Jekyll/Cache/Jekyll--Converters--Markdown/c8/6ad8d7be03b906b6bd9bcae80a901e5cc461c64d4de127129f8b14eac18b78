@@ -1,0 +1,37 @@
+I"Z<p>Dieser USB-TV-Stick ist unter Ubuntu durchaus zum Laufen zu
+kriegen:</p>
+
+<p>Download Firmware von</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://www.otit.fi/~crope/v4l-dvb/af9015/af9015_firmware_cutter/firmware_files/4.95.0/dvb-usb-af9015.fw
+</code></pre></div></div>
+
+<p>nach <code>/lib/firmware</code> legen.</p>
+
+<p>Neue Paketquelle hinterlegen:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deb http://ppa.launchpad.net/yavdr/stable-vdr/ubuntu lucid main
+</code></pre></div></div>
+
+<p>Signierungsschlüssel einspielen:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com
+</code></pre></div></div>
+
+<p>Quellen neu laden:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get update
+</code></pre></div></div>
+
+<p>V4l, metv + Firmware installieren:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install v4l-dvb-dkms metv linux-firmware linux-firmware-nonfree
+</code></pre></div></div>
+
+<p>Sender scannen</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scan /usr/share/dvb/dvb-t/at-Official
+</code></pre></div></div>
+
+<p>Neustarten</p>
+:ET

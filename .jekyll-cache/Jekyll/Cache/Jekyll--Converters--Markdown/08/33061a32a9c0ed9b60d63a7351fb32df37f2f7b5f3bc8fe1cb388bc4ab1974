@@ -1,0 +1,49 @@
+I"�<h2 id="datenimport">Datenimport</h2>
+
+<p>Die letzte Woche stand im Zeichen des Datenimport, die Daten des ersten
+Referenzsystems werden nun regelmäßig aus den Fremdsystemen befüllt, das
+bedeutet</p>
+
+<ul>
+  <li>die Stammdaten sind aus dem alten Webshop komplett übernommen, hier
+ist keine weitere Aktualisierung nötig</li>
+  <li>der Produktkatalog wird aus dem ERP aktualisiert</li>
+  <li>die Relationen zwischen Hardware und passendem Zubehör kommen
+täglich aus der Zubehördatenbank</li>
+  <li>Produkteigenschaften werden aus aus Icecat Webservice por
+Delta-Update täglich aktualisiert</li>
+  <li>die Suchmaschine wird kontinuierlich aktualisiert, das heißt
+Produkte und Kategorien werden reindiziert</li>
+</ul>
+
+<h2 id="exception-notification">Exception Notification</h2>
+
+<p>Um die Stabilität des Imports zu garantieren, werden wir ab sofort über
+Exceptions in der Applikation benachrichtigt. Exceptions heißen auf
+Deutsch Ausnahmefehler und stellen Fehlersituationen dar, die bei der
+Programmierung nicht antizipiert wurden. Die Information über Exceptions
+beschränkt sich nicht nur auf Fehlersituationen in Jobs, sondern Fehler
+an jeder Stelle in der Anwendung. Wir erhalten in dieser Information
+auch zum Beispiel die Benutzeridentifikation, die Abfrageparameter und
+die Stelle im Programmcode, an der der Fehler aufgetreten ist.</p>
+
+<p>Das hilft uns bei der Behebung des Fehlers, indem wir die Situation
+nachstellen können. Wir können nun den Benutzer informieren, dass wir an
+der Behebung des Fehlers arbeiten, was die Kundenzufriedenheit steigert.
+Nach Behebung können wir den Benutzer etwa per E-Mail von der
+Instandsetzung informieren.</p>
+
+<h3 id="simulation-einer-fehlersituation">Simulation einer Fehlersituation</h3>
+
+<hr />
+
+<p><img src="/img/blog/exception.png" alt="Exception" style="max-width: 100%" /></p>
+<hr />
+
+<h2 id="weiteres">Weiteres</h2>
+
+<ul>
+  <li>Die Formatierung des Suchfeldes macht in manchen Browsern
+Schwierigkeiten, wir denken aber, das Problem gelöst zu haben.</li>
+</ul>
+:ET

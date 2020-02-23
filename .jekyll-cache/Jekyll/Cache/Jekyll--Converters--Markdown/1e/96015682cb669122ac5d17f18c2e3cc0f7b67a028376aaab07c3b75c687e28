@@ -1,0 +1,76 @@
+I"M<h2 id="crossselling-informationen-aus-bechlem">Crossselling Informationen aus Bechlem</h2>
+
+<p>In den letzten 7 Tagen haben wir eine weitere Schnittstelle als Engine
+und Gem entwickelt. Sie bezieht Crossselling Daten aus dem Webservice
+Bechlem (<a href="http://www.bechlem.de/de/index.html">http://www.bechlem.de/de/index.html</a>), also zum Beispiel, die
+Information welche Tintenpatronen für einen Drucker als Zubehör nötig
+sind.</p>
+
+<p>Die Navigation haben wir in Form von Breadcrumbs ausgeführt, die
+Kategorisierung basiert auf jener von Bechlem. Bechlem ist kein
+unmittelbar verwendbares Webservice, sondern stellt den Download der
+Daten in Form von CSV-Dateien zur Verfügung. Diese Daten lesen wir per
+Batch Job als Rake Task in eine MYSQL-Datenbank außerhalb der Mercator
+Datenbank, die wir bei Bedarf in Echtzeit befragen. Wir haben damit rund
+1.2 Millionen Relationen zwischen Produkten und Zubehörartikeln zur
+Verfügung, stellen aber nur jene Produkte dar, die auch tatsächlich der
+Kunde in seinem Produktkatalog hat.</p>
+
+<p>Bechlem ist wieder als optionale Schnittstelle für Mercator ausgeführt,
+wird also nur im Kundensystem installiert, falls der Kunde das Service
+tatsächlich in Anspruch nehmen will.</p>
+
+<h3 id="crossselling">Crossselling</h3>
+
+<hr />
+
+<p><img src="/img/blog/crossselling.png" alt="Crossselling" style="max-width: 100%" /></p>
+<hr />
+
+<p>Sowohl die Bechlem Schnittstelle als auch Elasticsearch und die
+Facettensuche sind auf das Demosystem ausgerollt.</p>
+
+<p>Die Namensraumproblematik, die im letzten Bericht angesprochen war, hat
+uns auch hier wieder getroffen. Durch manuelle Views und manuelle
+Konfiguration der Routen konnten wir der Probleme Herr werden.</p>
+
+<p>Das Einspielen der SQL Daten hat überraschend Probleme bereitet, die
+MYSQL Datenbank hat das Einspielen von Daten aus externen Dateien aus
+Sicherheitsgründen verboten. Wir haben herausgefunden, dass es uns
+möglich ist, die Datenbankverbindung von Ruby On Rails Seite her so zu
+parametrisierten, dass der Import in diese Datenbank zugelassen wird.</p>
+
+<p>Weiters ist der MySQL-Client von Ruby On Rails standardmäßig im Modus
+“strict”, was das Einfügen von NULL-Werten aus CSV-Dateien
+erschwert. Dieser Parameter ist zu löschen, um einen reibungslosen
+Import zu ermöglichen.</p>
+
+<p>Nebenbei beherrschen wir nun auch den Download von FTP Servern und das
+umgehen mit komprimierten Dateien innerhalb einer Ruby On Rails
+Applikation.</p>
+
+<h2 id="sicherheitslücke-elasticsearch">Sicherheitslücke Elasticsearch</h2>
+
+<p>Die Standardinstallation von Elasticsearch, der Suchmaschine, die wir
+für die Produktsuche und die Filterung der Produkteigenschaften
+eingeführt haben, ist inhärent unsicher, die Suchmaschine erlaubt
+Anfragen auf allen Netzwerkschnittstellen von beliebigen Adressen.
+Nebenbei kann per Request beliebiger Code ausgeführt werden. Zusammen
+mit dem Umstand, dass Elasticsearch authentifizierungslos ist, eine
+sicherheitstechnische Katastrophe.</p>
+
+<p>Als wir verdächtigen Netzwerkverkehr beobachtet haben, haben wir
+unmittelbar recherchiert und entsprechende Sicherheitsvorkehrungen
+getroffen. Nicht auszudenken, wäre dies auf einem Produktivsystem
+passiert.</p>
+
+<p>Wir sind nun wieder alamiert und mehr um die Sicherheit der
+Softwarekomponenten bemüht.</p>
+
+<p>An und für sich bleibt Elasticsearch eine wesentliche Komponente für uns
+mit großem Potential, wir sind dabei die Produkt- und Kategoriensuche
+von der Websitesuche, die in Hobo eingebaut ist, auf Elasticsearch
+umstellen. Erste Tests versprechen eine deutliche
+Geschwindigkeitssteigerung, nebenbei ist unsere Suche damit
+tippfehlerresistent.</p>
+:ET

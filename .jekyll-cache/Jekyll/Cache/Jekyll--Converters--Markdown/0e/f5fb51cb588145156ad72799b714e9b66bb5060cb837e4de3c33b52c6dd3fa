@@ -1,0 +1,16 @@
+I"�<p>Durch Aktualisierung auf XFCE 4.10 lässt sich Windoews 7 Aero
+Snap-ähnliches Tiling erreichen, d.h. die Fenster können durch schieben
+gegen eine Desktopkante ind halber Bildschirmgröße, links, rechts, oben
+oder unten angeordnet werden.</p>
+
+<p>Die Aktualisierung auf XFCE 4.10 lässt sich hinzufügen des Repositories</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo add-apt-repository ppa:xubuntu-dev/xfce-4.10
+</code></pre></div></div>
+
+<p>und Aktualisierung erreichen:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get update
+sudo apt-get dist-upgrade
+</code></pre></div></div>
+:ET

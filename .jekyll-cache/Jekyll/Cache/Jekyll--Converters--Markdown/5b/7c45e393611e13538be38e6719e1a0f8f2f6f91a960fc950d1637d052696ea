@@ -1,0 +1,62 @@
+I"�
+<h2 id="update-auf-ruby-211">Update auf Ruby 2.1.1</h2>
+
+<p>Ruby ist die Programmiersprache, die für unser Projekt die entscheidende
+darstellt. Wir schreiben letzendlich immer dann Ruby, auch wenn wir
+Rails oder Hobo Code schreiben. Sowohl Rails als auch Hobo sind
+technisch nur DSLs (Domänenspezifische Sprachen), die Ruby um
+Funktionalität erweitern - eigentlich nicht mal das - sondern den
+Abstraktionsgrad der Programmierung erhöhen und die Menge der Codezeilen
+verringern.</p>
+
+<p>Nun - diese Woche stand ein Update von Ruby an, auf Version 2.1.1.
+Eigentlich eine harmlose Sache, ist doch 2.1.1 nur ein sogenanntes minor
+Release, also eines, das Fehler behebt und keine neuen Funktionen
+hinzufügt oder seitens des Aufrufes ändern würde. Dennoch besteht immer
+ein Installations- und Testaufwand auf unserer Seite. Es gilt
+festzustellen, ob nicht durch das Update neue Inkompatibilitäten
+entstanden sind oder Regressionen aufgetreten sind, d.h. alte Probleme
+wieder eingeführt wurden.</p>
+
+<p>Da wir zur Verwaltung von Ruby, Rails, Hobo und allen verwendeten Gems
+(Software zur Erweiterung, siehe hierzu auch den Artikel vom 14.April)
+den Ruby Versionsmanager RVM verwenden, müssen wir nicht nur Ruby neu
+installieren, sondern auch alle Gems. Das hat Aufwand zur Folge, aber
+auch die Möglichkeit zur älteren Ruby-Version zurückzugehen.</p>
+
+<p>Alle Gems, die Systembibliotheken einbinden, kompilieren ihre
+Schnittstellen bei der Installation in den Code.</p>
+
+<p>Wir verfügen über eine mittlerweile recht umfangreiche Testsuite, die
+wir bei einem solchen Update natürlich nutzen. Letztendlich läuft es
+aber, auch wenn noch kein System in Produktion läuft, auf eine Mischung
+aus Plan und Bauchenscheidung hinaus, wann man ein Update durchführt,
+auf welche Systeme man es wann ausrollt und - gegebenenfalls - ob man
+ein Update wieder zurücknimmt.</p>
+
+<p>Um es kurz zu machen, alle unsere Tests waren erfolgreich, und wir
+verwenden Ruby 2.1.1 nun auf allen Entwicklungssystemen und dem
+Demosystem unter <a href="http://mercator.informatom.com">http://mercator.informatom.com</a> .</p>
+
+<p>Bei dieser Gelegenheit haben wir alle unsere Modelltests wieder auf
+aktuellen Stand gebracht.</p>
+
+<h2 id="die-produktsuche">Die Produktsuche</h2>
+
+<p>Die Produktsuche ist nun auf Elasticsearch umgestellt und wurde auch
+optisch neu gestaltet. Wir überlegen, vom modalen Dialog der
+Ergebnispräsentation weg zu gehen. Das werden Tests mit Usern
+entscheiden.</p>
+
+<h3 id="ein-suchergebnis">Ein Suchergebnis</h3>
+
+<hr />
+
+<p><img src="/img/blog/tastatur.png" alt="tastatur" style="max-width: 100%" /></p>
+<hr />
+
+<h2 id="weiteres">Weiteres</h2>
+
+<p>Diese Woche wurde auch die erste Referenzinstallation technisch
+spezifiziert.</p>
+:ET

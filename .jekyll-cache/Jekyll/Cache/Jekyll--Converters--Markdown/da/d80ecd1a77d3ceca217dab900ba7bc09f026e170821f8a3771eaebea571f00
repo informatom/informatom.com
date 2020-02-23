@@ -1,0 +1,105 @@
+I"�<h2 id="content-manager">Content Manager</h2>
+
+<p>Der in der letzen Woche beschriebene Content Manager ist nun voll
+funktionsfähig.</p>
+
+<p>Webseitenelemente, Webseiten und Verzeichnisse sind voll aus dem Content
+Manager bearbeitbar.</p>
+
+<p>Auch ist der Content Manager nun voll internationalisiert und ins
+Englische übersetzt.</p>
+
+<p>Ein ähnlicher, sogar größerer Um- beziehungsweise Neubau steht uns im
+Bereich der Produktpflege bevor,
+für’s erste haben wir nur in der Pflege des Produktkataloges auf
+Fancytree umgestellt, um die Bearbeitung dort zu erleichtern.</p>
+
+<p>Die Verwendung von W2UI bereitet uns keine relevanten Probleme, sodass
+wir für die einfachere Verwendung der zu installierenden Komponenten
+(“Assets”) ein Modul (“Gem”) geschrieben und veröffentlicht
+haben. Wir haben bereits eine Nachfrage zu Dokumentationsmaterial und
+einem Vortrag in der Wiener Ruby Meetup Gruppe erhalten, der wir
+nachkommen werden. Auch in der Hobo User Gruppe sind die dafür
+erstellten Materialien gut aufgenommen worden.</p>
+
+<p>Wir haben auch einige andere Index-Sichten auf das W2UI Grid umgestellt,
+nämlich jene der Werte, Eigenschaften und Eigenschaftengruppen.</p>
+
+<h3 id="index-view-der-werte-mit-dem-w2ui-grid">Index View der Werte mit dem W2UI Grid</h3>
+
+<hr />
+
+<p><img src="/img/blog/werte.png" alt="Werte" style="max-width: 100%" /></p>
+<hr />
+
+<p>Dies ist auch technischer Sicht besonders interessant - es stellt eine
+klassische “Lesson learned” dar:</p>
+
+<p>Bislang haben wir Index Views, die Listen von Instanzen eines Modells,
+als paginierte Listen dargestellt. Das bedeutet, dass wir pro Seite 30
+Elemente dargestellt haben, der Administrator konnte dann durch die
+Seiten blättern oder - wo wir es implementiert haben - per Volltextsuche
+in den relevanten Spalten suchen. Hauptgründe für diese
+Darstellungsweise sind die Übersichtlichkeit und die Geschwindigkeit der
+Darstellung.</p>
+
+<p>Mit dem W2UI Grid stehen uns nun andere Optionen offen. Bei Modellen,
+bei denen es bis zu etwa 2500 Instanzen gibt, können wir wir alle
+Instanzen laden. Wir beobachten, dass wir etwa 800 Instanzen pro Sekunde
+laden können.</p>
+
+<p>Die Daten werden in einem getrennten Request nach der HTML Seite als
+JSON Daten geladen und im Speicher des Browsers - konkret im Javascript
+Memory abgelegt. Die Elemente, die aktuell im Grid darzustellen sind,
+sowie einige Werte davor und einige danach, werden mit den nötigen HTML
+Elementen in den DOM Baum kopiert. Der DOM (Document Object Model) Baum
+ist die hierarchische, objektorientierte Representation einer Webseite
+im Browser. Man könnte sagen, das was ein Browser von der Struktur einer
+Webseite versteht, oder wie er sie selbst sieht.</p>
+
+<p>Scrollt man sie aus dem sichtbaren Bereich werden sie auch wieder aus
+dem DOM Baum entladen. Dies erzeugt einen deutlichen Performance Schub,
+insbesondere mit dem Umstand, dass wir hier im Administrationsbereich
+wissen, dass man alle Elemente sehen und editieren darf, wenn man
+Administrator ist und keine sehen darf, wenn nicht. Hobo prüft
+standardmäßig bei jedem Attribut jedes Datensatzes, ob es dargestellt
+bzw editiert werden darf. Wir ziehen die Berechtigungsprüfung auf
+Adminsite-Niveau hoch und sparen uns bei sagen wir 1000 darzustellenden
+Instanzen bei 10 Attributen 10 000 Überprüfungen.</p>
+
+<p>Damit kann man durch einen Produktkatalog von 2000 Instanzen blättern,
+die Datensätze ohne merkbare Verzögerung sortieren und mit der
+Volltextsuche, die im W2UI Grid eingebaut ist, die Datensätze nach
+diversen Kriterien durchsuchen.</p>
+
+<h3 id="suche-in-einem-grid">Suche in einem Grid</h3>
+
+<hr />
+
+<p><img src="/img/blog/suche.png" alt="Suche" style="max-width: 100%" /></p>
+<hr />
+
+<p>Nun sieht man aber im oberen Screenshot ein Grid, das behauptet, mehr
+als 100 000 Datensätze darzustellen. Dies wird dadurch ermöglicht, dass
+nicht alle Datensätze auf einmal geladen werden, sondern je nach
+Stellung des Scrollbalkens nur die nötigen Datensätze nach Bedarf 100
+Stück-weise gelesen werden. Die Suche muss dann allerdings serverseitig
+erfolgen, da nicht alle Daten im Browser verfügbar sind.</p>
+
+<p>Nebenbei bemerkt, integriert sich W2UI auch optisch brauchbar mit den
+Twitter Bootstrap Interfaces. Wir sind zuversichtlich mit dem nun
+erweiterten Repertoire an Tools und Bibliotheken alle
+administrationsseitigen Unzulänglichkeiten beseitigen zu können.</p>
+
+<h2 id="vermischtes">Vermischtes</h2>
+
+<p>Es gab wieder ein paar kleinere Fixes im Bereich des Moduls, das Twitter
+Bootstrap 3 an Hobo integriert, die wir auch wieder veröffentlicht
+haben.</p>
+
+<p>Insbesondere die Darstellung hochgeladener Attachments haben wir
+verbessert, in dem wir Vorschaubilder im Pflegedialog darstellen.</p>
+
+<p>Die Migration auf Twitter Bootstrap 3 ist aus unserer Sicht damit
+abgeschlossen.</p>
+:ET

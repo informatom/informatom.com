@@ -1,0 +1,144 @@
+I"�1<p>Diese Woche wollten wir dem Entwicklungsalltag entfliehen und
+heben eine Woche eingeschoben, in der wir uns um die Automatisierung der
+Installation und Wartung kümmern wollen, also mehr “Devops”
+Tätigkeiten verrichten.</p>
+
+<p>Für den Bereich der automatischen Installation und der Automatisierung
+der Wartungstätigkeiten haben wir uns nun auf die
+Automatisierungssoftware Puppet (http://puppetlabs.com/) festgelegt.
+Puppet ist ein weiterer Dienst, der auf der virtuellen Maschine
+installiert wird und zeit- oder durch Randbedingungen gesteuert,
+Aufgaben durchführen kann.</p>
+
+<p>Ein Argument für Puppet lag darin, dass es in Ruby programmiert werden
+kann, der Programmiersprache, in der wir über das größte Know How
+verfügen.</p>
+
+<p>Allerdings hilft uns Puppet wenig beim Bootstrapping, also, wenn wir uns
+Münchhausen gleich, am Beginn der Installation an der eigenen
+Stiefelschlaufe aus dem Sumpf ziehen müssen. Wir verwenden dazu
+ebenfalls eine auf Ruby basierende Software Veewee
+(<a href="https://github.com/jedi4ever/veewee">https://github.com/jedi4ever/veewee</a>). Mit Veewee programmierten wir die
+Erzeugung virtueller Maschinen für unterschiedliche Hypervisor
+(Virtualbox, KVM, VmWare und Parallels). Es kann in diesen dann auch
+automatisiert das Betriebssystem (in unserem Fall Ubuntu Linux)
+installieren. Auch nach der Basisistallation kann Veewee noch weitere
+Aufgaben durchführen, wie etwa Puppet installieren, das dann die weitere
+Installation, Konfiguration und Wartung übernimmt.</p>
+
+<p>Veewee selbst bedient sich bei der Erstellung der virtuellen Maschine
+eines weiteren Tools: Vagrant (<a href="https://www.vagrantup.com/">https://www.vagrantup.com/</a>). Wie alle
+anderen Komponenten ist Vagrant Open Source, sodass wir am Schluss eine
+Guided Selling Lösung mit einem komplett freien Softwarestack
+implementiert haben werden.</p>
+
+<p>Die erzeugten Festplattien-Images können dann für praktisch alle
+Hypervisor konvertiert werden.</p>
+
+<h3 id="beispielscript-installation-rvm-mit-veewee">Beispielscript Installation rvm mit Veewee</h3>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="c"># Install dependencies</span>
+apt-get <span class="nt">-y</span> <span class="nb">install </span>bash curl git-core build-essential bison openssl libreadline6 libreadline6-dev zlib1g zlib1g-dev
+apt-get <span class="nt">-y</span> <span class="nb">install </span>libssl-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev curl git-core libyaml-dev libxslt-dev
+apt-get <span class="nt">-y</span> <span class="nb">install </span>autoconf libmysqlclient-dev libreadline5 libltdl-dev libncurses5-dev libserf1-dbg libsvn1 libtool
+apt-get <span class="nt">-y</span> <span class="nb">install </span>subversion libgdbm-dev pkg-config libffi-dev gawk
+
+<span class="c"># Install rvm</span>
+curl <span class="nt">-L</span> get.rvm.io | bash <span class="nt">-s</span> stable
+usermod <span class="nt">--append</span> <span class="nt">--groups</span> rvm vagrant
+
+<span class="c"># Install Ruby</span>
+<span class="nv">RVM</span><span class="o">=</span>/usr/local/rvm/bin/rvm
+<span class="nv">$RVM</span> <span class="nb">install </span>2.1.2
+<span class="nv">$RVM</span> <span class="nb">alias </span>create default 2.1.2
+<span class="nv">$RVM</span> rubygems current</code></pre></figure>
+
+<h2 id="puppet">Puppet</h2>
+
+<p>Wir haben ein Script erstellt, das uns Entwicklungsmaschinen und
+Demomaschinen für Referenzkunden und Marketingtermine auf Knopfdruck
+erstellen kann.</p>
+
+<p>Bei den weiteren Installationsschritten mittels Puppet haben wir Erfolge
+erzielt, aber auch mit einem Problem zu kämpfen.</p>
+
+<p>Das Positive: Wir können problemlos den Webserver Apache, die Datenbank
+MySQL und deren Verwaltungstool PHPMyadmin und den Ruby Versionsmanager
+RVM installieren.</p>
+
+<p>Bei der Installation von Ruby selbst und Ruby On Rails haben wir mit der
+Problematik zu tun, dass wir gewöhnlich Ruby und Rails unter einem
+niedrig privilegierten User “rails” installieren. Puppet kommt mit
+einem eigenen Benutzer “puppet”, sodass wir mit jedem Script
+zunächst den Benutzer wechseln müssten. Eine Alternative wäre auf
+vorgefertigte Ruby und Ruby On Rails Pakete umzusteigen, hier haben wir
+uns noch nicht entschieden.</p>
+
+<p>Wir können zum Beispiel auch die Mercator Applikation selbst mit allen
+ihren Modulen aus den Repositories automatisch installieren.</p>
+
+<h3 id="beispielscript-installation-mercator">Beispielscript Installation Mercator</h3>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="n">mercator</span> <span class="p">{</span>
+  <span class="n">file</span> <span class="p">{</span> <span class="s2">"/var/rails"</span><span class="p">:</span>
+         <span class="k">ensure</span> <span class="o">=&gt;</span> <span class="s2">"directory"</span><span class="p">,</span>
+         <span class="n">owner</span> <span class="o">=&gt;</span> <span class="s2">"rails"</span><span class="p">,</span>
+         <span class="n">group</span> <span class="o">=&gt;</span> <span class="s2">"rails"</span><span class="p">,</span>
+         <span class="n">mode</span> <span class="o">=&gt;</span> <span class="mi">770</span> <span class="p">}</span>
+
+  <span class="nb">exec</span> <span class="p">{</span> <span class="s1">'init git repo'</span><span class="p">:</span>
+         <span class="n">cwd</span> <span class="o">=&gt;</span> <span class="s1">'/var/rails'</span><span class="p">,</span>
+         <span class="n">command</span> <span class="o">=&gt;</span> <span class="s1">'/usr/bin/sudo -u rails /usr/bin/git clone ssh://git@mittenin.at/var/git/mercator.git &amp;&amp; rm /var/rails/mercator/Gemfile.lock'</span><span class="p">,</span>
+         <span class="n">creates</span> <span class="o">=&gt;</span> <span class="s1">'/var/rails/mercator'</span><span class="p">,</span>
+         <span class="nb">require</span> <span class="o">=&gt;</span> <span class="no">File</span><span class="p">[</span><span class="s1">'/home/rails/.ssh/id_rsa'</span><span class="p">],</span>
+         <span class="n">logoutput</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="p">}</span>
+
+  <span class="nb">exec</span> <span class="p">{</span> <span class="s1">'init git repo mercator_bechlem'</span><span class="p">:</span>
+         <span class="n">cwd</span> <span class="o">=&gt;</span> <span class="s1">'/var/rails/mercator/vendor/engines'</span><span class="p">,</span>
+         <span class="n">command</span> <span class="o">=&gt;</span> <span class="s1">'/usr/bin/sudo -u rails /usr/bin/git clone ssh://git@mittenin.at/var/git/mercator_bechlem.git'</span><span class="p">,</span>
+         <span class="n">creates</span> <span class="o">=&gt;</span> <span class="s1">'/var/rails/mercator/vendor/engines/mercator_bechlem/Gemfile'</span><span class="p">,</span>
+         <span class="nb">require</span> <span class="o">=&gt;</span> <span class="no">File</span><span class="p">[</span><span class="s1">'/home/rails/.ssh/id_rsa'</span><span class="p">],</span>
+         <span class="n">logoutput</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="p">}</span>
+
+  <span class="nb">exec</span> <span class="p">{</span> <span class="s1">'init git repo mercator_icecat'</span><span class="p">:</span>
+         <span class="n">cwd</span> <span class="o">=&gt;</span> <span class="s1">'/var/rails/mercator/vendor/engines'</span><span class="p">,</span>
+         <span class="n">command</span> <span class="o">=&gt;</span> <span class="s1">'/usr/bin/sudo -u rails /usr/bin/git clone ssh://git@mittenin.at/var/git/mercator_icecat.git'</span><span class="p">,</span>
+         <span class="n">creates</span> <span class="o">=&gt;</span> <span class="s1">'/var/rails/mercator/vendor/engines/mercator_icecat/Gemfile'</span><span class="p">,</span>
+         <span class="nb">require</span> <span class="o">=&gt;</span> <span class="no">File</span><span class="p">[</span><span class="s1">'/home/rails/.ssh/id_rsa'</span><span class="p">],</span>
+         <span class="n">logoutput</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="p">}</span>
+
+  <span class="nb">exec</span> <span class="p">{</span> <span class="s1">'init git repo mercator_legacy_importer'</span><span class="p">:</span>
+          <span class="n">cwd</span> <span class="o">=&gt;</span> <span class="s1">'/var/rails/mercator/vendor/engines'</span><span class="p">,</span>
+          <span class="n">command</span> <span class="o">=&gt;</span> <span class="s1">'/usr/bin/sudo -u rails /usr/bin/git clone ssh://git@mittenin.at/var/git/mercator_legacy_importer.git'</span><span class="p">,</span>
+          <span class="n">creates</span> <span class="o">=&gt;</span> <span class="s1">'/var/rails/mercator/vendor/engines/mercator_legacy_importer/Gemfile'</span><span class="p">,</span>
+          <span class="nb">require</span> <span class="o">=&gt;</span> <span class="no">File</span><span class="p">[</span><span class="s1">'/home/rails/.ssh/id_rsa'</span><span class="p">],</span>
+          <span class="n">logoutput</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="p">}</span>
+
+  <span class="nb">exec</span> <span class="p">{</span> <span class="s1">'init git repo mercator_mesonic'</span><span class="p">:</span>
+         <span class="n">cwd</span> <span class="o">=&gt;</span> <span class="s1">'/var/rails/mercator/vendor/engines'</span><span class="p">,</span>
+         <span class="n">command</span> <span class="o">=&gt;</span> <span class="s1">'/usr/bin/sudo -u rails /usr/bin/git clone ssh://git@mittenin.at/var/git/mercator_mesonic.git'</span><span class="p">,</span>
+         <span class="n">creates</span> <span class="o">=&gt;</span> <span class="s1">'/var/rails/mercator/vendor/engines/mercator_mesonic/Gemfile'</span><span class="p">,</span>
+         <span class="nb">require</span> <span class="o">=&gt;</span> <span class="no">File</span><span class="p">[</span><span class="s1">'/home/rails/.ssh/id_rsa'</span><span class="p">],</span>
+         <span class="n">logoutput</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="p">}</span>
+
+  <span class="nb">exec</span> <span class="p">{</span> <span class="s1">'init git repo mercator_mpay24'</span><span class="p">:</span>
+         <span class="n">cwd</span> <span class="o">=&gt;</span> <span class="s1">'/var/rails/mercator/vendor/engines'</span><span class="p">,</span>
+         <span class="n">command</span> <span class="o">=&gt;</span> <span class="s1">'/usr/bin/sudo -u rails /usr/bin/git clone ssh://git@mittenin.at/var/git/mercator_mpay24.git'</span><span class="p">,</span>
+         <span class="n">creates</span> <span class="o">=&gt;</span> <span class="s1">'/var/rails/mercator/vendor/engines/mercator_mpay24/Gemfile'</span><span class="p">,</span>
+         <span class="nb">require</span> <span class="o">=&gt;</span> <span class="no">File</span><span class="p">[</span><span class="s1">'/home/rails/.ssh/id_rsa'</span><span class="p">],</span>
+         <span class="n">logoutput</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="p">}</span>
+
+  <span class="nb">exec</span> <span class="p">{</span> <span class="s1">'bundle install'</span><span class="p">:</span>
+         <span class="n">cwd</span> <span class="o">=&gt;</span> <span class="s1">'/var/rails/mercator'</span><span class="p">,</span>
+         <span class="n">command</span> <span class="o">=&gt;</span> <span class="s1">'/usr/local/rvm/bin/rvmsudo /usr/local/rvm/gems/ruby-2.1.2@global/bin/bundle install'</span><span class="p">,</span>
+         <span class="n">creates</span> <span class="o">=&gt;</span> <span class="s1">'/var/rails/mercator/Gemfile.lock'</span><span class="p">,</span>
+         <span class="nb">require</span> <span class="o">=&gt;</span> <span class="no">Exec</span><span class="p">[</span><span class="s1">'init git repo'</span><span class="p">],</span>
+         <span class="n">logoutput</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span>
+         <span class="n">user</span>  <span class="o">=&gt;</span> <span class="s1">'rails'</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="p">{</span><span class="s1">'phpmyadmin'</span><span class="p">:</span>
+       <span class="k">ensure</span> <span class="o">=&gt;</span> <span class="n">present</span><span class="p">,</span>
+       <span class="n">root_password</span> <span class="o">=&gt;</span> <span class="s1">'*enter*password*here*'</span> <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+:ET

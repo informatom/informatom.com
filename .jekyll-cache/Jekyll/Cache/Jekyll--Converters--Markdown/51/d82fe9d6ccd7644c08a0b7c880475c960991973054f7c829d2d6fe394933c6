@@ -1,0 +1,115 @@
+I"�<h2 id="webrtc">WEBRTC</h2>
+
+<p>Wie in einem Artikel vor einigen Wochen beschrieben, funktioniert unser
+WEBRTC Client in der letzten Version von Firefox nicht mehr.</p>
+
+<p>Wir haben diese Woche einen Ersatz implementiert: Wir ersetzen die
+Bibliothek Webrtc Jquery Plugin durch den <a href="https://github.com/palavatv/palava-client">Palava
+Client</a>. Damit ist auch die
+Verwendung des STUN-TURN Servers von Freshtilledsoil obsolet. Wir haben
+unseren eigenen installiert, genannt <a href="https://github.com/palavatv/palava-machine">Palava
+Machine</a>. Wie bereits im
+Artikel <a href="/2015/01/19/kein-anschluss-unter-dieser-nummer.html">Kein Anschluss unter dieser
+Nummer</a> angekündigt, haben wir
+uns im Bereich Websockets schlau machen müssen. Zur Erklärung:</p>
+
+<p>Klassischen Webrequests (das, was ein Browser ausführt, wenn ein Link
+oder ein Button angeklickt werden) werden vom Client (das heißt dem
+Browser) initiiert. Der Server erhält den Request, bearbeitet ihn und
+erstellt einen Response, den er zum Client sendet. Ist das erledigt, hat
+der Server keine Möglichkeit mehr, Daten zum Client zu senden. Er kann
+auch von sich aus keine Verbindung aufbauen.</p>
+
+<p>Das wäre für unseren Videochat und WEBRTC zu wenig. Klinkt sich ein
+weiterer Supportmitarbeiter in das Gespräch ein, müssen die Webbrowser
+von Kunde und erstem Vertriebsmitarbeiter benachrichtigt werden und zum
+Beispiel ein neues Videofenster darstellen. Diese Möglichkeit bieten
+Websockets, eine Verbindung zwischen Browser und Webserver, bei der
+beide Partner auch in späterer Folge Daten senden können.</p>
+
+<p>Moderne Browser beherrschen dies out of the Box, nicht aber unser
+Proxyserver Apache. Wir verwenden Apache, um nicht für jede Applikation
+eine eigene IP-Adresse zu vergeuden oder gar eine eigene virtuelle
+Maschine installieren zu müssen. Es gibt zwar ein Add-On Modul für
+Apache, das wird aber nicht mit Ubuntu ausgeliefert. So müssten wir bei
+jedem Apache Update Apache neu kompilieren und das Modul dabei
+einbinden. Das ist zu mühsam und langwierig.</p>
+
+<p>Wir verwenden daher zum ersten mal auf einem Server anstelle von Apache
+den Webserver <a href="https://de.wikipedia.org/wiki/Nginx">Nginx</a>, eine
+Software aus ursprünglich russischer Entwicklung, der für Websockets als
+Proxy fungieren kann. Wir können damit auch den Faye Messagingserver,
+den wir für die Textnachrichten, das Co-Browsing, u.a. verwenden, auf
+die gleiche virtuelle Maschine legen und hinter Nginx betreiben. Die
+Kommunikation der Browser über Faye basiert ebenso auf Websockets wie
+die von Palava.</p>
+
+<h3 id="palava-video">Palava Video</h3>
+
+<hr />
+
+<p><img src="/img/blog/palava-video.png" alt="Palava Video" style="max-width: 100%" /></p>
+<hr />
+
+<p>Das erste Referenzsystem ist nun auf Palava umgestellt.</p>
+
+<h2 id="bug-in-zipzipfile">Bug in Zip::ZipFile</h2>
+
+<p>Bei einer Routinekontrolle haben wir festgestellt, dass der Bechlem
+Produktkatalog nicht mehr korrekt implementiert wurde. Wir haben einen
+Blick in das entpackte Zip-File geworfen und unmittelbar festgestellt,
+dass ein Hersteller in der Hersteller - Datei nicht mehr aufgeführt ist.
+Also Support-Ticket aufgemacht und eine zunächst seltsame Diskussion mit
+dem Dienstleister geführt, der zwar nie behauptete, dass sich seine
+Datenstruktur geändert hätte, diese Änderung aber auch nicht erklären
+wollte. In eine Nebensatz kam im dritten Anlauf die Bemerkung, dass der
+Hersteller doch aufgeführt sei, was uns dann wirklich stutzig gemacht
+hat.</p>
+
+<p>Nun ging es ans Eingemachte. Tatsächlich wurde des Zipfile von der in
+Ruby mitgelieferten Klasse <code class="highlighter-rouge">Zip::ZipFile</code> nicht mehr richtig entpackt,
+allerdings auch ohne eine Fehlermeldung oder Warnung auszugeben. Erst
+die Umstellung auf das <a href="https://github.com/rubyzip/rubyzip">Gem
+Rubyzip</a> konnte die Datei korrekt
+entpacken, womit auch die Importschnittstelle wieder korrekt
+funktionierte.</p>
+
+<h2 id="logging">Logging</h2>
+
+<p>Ruby on Rails loggt standardmäßig in eine Textdatei. Zwar wird in einer
+Produktivumgebung wesentlich weniger protokolliert, als in einem
+Entwicklungssystem. Dennoch hatten wir uns von Anfang an entschlossen,
+Jobs nicht in diese Datei loggen zu lassen, sondern in eine davon
+getrennte Datei. Wir haben diese Woche begonnen, erste Jobs von Mercator
+Administratoren aus dem Webinterface steuern zu lassen. Dabei will der
+Administrator dann üblicherweise den Loginhalt lesen. Mit der
+Überlegung, wie wir die Logdatei der Jobs nun am Günstigsten darstellen,
+kam der Entschluss Jobs nicht mehr in eine getrennte Logdatei, sondern
+in eine Tabelle in der Datenbank schreiben zu lassen. Diese Tabelle kann
+dann im Administrationsinterface bequem analysiert werden.</p>
+
+<h3 id="logviewer">Logviewer</h3>
+
+<hr />
+
+<p><img src="/img/blog/logadmin.png" alt="Logadmin" style="max-width: 100%" /></p>
+<hr />
+
+<p>Wir haben dabei die Menge des Loggings auf das Wesentliche reduziert.</p>
+
+<p>Jobs die aus dem Admininterface gestartet werden, werden sofort in einen
+Hintergrundprozess geschoben, der als Delayed-Job ausgeführt ist.</p>
+
+<h2 id="diverses">Diverses</h2>
+
+<ul>
+  <li>Wir verwenden für die konsistente optische Gestaltung der
+HTML-Seiten das <a href="http://getbootstrap.com/">Twitter Bootstrap
+Framework</a>, das <a href="https://de.wikipedia.org/wiki/Responsive_Webdesign">responsives
+Design</a> unterstützt.
+Eine einfache Implementierung dessen in unseren Vorlagen haben wir
+nun dokumentiert.</li>
+  <li>In einem Referenzsystem fehlte der Link zum Produktvergleich, der
+Fehler ist nun behoben.</li>
+</ul>
+:ET

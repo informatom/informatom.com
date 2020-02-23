@@ -1,0 +1,97 @@
+I"H<h2 id="produkt-manager-und-property-manager">Produkt Manager und Property Manager</h2>
+
+<p>In dieser Woche haben der Product und der Property Manager das Licht der
+Welt erblickt.</p>
+
+<h3 id="produkt-manager">Produkt Manager</h3>
+
+<hr />
+
+<p><img src="/img/blog/product_manager.png" alt="Produktmanager" style="max-width: 100%" /></p>
+<hr />
+
+<p>Der Product Manager ist bislang nur rudimentär fertiggestellt. Er dient
+bislang</p>
+
+<ul>
+  <li>zur Navigation im Produktkatalog, der in der linken Spalte
+dargestellt wird. Er dient später dazu, die Kategorien und in ihnen
+die Produkte zu verwalten</li>
+  <li>Pflege der filterbaren Eigenschaften auf Kategorienebene in der
+rechten Spalte: Klickt man auf eine Eigenschaft so wird sie von
+filterbar zu nicht filterbar und umgekehrt.</li>
+  <li>Kontrolle der Eigenschaften der Produktkategorien in den Liste oben
+in der mittleren Spalte</li>
+  <li>Kontrolle der Produkte einer Kategorie im Grid unten in der
+mittleren Spalte.</li>
+  <li>Wählt man dort ein Produkt aus, kann man in den Property Manager
+(und später auch in andere Administrationsansichten zum Produkt)
+navigieren.</li>
+</ul>
+
+<h3 id="property-manager">Property Manager</h3>
+
+<hr />
+
+<p><img src="/img/blog/property_manager.png" alt="Property Manager" style="max-width: 100%" /></p>
+<hr />
+
+<p>Der Property Manager ist das neue Administrationsinterface zur Pflege
+der Werte der Eigenschaften der einzelnen Produkte. Er ist bereits in
+einem verwendbaren Zustand.</p>
+
+<ul>
+  <li>In der linken Spalte sieht man alle Attribute des ausgewählten
+Produktes dargestellt.</li>
+  <li>In der mittleren Spalte findet man oben den Baum der Eigenschaften
+eines Produktes. Die Eigenschaften sind in Gruppen kategorisiert.
+Der Screenshot zeigt die Navigation in der Eigenschaftengruppe
+“Speicher”.<br />
+Derzeit ist die Eigenschaft “Interner Speichertyp” selektiert,
+sie hat den orange dargestellten Wert “DDR3-SDRAM” für das
+betrachtete Produkt.</li>
+  <li>Der ausgewählte Wert ist im Formular unten in allen
+Attributen dargestellt.</li>
+  <li>Er kann dort geändert werden, das heißt gespeichert oder
+gelöscht werden.</li>
+  <li>Um die Übersicht über die existierenden Eigenschaften und
+Eigenschaftengruppen zu bewahren, sind diese in den Spalten 3 und
+4 dargestellt. Die Selektion liegt auf den richtigen Instanzen
+“Speicher” und “Interner Speichertyp”.</li>
+  <li>In diesen beiden Spalten können Eigenschaften und -gruppen
+gepflegt werden. Das heisst es können existierende Werte geändert
+und, sofern sie nicht referenziert werden, gelöscht werden.</li>
+  <li>Weiters können neue Eigenschaften und -gruppen angelegt werden.
+Hierbei kommen die bereits existierenden Pflegedialoge
+zur Verwendung. Wir haben nur die Navigation soweit angepasst, dass
+man nach der Pflege wieder hierher in den Property Manager
+zurück gelangt.</li>
+  <li>Die Eigenschaften und -gruppen können auch umsortiert werden: Die
+Werte der Spalte Reihung sind editierbar. Hier macht sich wieder die
+Effizienz von Ajax und JSON bezahlt, das Aktualisieren aller
+dargestellter Daten gelingt auch bei 70 Eigenschaftengruppen und
+mehr als 1600 Eigenschaften in deutlich unter einer Sekunde.</li>
+  <li>Man kann neue Werte anlegen, dazu sind lediglich eine
+Eigenschaftengruppe und eine Eigenschaft auszuwählen und <em>Wert
+erzeugen</em> zu klicken. Dann kann man die Attribute eintragen und den
+Wert speichern. Der Wertebaum wird dann wieder
+automatisch aktualisiert.</li>
+</ul>
+
+<p>Die Wertepflege ist damit verwendbar, für mehr als 100 000 Werte erweist
+sie sich in einem Referenzsystem als ausreichend schnell.</p>
+
+<h3 id="vermischtes">Vermischtes</h3>
+
+<ul>
+  <li>Wir hatten im Frontend vergessen, in der Kategorie “empfohlene
+Produkte” den jeweiligen Grund der Empfehlung auszugeben. Dieser
+Fehler ist behoben.</li>
+  <li>In der Definition useres Gems
+<a href="http://rubygems.org/gems/hobo\_w2ui">hobo_w2ui</a> zur einfachen
+Installation von W2UI hatte sich ein Fehler eingeschlichen, der nun
+ebenfalls behoben ist. Im Zuge dessen haben wir auch einen CSS
+Fehler in der eigentlichen Bibliothek W2UI gefunden, den der
+Entwickler nun behoben hat.</li>
+</ul>
+:ET

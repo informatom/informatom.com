@@ -1,0 +1,61 @@
+I"<p>Heute ein technische Tipp für Besitzer eine Laptops der Sony
+P-Serie. Diese kleinen stylischen Notwbooks sind durchaus auch für Linux
+geeignet.</p>
+
+<ul>
+  <li>Um die Grafikkarte voll zu unterstützen fügt man ein weiteres
+Repository hinzu</li>
+</ul>
+
+<!-- -->
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo add-apt-repository ppa:gma500/ppa &amp;&amp; sudo apt-get update
+</code></pre></div></div>
+
+<ul>
+  <li>Der entsprechende Schhlüssel wird hinzugefügt:</li>
+</ul>
+
+<!-- -->
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo gpg –keyserver keyserver.ubuntu.com –recv C6598A30
+</code></pre></div></div>
+
+<ul>
+  <li>Schließlich werden die eigentlichen Treiber installiert:</li>
+</ul>
+
+<!-- -->
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install poulsbo-driver-2d poulsbo-driver-3d poulsbo-config
+</code></pre></div></div>
+
+<ul>
+  <li>Die Grafikkarte wird im Gegensatz zu der Beschreibung unter
+<code class="highlighter-rouge">http://www.datenteiler.de/ubuntu-auf-dem-sony-vaio-p/</code>, die aber
+dennoch sehr nützlich war, nach Reboot erkannt.</li>
+  <li>Um das UMTS-Modem zu verwenden ein Verzeichnis im home erstellen und
+hinein wechseln:</li>
+</ul>
+
+<!-- -->
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir 3g
+cd 3g
+</code></pre></div></div>
+
+<ul>
+  <li>Anschließend Download, Installation und Reboot:</li>
+</ul>
+
+<!-- -->
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget http://www.logic.at/people/preining/software/sony-laptop-zseries-0.9np7.tar.gz
+tar xfvz sony-laptop-zseries-0.9np7.tar.gz
+cd sony-laptop-zseries-0.9np7
+make
+sudo make install
+sudo reboot
+</code></pre></div></div>
+
+<h3 id="warnung">Warnung!</h3>
+
+<p>Trotz diverser Anleitungen für 11.04 bin ich auf 10.10 zurückgestiegen:
+Nur hier funktioniert bei mir der Grafiktreiber. Mittlerweile kann ich
+sagen, dass auch fullHD problemlos funktioniert.</p>
+:ET

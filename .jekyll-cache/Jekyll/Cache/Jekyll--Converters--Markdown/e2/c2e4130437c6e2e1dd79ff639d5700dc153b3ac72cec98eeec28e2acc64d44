@@ -1,0 +1,82 @@
+I"�<p>In dieser Woche haben wir alle laufenden Referenzsysteme auf
+Palava umgestellt, sodass wir uns nun in einer Position wiederfinden,
+die es bislang noch nicht gab. Wir sind “self-contained” oder
+“subsistent”.</p>
+
+<p>Das bedeutet, es gibt keine externe Infrastruktur, von der Mercator
+abhängig ist, denn wir betreiben nun auch den Stun &amp; Turn Server selbst
+und auf unserer eigenen Infrastruktur.</p>
+
+<p>Natürlich ist zu sagen, dass einige Schnittstellen - wie die zu den
+externen Produktkatalogen - ihren Sinn verlieren, ohne deren
+Serviceanbieter. Auch besteht die Möglichkeit des E-Payments nur in
+Zusammenarbeit mit einem externen Dienstleister. Die eigentliche
+Funktionalität von Mercator, das Guided Selling System also, läuft aber
+vollständig auf unserer eigenen Infrastruktur.</p>
+
+<p>Nebenbei sind wir durch die Umstellung auf Palava in der optischen
+Gestaltung des Videochat nun nicht mehr durch das alte jQuery Plugin
+eingeschränkt, sondern können das Videofenster einbetten, wie wir es
+möchten.</p>
+
+<p>Weiters lief der Faye Messaging Server in Entwicklermodus statt in
+Produktionsmodus, was wir beseitigt haben. Dies scheint keine
+Auswirkungen auf die Performance zu haben, aber wir haben gesehen, dass
+aufgrund unserer mangelhaften Dokumentation der Installation von Faye
+diese Unsauberkeit mehrere Monate nicht bemerkt haben.</p>
+
+<h2 id="vorträge">Vorträge</h2>
+
+<p>Innerhalb der nächsten sechs Wochen bieten sich für Stefan Haslinger von
+Informatom Gelegenheiten zu 5 Vorträgen, in denen Mercator stets erwähnt
+und beworben werden kann.</p>
+
+<p>Er wird sprechen bei</p>
+
+<ul>
+  <li>Ember-js-Vienna, <a href="http://www.meetup.com/Ember-js-Vienna-Meetup/events/220028985/">24.Februar</a></li>
+  <li>Vienna-RB, <a href="http://www.meetup.com/vienna-rb/events/219357990/">5.März</a></li>
+  <li>Vienna PHP, <a href="http://www.meetup.com/viennaphp/events/219443548/">10.März</a></li>
+  <li>IT-Alliance, 11.März (geschlossene Veranstaltung nur für Mitglider
+der IT-Alliance)</li>
+  <li><a href="http://www.meetup.com/Freelancing-in-Vienna/">Freelancer Meetup</a>, (Termin
+steht noch nicht fest).</li>
+</ul>
+
+<p>Sollten Sie diesen Artikel noch vor den verlinkten Terminen lesen,
+sind sie natürlich gerne eingeladen, mit uns über Mercator
+zu diskutieren.</p>
+
+<h2 id="dokumentation">Dokumentation</h2>
+
+<p>In den nächsten Wochen verlagert sich ein Teil unserer Projektzeit mehr
+in Richtung Dokumentation und Marketing.</p>
+
+<p>Wir haben beschlossen, die in unserem privaten Projektwiki vorhandene
+Dokumentation zu überarbeiten und zu veröffentlichen.</p>
+
+<p>Dies wird auf den Github-Seite von Mercator passieren. Wenn Sie diesen
+Text lesen, finden Sie die Dokumentation bereits
+<a href="https://github.com/informatom/mercator/wiki/Dokumentation-DE">online</a>.</p>
+
+<h3 id="verkaufs--und-beratungsprozessdiagramm">Verkaufs- und Beratungsprozessdiagramm</h3>
+
+<p>Wir haben im Zuge dessen auch das Verkaufs- und Beratungsprozessdiagramm
+überarbeitet.</p>
+
+<hr />
+
+<p><img src="/img/blog/Verkaufsprozessdiagramm.png" alt="Verkaufsprozessdiagramm" style="max-width: 100%" /></p>
+<hr />
+
+<h2 id="vermischtes">Vermischtes</h2>
+
+<ul>
+  <li>Unsere erst vor kurzem erstellte Twitter Integration ist gebrochen,
+das verwendete Modul hat seine API verändert. Wir haben diese
+Änderung nun in unserem Code nachvollzogen und können wieder Twitter
+Feeds einlesen.</li>
+  <li>Die Anmeldemöglichkeit per E-Mail wurde auf alle Referenzsysteme
+ausgerollt.</li>
+</ul>
+:ET

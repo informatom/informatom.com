@@ -1,0 +1,99 @@
+I"<p>Wir haben nun das Messaging auf eine solide und zeitgemäße Basis
+gestellt: den Messaging Server Faye. Alle Browserferster abonnieren nun
+Nachtichtenkanäle ihrer Inhalte über einen lange laufenden Ajax Request.
+Sie erzeugen damit, solange sich die für sie relevanten Informationen
+nicht ändern, auch keine Serverlast.</p>
+
+<p>Erst wenn sich etwas ändert, erfährt das Fenster, welche Komponente
+aktualisiert werden soll, und stellt dann einen gezielten Request auf
+genau diese Inhalte.</p>
+
+<p>Wir planen zur Zeit nur eine Instanz des Messagingservers für alle
+Shopinstanzen zu betreiben, die Lastanalyse wird zeigen, ob dies
+ausreicht.</p>
+
+<p>Der Berater, also der Vertriebsmitarbeiter kann nun den Kunden per
+Cobrowsing auf andere Inhalte führen. Bei Inhalten innerhalb der Domäne
+unter der Mercator installiert ist, werden die Inhalte in einer Lightbox
+eingeblendet, bei Inhalten von anderen Domänen in einem I-Frame
+innerhalb der Lightbox.</p>
+
+<p>Um den Upload von Screenshots noch schneller zu machen, fragen wir nun
+nicht mehr nach einem Dateinamen, sondern vergeben einen Standardnamen,
+der im Anschluss in aller Ruhe geändert werden kann.</p>
+
+<p>Kunden können nun nach ihrer Beratungssession ein Feedback abgeben und
+dabei entscheiden, ob sie und/oder der Berater dabei anonym bleiben
+sollen. Diese Anonymität ist durch die Datenstruktur tatsächlich
+gewährleistet.</p>
+
+<p>Es gibt nun die Ansicht der Überprüfung des Warenkorbes vor dem
+eigentlichen Bestellvorgang.</p>
+
+<p>Der Text der Seite, in dem sich der Shopbesitzer für die Bestellung
+bedankt, ist für den Kunden frei konfigurierbar und jederzeit änderbar.
+Der Bestellprozess ist damit für das Erste komplett.</p>
+
+<p>Wir sind nun in der Lage, falls Mercator als B2B Shop eingesetzt wird, die
+Eingabe einer UID-Nummer zu erzwingen und diese gegenüber dem
+Webservice der Europäischen Kommission unter
+<a href="http://ec.europa.eu/taxation\_customs/vies/viesspec.do">http://ec.europa.eu/taxation\_customs/vies/viesspec.do</a> zu verproben. Wir
+könnten in Folge auch den Erfolg der Validierung in Form des
+Bestätigungscodes des Service in der Datenbank ablegen und damit dem
+Shopbetreiber den Beweis der Überprüfung der VAT-Nummer erleichtern.</p>
+
+<p>Wir mischen nun alte bestehende Warenkörbe nicht mehr automatisch hinzu.
+Der Kunde erhält die Möglichkeit, alte - wir nennen sie geparkte -
+Warenkörbe positionsweise in den aktiven Warenkorb zu übernehmen und sie
+im Anschluss zu archivieren.</p>
+
+<p>Für jede Position des Warenkorbes gibt es nun Upselling, das bedeutet,
+der Kunde kann sich passende Zubehörartikel zu einem Artikel einblenden
+und diese unmittelbar in den Warenkorb legen, ohne dazu die Ansicht
+verlassen zu müssen. Das ist eine Komfortfunktion für den Kunden, die
+das Produktmanagement nach unserer Meinung erfunden hat und ein
+Alleinstellungsmerkmal von Mercator darstellt. Zumindest haben wir
+dieses Feature noch in keinem anderen Webshop gesehen.</p>
+
+<p>Es gibt nun eine Volltextsuche auf Artikelebene im gesamten Shop. In der
+Administrationssicht ist der Produktindex sortierbar und durchsuchbar.</p>
+
+<p>Bei der Suche nach Artikeln (z.B. in der Beratungssicht für die
+Erstellung von Produktvergleichen) haben wir die Autocompletion von
+Produktnamen auf Artikelnummern umgestellt.</p>
+
+<p>Wir haben die Performance der Produktdetailansicht analysiert. Die
+Laufzeiten von 3-4 Sekunden ergeben sich interessanter weise nicht durch
+die Datenbankabfrage (70ms) sondern durch den Aufbau der Webseite, in
+dem bei bis zu 100 Detailinformationen pro Artikel verarbeitet, aufbereitet
+und ausgegeben werden. Wir überlegen die Option, etwa die
+Zubehörartikel erst bei Bedarf, das heißt, wenn der entsprechende
+Registerreiter auch vom Kunden aufgerufen wird, nachzuladen.</p>
+
+<p>Das Thema Performance des Produktvergleiches haben wir gelöst, indem wir
+die Datenbankstruktur umgestellt haben. Produkteigenschaften und
+Produkteigenschaftengruppen gelten nun übergreifend über alle Produkte,
+erst die Werte dieser Eigenschaften sind produktspezifisch.</p>
+
+<p>Diese Umstellung, die im ersten Moment nach Haarspalterei klingt,
+viertelt die Menge der Daten, die in diesem Bereich in der Datenbank
+abgelegt und halbiert den Code zur Darstellung des Vergleichs. So
+nebenbei wurde auch noch ein Fehler im alten Code entdeckt.</p>
+
+<h3 id="der-produktvergleich">Der Produktvergleich</h3>
+
+<hr />
+
+<p><img src="/img/blog/produktvergleich.png" alt="Produktvergleich" /></p>
+<hr />
+
+<p>Ein minimalistischer Parser erkennt beim Import numerische und boolsche
+(ja/nein) Eigenschaften.</p>
+
+<p>Bei den Überlegungen und ersten Versuchen zur Filterung nicht
+Produkteigenschaften dürften wir auf einem Holzweg sein, hier laufen die
+Recherchen noch.</p>
+
+<p>Insgesamt haben wir wieder erfolgreich zwei Wochen hinter uns, in denen
+wir gegenüber dem Plan aufgeholt haben.</p>
+:ET

@@ -1,0 +1,6 @@
+I"J<p>Wir haben nun das Messaging auf eine solide und zeitgemäße Basis
+gestellt: den Messaging Server Faye. Alle Browserferster abonnieren nun
+Nachtichtenkanäle ihrer Inhalte über einen lange laufenden Ajax Request.
+Sie erzeugen damit, solange sich die für sie relevanten Informationen
+nicht ändern, auch keine Serverlast.</p>
+:ET

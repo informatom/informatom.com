@@ -1,0 +1,71 @@
+I"O<h2 id="meetup-gruppe">Meetup Gruppe</h2>
+
+<p>Da wir alle Anfänger bei der Verwendung von Ember.js sind, wäre es
+nützlich neben Online Kontakten über persönliche Kontakte zu Ember.js
+Entwicklern zu verfügen.</p>
+
+<p>Recherchen in der Prgrammiererszene in Wien haben ergeben, dass es zwar
+zu einigen Javascript Frameworks Interessensgruppen gibt, etwa zu
+Angular.js und Meteor.js, nicht aber zu Ember.js.</p>
+
+<p>Unser Stefan Haslinger hat nun eine derartige Gruppe gegründet
+(<a href="http://www.meetup.com/Ember-js-Vienna-Meetup/">http://www.meetup.com/Ember-js-Vienna-Meetup/</a>) und das erste Meetup
+abgehalten. Wir nützen diese Gruppe als weitere Marketingschine und
+haben uns auch bei der Vienna.js Meetup Gruppe vor rund 40 Entwicklern
+präsentiert.</p>
+
+<p>Gespräche beim ersten Meetup zeigen, dass wir grundsätzlich am richtigen
+Weg sind, und unsere Probleme sehr ähnlich den Anfangsproblemen der
+anderen Teilnehmer gelagert sind. Sehr positiv stimmt uns, von zwei
+Projekten zu hören, die Ember.js bereits sechs Monate beziehungsweise
+über ein Jahr einsetzen und weiterhin voll und ganz hinter Ember.js
+stehen und den Einsatz nicht bereuen.</p>
+
+<p>Weiterhin gibt es einen nicht unbeträchtlichen Recherche- und Lernbedarf
+bei allen Entwicklern. Wir halten es auch bei diesem Projekt so, dass
+wir Lernzeiten nicht am Projekt verbuchen, sondern als Schulungszeiten
+in unseren Zeiterfassungen der einzelnen Firmen festhalten.</p>
+
+<h3 id="update-8-august">Update 8. August</h3>
+
+<p>Mittlerweile hat die Meetupgruppe 20 Mitglieder, das zweite Meetup hat
+stattgefunden und wir haben wieder neue Ember.js-Programmierer
+kennengelernt.</p>
+
+<p>Darüber hinaus hat Stefan Haslinger einen Vortrag zu Ember.js beim
+Vienna.js Meetup (<a href="http://www.meetup.com/viennajs/events/135052002/">http://www.meetup.com/viennajs/events/135052002/</a>) vor
+50 Interessierten gehalten, der wieder als Marketingoption für Mercator
+genutzt werden konnte. Der Vortrag selbst ist unter
+<a href="http://at.mittenin.at/36">http://at.mittenin.at/36</a> publiziert.</p>
+
+<p>Rund drei Arbeitswochen Lern- und Recherchezeit sind in das Erlernen von
+Ember.js bisher pro Mitarbeiter aufgegangen.</p>
+
+<h2 id="übersichtlicheres-logging">Übersichtlicheres Logging</h2>
+
+<p>Beim Altdatenimport nutzen wir intensiv den Datenlogger, den wir für
+unsere Jobs geschrieben haben. Über große Mengen von Daten in Logfiles
+den Überblick zu behalten, kostet einiges an Anstrengung, Um hier die
+Effizienz zu erhöhen, haben wir zu einem ungewöhnlichen Mittel gegriffen</p>
+<ul>
+  <li>farbiges Logging und das in strukturierter Form:</li>
+</ul>
+
+<p>Der Unterschied zwischen unstrukturiertem und strukturiertem Output ist
+immens.</p>
+
+<h3 id="unstrukturierter-ungefärbter-logeintrag">Unstrukturierter, ungefärbter Logeintrag</h3>
+
+<hr />
+
+<p><img src="/img/blog/unstrukturiert.png" alt="unstrukturierter Logeintrag" style="max-width: 100%" /></p>
+<hr />
+
+<h3 id="strukturierter-gefärbter-logeintrag">Strukturierter, gefärbter Logeintrag</h3>
+
+<hr />
+
+<p><img src="/img/blog/strukturiert.png" alt="strukturierter Logeintrag" style="max-width: 100%" /></p>
+<hr />
+
+:ET

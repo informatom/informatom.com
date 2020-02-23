@@ -1,0 +1,100 @@
+I"A<p>Der Titel stammt von einem heiteren Buch über zu wörtliche
+Übersetzungen (“Englisch für Fortgeschrittene”), uns war mit dem
+Problem, dass die Administrationsoberfläche scheinbar willkürlich die
+Sprache wechselte, eher zum Fortlaufen…</p>
+
+<h2 id="übersetzung-der-adminoberflächen">Übersetzung der Adminoberflächen</h2>
+
+<p>Die anspruchsvollste Aufgabe dieser Woche war die in der vorletzen Woche
+angedeutete Lösung des Problems der Übersetzung der
+Administrationsoberfläche.</p>
+
+<p>Zunächst waren wir überrascht, dass die Sprache scheinbar völlig
+zufällig wechselte und nicht mehr mit der aktuellen Spracheinstellung
+des Benutzers übereinstimmte.</p>
+
+<p>Bei genauerem Nachdenken wurde der Grund klar:</p>
+
+<p>Die Javascript Files, aus denen die Interfaces mit w2ui gebaut werden,
+werden vom Browser des Benutzers beim Rendern der HTML Seite über die
+Rails Asset Pipeline angefordert.</p>
+
+<p>Diese liefert die (am Server vorkompilierten) Assets aus. Die momentan
+aktuelle Sprache beim Kompilierungszeitpunkt entscheidet daher über die
+verwendete Sprache beim Parsen der js-erb-Templates (Javascript +
+Embedded Ruby).</p>
+
+<p>Kurz haben wir überlegt, hier auf die Übersetzung zu verzichten. Aber
+wir haben bereits einiges an Mühe und Zeit in die vollständige
+Übersetzbarkeit investiert.</p>
+
+<p>Eine Alternative wäre gewesen, die Asset Pipeline nicht mehr zu
+verwenden. Allerdings hätten wir dann die Aufgaben der Kompilierung
+selbst durchführen müssen oder auf ein riesiges, praktisch unwartbares
+Javascript-File pro Administrationsschirm wechseln müssen. Da die
+Auslieferung nicht über die Assetpipeline (und damit produktiv direkt
+per Apache Webserver), sondern per Templates und damit über den
+Applikationsserver erfolgt wäre, hätten wir auch Performance eingebüsst.</p>
+
+<p>Die Rettung war ein Gem names i18n-js. Es ermöglicht, den Zeitpunkt der
+Übersetzung zu ändern. Das funktioniert, indem man zunächst
+konfiguriert, welche Bereiche der yml-Überstezungsdateien überhaupt
+benötigt werden. Aus diesen generiert die Asset Pipeline dann Files, in
+denen alle Strings in allen Übersetzungen als Javascript Hashes abgelegt
+sind.</p>
+
+<p>Dies sind pro Administrationsseite etwa 100 Strings und damit gerade mal
+ein paar Kilobyte Text, der sich gut für die Übertragung komprimieren
+lässt.</p>
+
+<p>Die Webseite lädt nun den nicht übersetzte Javascript Code, die Strings
+und eine kleine Javascript Bibliothek zum Übersetzen in den Browser und
+dieser übersetzt on the Fly vor der Darstellung. Das ist schnell und wir
+haben nun wieder eine vollständig lokalisierte Applikation.</p>
+
+<p>Netterweise ist auch die Syntax annähernd gleich, statt
+<code class="highlighter-rouge">&lt;%= I18n.t('mercator.are_you_sure\") %&gt;</code> steht einfach
+<code class="highlighter-rouge">I18n.t('mercator.are_you_sure\")</code> im erb-File. Das ist im Allgemeinen
+sogar weniger Tipparbeit.</p>
+
+<p>Ein einziges Mal war die Erstellung schwer, nämlich beim dynamischen
+Zusammenbauen der Stati</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">items: </span><span class="o">&lt;</span><span class="sx">%= a =</span> <span class="no">Category</span><span class="o">::</span><span class="no">Lifecycle</span><span class="p">.</span><span class="nf">states</span><span class="p">.</span><span class="nf">*</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">map</span> <span class="p">{</span>
+  <span class="o">|</span><span class="n">state</span><span class="o">|</span> <span class="p">\</span><span class="s2">"{id: '</span><span class="se">\"</span><span class="s2"> + state.to_s + </span><span class="se">\"</span><span class="s2">', text: I18n.t('mercator.states.</span><span class="se">\"</span><span class="s2"> + state.to_s + </span><span class="se">\"</span><span class="s2">')}</span><span class="se">\"</span><span class="s2">
+}.to_s.gsub('</span><span class="se">\"</span><span class="s2">','') %&gt;</span></code></pre></figure>
+
+<p>Die korrekte Interpolation der Strings (man beachte die interessante
+Schachtelung der Anführungszeichen) hat einige Knoten in den Gehirnen
+erzeugt.</p>
+
+<h2 id="vermischtes">Vermischtes</h2>
+
+<ul>
+  <li>Wir haben die Jobs der Artikelpflege (aus ERP und Herstellerkatalog)
+überarbeitet und beschleunigt und die Protokolle auf
+Fehler überprüft.</li>
+  <li>Der Tag, die eine übersichtliche Selektion eines Wertes aus einer
+Baumstruktur ermöglicht, <tree-select-one></tree-select-one> hatte einen Fehler.</li>
+</ul>
+
+<hr />
+
+<p><img src="/img/blog/tree-select-one.png" alt="Tree select one" style="max-width: 100%" /></p>
+<hr />
+
+<ul>
+  <li>Wir haben begonnen, die Payment Schnittstelle von einfachen Web
+Requests auf SOAP umzustellen. Der höhere Implementierungsaufwand
+wird sich in der weitreichenderen API und in einer Erhöhung der
+Zuverlässigkeit der Schnittstelle rechnen.</li>
+  <li>Aus dem Produktmanager können nun auch die Produktkategorien
+gepflegt werden, die meisten Eigenschaften per Formular, alle
+Eigenschaften können über einen Link zur bestehenden
+Kategorienpflege erreicht werden. Nach Speichern der Änderungen
+kehrt die Navigation automatisch in den Produktmanager in die
+richtige Kategorie zurück.</li>
+  <li>Im Content Manager können die wesentlichen Eigenschaften der
+Webseite unmittelbar per Formular gepflegt werden.</li>
+</ul>
+:ET

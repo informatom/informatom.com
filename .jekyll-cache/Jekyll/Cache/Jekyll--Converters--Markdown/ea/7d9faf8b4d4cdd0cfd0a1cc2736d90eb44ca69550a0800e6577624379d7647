@@ -1,0 +1,67 @@
+I"�<h2 id="jquery-erleichtert-das-clientseitige-eventhandling">JQuery erleichtert das clientseitige Eventhandling</h2>
+
+<p>Beim Umsetzen einiger Wünsche mittels eines Contentsliders auf der
+Startseite hat uns der Einsatz von JQuery und Twitter Bootstrap wieder
+viel Zeit gespart.</p>
+
+<p>Ein Seitenbereich soll, je nach dem, auf welchem Triggerfeld der
+Webseite sich der Mauszeiger befindet, einen entsprechenden Detailtext
+stabil zeigen. Ist die Maus nicht auf einem der Triggerfelder, sollen
+die Detailtexte automatisch durchscrollen. Bei Klick auf eines der
+Triggerfelder soll zur entsprechenden</p>
+
+<p>Detailseite gesprungen werden.</p>
+
+<p>Wir verwenden den eingebauten Slider von Twitter Bootstrap, genannt
+Carousel, und implementieren die Logik mit JQuery. Für Trigger Feld 8
+sieht das dann so aus:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#trigger8</span><span class="dl">"</span><span class="p">).</span><span class="nx">hover</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#carousel</span><span class="dl">'</span><span class="p">).</span><span class="nx">carousel</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+                                  <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#carousel</span><span class="dl">'</span><span class="p">).</span><span class="nx">carousel</span><span class="p">(</span><span class="dl">'</span><span class="s1">pause</span><span class="dl">'</span><span class="p">)</span> <span class="p">},</span>
+                     <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#carousel</span><span class="dl">'</span><span class="p">).</span><span class="nx">carousel</span><span class="p">(</span><span class="dl">'</span><span class="s1">cycle</span><span class="dl">'</span><span class="p">)</span> <span class="p">})</span>
+<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#trigger8</span><span class="dl">'</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">kundenzufriedenheit</span><span class="dl">"</span> <span class="p">})</span></code></pre></figure>
+
+<p>Durch den effizienten Selektor von JQuery und die klare API von Twitter
+Bootstrap erhalten wir beeindruckend kurzes und lesbares Javascript, das
+in einen Javascript for Dummies Kurs passen würde.</p>
+
+<h2 id="backgroundjobs">Backgroundjobs</h2>
+
+<p>Für Backgroundjobs ist nun auf den Servern Delayed Job installiert.
+Damit können wir ressourcenintensivere Prozesse in den Hintergrund
+auslagern und asynchron durchführen. Der Benutzer muss damit nicht auf
+die Fertigstellung der Aufgabe, zum Beispiel den Versand des E-Mails
+warten. Wir können aus dem Backgroundjob über unseren Messagingserver
+Faye aber weiterhin mit den Browsersessions kommunizieren und den
+Benutzer in weiterer Folge über die Fertigstellung benachrichtigen. Ein
+weiteres Beispiel wäre das manuelle Anstoßen der sonst nur täglichen
+Updates der externen Datenquellen aus dem Administrations-Interface.</p>
+
+<p>Für das Monitoring der Jobs wurde ein Webinterface eingerichtet.
+Scheiternde Jobs werden in exponentiell wachsenden Abständen erneut
+versucht.</p>
+
+<h2 id="vermischtes">Vermischtes</h2>
+
+<ul>
+  <li>Neben der breadcrumbartigen Navigation für Kategorien gibt es nun
+auch eine klassische Baumansicht</li>
+</ul>
+
+<h3 id="baumnavigation">Baumnavigation</h3>
+
+<hr />
+
+<p><img src="/img/blog/menue.png" alt="Menü" style="max-width: 100%" /></p>
+<hr />
+
+<ul>
+  <li>Die Mailingkomponente ist ferfiggestellt, sämtliche Standardmails
+sind konfiguriert.</li>
+  <li>Ein Problem mit der Preisfindung im ERP-System wurde behoben.</li>
+  <li>Wir sind weiters einem mysteriösen Bug auf die Schliche gekommen.
+Rails scheint Ports von Requests über mehrere Requests hinweg zu
+cachen sofern diese einmal von Port 80 abweichen und in Folge nicht
+mehr angegeben werden.</li>
+</ul>
+:ET

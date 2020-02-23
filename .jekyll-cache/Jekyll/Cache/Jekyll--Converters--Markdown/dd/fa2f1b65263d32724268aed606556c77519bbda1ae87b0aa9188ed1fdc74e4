@@ -1,0 +1,23 @@
+I"�<p><img src="/img/blog/jabra.jpg" alt="Jabra USB Speakerphone 410 unter Linux Mint 12" class="thumbnail" /></p>
+
+<p>Das Jabra USB Speakerphone 410 ist ein Handteller großes Gerät, das, an
+einem Windows oder Mac einen portablen Ersatz für ein
+Audiokonferenzsystem erstellt. Die Tonqualität des Lautsprechers ist bei
+Sprache wirklich ausgezeichnet, Gesprächpartner versichern, dass kein
+Echo auftritt. Nur leider wird das Gerät im ausgelieferten Zustand unter
+Linux Mint aufgrund eines fehlerhaften USB descriptors nicht richtig
+erkannt. Das Mikrofon funktioniert, die Audioausgabe über den
+Lautsprecher nicht.</p>
+
+<p>Es gibt allerdings ein Firmware Update, das bei Redhat (wirklich!)
+runtergeladen und mit der Jabra PC Suite installiert werden kann.
+Anschließend ist Plug and Play auch unter Linux Mint möglich.</p>
+
+<h3 id="links">Links</h3>
+
+<ul>
+  <li><a href="http://www.jabra.com/na-us/headsetsolutions/pages/jabraspeak410.aspx">Jabra Speakerphone 410</a></li>
+  <li><a href="https://bugzilla.redhat.com/show_bug.cgi?id=766714#c1">Firmware Update</a></li>
+  <li><a href="http://www.jabra.com/na-us/support/Pages/JabraPCSuite.aspx">Jabra PC Suite</a></li>
+</ul>
+:ET

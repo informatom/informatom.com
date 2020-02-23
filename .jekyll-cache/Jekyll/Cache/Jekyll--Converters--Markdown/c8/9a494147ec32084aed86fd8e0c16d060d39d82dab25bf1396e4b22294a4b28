@@ -1,0 +1,7 @@
+I"l<p>Diese WLAN-Karte kann unter Linux Mint zum Laufen gebracht
+werden, in dem die Firmware extrahiert wird. Dies erfolgt durch
+Installation des Paketes <code class="highlighter-rouge">b43-fwcutter</code> automatisch:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install b43-fwcutter
+</code></pre></div></div>
+:ET

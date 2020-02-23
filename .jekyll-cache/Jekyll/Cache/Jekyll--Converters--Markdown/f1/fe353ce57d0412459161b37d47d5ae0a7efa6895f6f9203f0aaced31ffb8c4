@@ -1,0 +1,87 @@
+I"V<h2 id="die-produktentwicklungsstrategie">Die Produktentwicklungsstrategie</h2>
+
+<p>Pünktlich mit dem Installationsbeginn für des dritte Referenzsystem
+konnten wir eine Lösung unseres Hauptproblems in der Strategie der
+Produktentwicklung lösen.</p>
+
+<p>Das Problem besteht kurz zusammengefasst darin, dass es möglich sein
+soll Features kundenübergreifend aber auch kundenspezifisch entwickeln
+zu können. Ebenso müssen gewisse Konfigurationen (wie Layout, Styling, etc)
+kundenübergreifend durchzuführen sein, andere kundenspzifisch.</p>
+
+<p>Einen Teil dieses Problems hatten wir damit gelöst, dass wir einzelne
+Module (in Form von Rubygems und Rails Engines ausgeführt) erstellt
+haben, wie die ERP-Schnittstelle. Schon beim zweiten Referenzsystem
+hatten wir aber die Schwierigkeit,
+dass alle Gems installiert werden müssen, da des Gemfile “mitten” in
+der Applikation liegt und damit kundenübergreifend ist.</p>
+
+<p>Wir haben die Steuerung zunächst über Rails Environments zu trennen
+versucht, aber auch dabei müssen in allen Systemen alle Gems installiert
+werden. Das Thema unterschiedlichen Layouts (CSS Files, DRYML Tags) hatten wir
+überhaupt noch ignoriert.</p>
+
+<p>Wir haben auch versucht, möglichst viele Einstellungen in die Datenbank
+zu verlegen. Bei den oben genannten Beispielen ist dies aber nicht
+möglich. Wir haben damit nur bei etwa 10 Dateien ein Problem, diese bei jedem
+Update manuell systemspezifisch einzuspielen, ist aber einfach zu viel
+Aufwand und zu fehleranfällig.</p>
+
+<p>Doch dann kam die Erleuchtung in Form von Symlinks und
+systemspezifischen Code-Repositiories. Das bedarf einer Erklärung, da
+der Ansatz eigentlich sehr einfach, aber nicht verbreitet ist.
+Die genannten 5-10 Dateien, werden in der Applikation durch symbolische
+Link auf Dateien innerhalb eines kunden- oder systemspezifischen
+Verzeichnisses (/vendor/customer) ersetzt.</p>
+
+<p>Dieses Verzeichnis ist in einem getrennten Code-Repository. Damit
+reduziert das Deployment, das wir ohnehin per Git durchführen auf einen
+zweiten Pull-Vorgang, der auch per Script automatisiert
+werden könnte.</p>
+
+<p>Auf Entwicklungsrechnern kann damit sogar rasch zwischen mehreren
+Systemen durch eine weitere Indirektion gewechselt werden:
+Pro System gibt es ein Verzeichnis innerhalb von <code>/vendor/customers</code></p>
+<ul>
+  <li>man bemerke das ‘s’!). Und /vendor/customer linkt immer aus des gerade
+betrachtete System.</li>
+</ul>
+
+<hr />
+
+<p><img src="/img/blog/indirection.png" alt="Indirektion" style="max-width: 100%" /></p>
+<hr />
+
+<p>Im Zuge dessen haben wir die Repositories für alle 6 Systeme (3
+Referenzsysteme mit je einem Entwicklungs- und einem Stagingsystem)
+angelegt und tranportiert.</p>
+
+<p>Wir haben das System nun auf allen Rechnern und Servern getestet, es
+funktioniert problemlos.</p>
+
+<p>Damit können wir weitere Modularisierungen, wie etwa die Umwandlung der
+eigentlichen Applikation in eine Engine auf einen wesentlich späteren
+Zeitpunkt verschieben evtl sogar ganz absagen.</p>
+
+<h2 id="vermischtes">Vermischtes</h2>
+
+<p>Für das erste Referenzsystem wurden einige Arbeiten durchgeführt:</p>
+
+<ul>
+  <li>kleine Layoutanpassungen</li>
+  <li>Erstellung eines alternativen Importjobs für Kategorien</li>
+  <li>Es gibt ein Script zum Testen der Vollständigkeit der Kategorien
+(gibt es für jedes Produkt wenigstens eine Kategorie, in der es
+zugeordnet ist?)</li>
+  <li>Neuimport der Produkte</li>
+  <li>Ein Systemupdate auf eine neuere Betriebssystemversion wurde
+durchführt (Ubuntu 12.04 auf Ubuntu 14.04). Es gab hierbei
+keinerlei Probleme. Mercator ist mit beiden Versionen
+voll kompatibel.</li>
+  <li>Das zweite Referenzsystem ist nun installiert und kann mit Daten
+befüllt werden.</li>
+  <li>Wir haben ein Modul zum Tracken der User installiert. Damit werden
+wir etwa verfolgen können, ab Benutzer im Shop herumirren oder
+effektiv Produkte finden und bestellen können.</li>
+</ul>
+:ET

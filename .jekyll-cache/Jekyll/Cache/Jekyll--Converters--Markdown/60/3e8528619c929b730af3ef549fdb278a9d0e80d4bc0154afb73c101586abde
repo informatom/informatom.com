@@ -1,0 +1,40 @@
+I"'<h2 id="marketing-und-organisation">Marketing und Organisation</h2>
+
+<p>Diese Woche hat es mit einigen organisatorische Arbeiten in sich:</p>
+
+<ul>
+  <li>Wir arbeiten weiter an unserer Vertriebsvereinbarung</li>
+  <li>Beim Darstellen des Upselling kam es zu einer Ausnahmesituation,
+wenn das Produkt ein vom Vertriebsmitarbeiter ad-hoc erfundenes
+Produkt ist</li>
+  <li>Beim HP Spotlight Event stellen wir Mercator in einem Vortrag vor
+und stoßen auf reges Interesse. Bemerkenswert: Seit mehr als einem
+Jahr sind wir auf keinen Menschen gestoßen, der einen mit Mercator
+vergleichbaren Webshop gesehen hat.</li>
+  <li>Bei der Benachrichtigung über Videochatstarts gab es einen Fehler,
+der nun behoben ist.</li>
+  <li>Bei der Installation eines Entwicklerlaptops sind wir auf einen
+Fehler in der Installationsanleitung gestoßen.</li>
+  <li>Eine Kunde äußerte den Wunsch, dass seine Kunden doch informiert
+werden sollen, wenn der Vertriebsmitarbeiter tippt. Wir stellen nun
+keine Animation dar, wie dies in anderen Chatapplikationen der Fall
+ist, sondern den bislang getippten Text. Damit hier nicht unnötig
+Daten übertragen werden, erfolgt die Übertraging throtteld,
+also gedrosselt. Der Textstring wird nur übertragen, wenn sich in
+der letzten Sekunde an seinem Inhalt etwas geändert hat und die
+Übertragung erfolgt auch nur einmal pro Sehunde.</li>
+  <li>Der Konversationsstart wurde neu gestaltet.</li>
+  <li>Ein Fehler im Algorithmus, mit dem wir nach Daten im Icecat Katalog
+gesucht haben, wurde behoben.</li>
+  <li>Das Schnittstellendiagramm wurde angepasst, die Darstellung rund um
+STUN/TURN Server und Palava war unvollständig.</li>
+</ul>
+
+<h3 id="schnittstellendiagramm">Schnittstellendiagramm</h3>
+
+<hr />
+
+<p><img src="/img/blog/schnittstellen.png" alt="schnittstellen" style="max-width: 100%" /></p>
+<hr />
+
+:ET

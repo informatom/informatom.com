@@ -1,0 +1,94 @@
+I"+<p>In der Serie der Administrationsoberflächen haben wir diese
+Woche eine weitere erstellt.</p>
+
+<p>Der Relations Manager komplettiert für’s erste diese Serie.</p>
+
+<h3 id="relations-manager">Relations Manager</h3>
+
+<hr />
+
+<p><img src="/img/blog/relation_manager.png" alt="Relation Manager" style="max-width: 100%" /></p>
+<hr />
+
+<ul>
+  <li>In der linken Spalte in der oberen Liste werden alle Kategorien
+dargestellt, zu denen das im Produktmanager ausgewählte Produkt
+zugeordnet worden ist.</li>
+  <li>Diese sogenannten Kategorisierungen können hier ausgewählt und
+gelöscht werden.</li>
+  <li>Im Baum darunter findet man alle Kategorien. Wählt man eine aus,
+kann das Produkt dieser Kategorie zugeordnet werden.</li>
+  <li>In der mittleren Spalte werden die unterschiedlichen Beziehungen
+zwischen dem ausgewählten Produkt und anderen dargestellt.</li>
+  <li>In der oberen Liste sind das die Artikelzuordnungen, sie sind etwa
+für ein Feature wie <em>Kunden kauften auch</em> verwendbar.</li>
+  <li>In der mittleren Liste werden Empfehlungen zu einem Produkt
+ausgesprochen (evtl, das nächste bessere / größere / schnellere
+Produkt ist …)</li>
+  <li>In der unteren Liste wird das Zubehör zum Produkt verwaltet.</li>
+  <li>Zuordnungen können nach Auswahl durch Buttonklick gelöscht werden.</li>
+  <li>In der Liste in der rechten Spalte findet man alle aktiven (siehe
+auch unten) Produkte.</li>
+  <li>Wählt man ein Produkt aus, so kann durch Buttonklick eine Zuordnung
+in eine der drei Kategorien erfolgen.</li>
+  <li>Bei der Anlage einer Empfehlung wird man zur Eingabe eines
+Grundes aufgefordert.</li>
+</ul>
+
+<p>Eine recht große Herausforderung stellte sich der Kundenwunsch dar, dass
+automatisch zunächst in der Liste rechts nur alle aktiven Produkte
+dargestellt werden sollen. Die Lösung erfolgte schlussendlich mit einer
+Anpassung der erweiterten Suche von w2ui:</p>
+
+<h3 id="filterung">Filterung</h3>
+
+<hr />
+
+<p><img src="/img/blog/filter.png" alt="Filter" style="max-width: 100%" /></p>
+<hr />
+
+<p>Im Screenshot ist zu sehen, dass für den Status gerade mehrere Werte
+abgefragt werden sollen. Dies erledigt w2ui über einen Feldtyp <strong>enum</strong>.
+Werte können durch Klick auf das kleine x auch wieder bequem entfernt
+werden.</p>
+
+<p>Ruft man die Seite das erste mal auf, so ist der Filter auf ‘nur aktive
+Produkte’ gesetzt. Man kann im gezeigten Filterdialog oder per Button
+‘Filter entfernen’ diesen Löschen oder ändern.</p>
+
+<p>Die Filtersettings sind wieder mit den Grid-Einstellungen speicherbar.</p>
+
+<p>Wir sprechen hier immer von “Produkten”. Ist es in der Branche aber
+zum Beispiel üblich, von “Artikeln” zu sprechen, so stellt das kein
+Problem dar:</p>
+
+<p>Wir können in der Lokalisierung der Begriffe ins Deutsche den Begriff
+Artikel verwenden. Der gesamte Webshop ist zunächst sprachagnostisch und
+spricht erst durch die Lokalisierung in einer Sprache.</p>
+
+<p>Bei den Tests ist uns aber aufgefallen, dass wir ein fundamentales
+Problem mit der Übersetzung der Administationsoberflächen haben. Der
+Grund und die Auflösung hierfür folgt (hoffentlich) nächste Woche, wenn
+wir die Übersetzung der Administration umgestellt haben. Die Werte für
+die Stati im Filterdialog sind aktuell daher noch hard codiert, aber wir
+wissen immerhin schon, wie wir das Dilemma lösen (wollen ;-) ).</p>
+
+<h2 id="features-im-eigenschaftenmanager">Features im Eigenschaftenmanager</h2>
+
+<p>Im Eigenschaftenmanager können nun auch die Features gepflegt werden.</p>
+
+<h3 id="features">Features</h3>
+
+<hr />
+
+<p><img src="/img/blog/features.png" alt="Features" style="max-width: 100%" /></p>
+<hr />
+
+<ul>
+  <li>Features können gelöscht werden</li>
+  <li>Bei der Neuanlage erscheint ein modales Fenster zur Eingabe der
+Texte</li>
+  <li>Die Texte können in der Liste editiert werden und anschließend
+gespeichert werden.</li>
+</ul>
+:ET

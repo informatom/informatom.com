@@ -1,0 +1,76 @@
+I"�<h2 id="authentifizierung-über-mehrere-domains-hinweg">Authentifizierung über mehrere Domains hinweg</h2>
+
+<p>Manchmal glaubt man als Entwickler die Welt nicht mehr zu verstehen.
+Manche Browser schienen hin und wieder grundlos die Anmeldeinformationen
+in Mercator zu verlieren. Und noch merkwürdiger: Manchmal schienen diese
+Anmeldeinformationen auch wieder zurückzukommen. Als einer unserer
+Entwickler wider diese Situation erlebt hat, ist er der Sache auf den
+Grund gegangen:</p>
+
+<p>Wir verwenden zur Wiedererkennung angemeldeter Benutzer Cookies. Diese
+Cookies enthalten Informationen zur Session und sind domainspezifisch, worin der Schlüssel des Problems liegt.</p>
+
+<h3 id="beispiel-cookie">Beispiel-Cookie</h3>
+
+<hr />
+
+<p><img src="/img/blog/cookie.png" alt="Cookie" style="max-width: 100%" /></p>
+<hr />
+
+<p>Die Mercator-Instanz, bei der das Problem wieder aufgetreten ist, ist
+ein Staging System bei einem Kunden, der unterschiedliche Domains für
+Webshop und sonstige Domain verwendet, also etwa:
+<code class="highlighter-rouge">http://company-shop.com</code> und <code class="highlighter-rouge">http://company.com</code>.</p>
+
+<p>Bislang waren alle Systeme derart beschaffen, dass die beiden Teile auf
+unterschiedlichen Subdomains der selben Domain gelaufen sind, also
+<code class="highlighter-rouge">http://shop.company.com</code> und <code class="highlighter-rouge">http://www.company.com</code>. Wir haben die
+Cookies der Applikation - um dies zu ermöglichen - richtiger Weise
+domainspezifisch konfiguriert und nicht subdomainspezifisch.</p>
+
+<p>Ein Teilen eines Cookies über Domaingrenzen hinweg - und des würden wir
+hier benötigen - ist aber aus Sicherheitsgründen technisch im Standard
+für Cookies verboten.</p>
+
+<p>Die Situation ist in sofern nicht dramatisch, als der einzig relevante
+Störfall jener ist, wo ein Kunde eines Shops sich einen oder mehrere
+Artikel in den Warenkorb legt und sich in Folge auf den CMS-Seiten
+informiert. Dann ist der Warenkorb plötzlich wieder leer (da der Konnex
+zum User in der Datenbank nicht mehr hergestellt werden kann). Bewegt er
+sich wieder in den Shopbereich, ist auch der Warenkorb wieder gefüllt.
+(Wir haben in weiterer Folge auch tatsächlich Webshops ‘in the wild’
+gefunden, die dieses Problem haben.) Es ist aber jedenfalls verwirrend.</p>
+
+<p>Wir benötigen, um die Situation wirklich zu bereinigen eine Form von
+Single Sign On zwischen den beiden Domains, aus Browsersicht zwischen
+den beiden Domains. Eine echte SSO Infrastruktur aufzuziehen, erfordert
+einiges an Aufwand, wir müssten hier Hobo deutlich erweitern. Nach
+einiger Recherche sind wir zu einer Lösung ohne allzu großen Aufwand
+gekommen:</p>
+
+<p>Wechselt ein User zwischen der Bereichen durch Klick auf einen Link, so
+leiten wir ihn auf die richtige Domain in der Applikation um. Wir kennen
+zu diesen Zeitpunkt noch die korrekten Anmeldeinformationen. Wir können
+daher zu diesem Zeitzunkt ein zeitlich begrenzt gültiges Token
+erstellen, das wir dem umgeleiteten URL hintanstellen und in der
+Datenbank ablegen. Dieses Token verwenden wir beim Behandeln des
+nächsten, des umgeleiteten Requests zu korrekten Anmeldung des Users
+womit er auch ein Cookie für die zweite Domain erhält. Damit ist er an
+jeder Stelle der Applikation korrekt angemeldet.</p>
+
+<h3 id="remember-token">Remember Token</h3>
+
+<hr />
+
+<p><img src="/img/blog/token.png" alt="Token" style="max-width: 100%" /></p>
+<hr />
+
+<h3 id="vermischtes">Vermischtes</h3>
+
+<ul>
+  <li>Wir haben Fortschritte bei Portierung auf Twitter Bootstrap 3
+gemacht und verwenden es nun im Frontend und im Backend komplett.</li>
+  <li>Wir haben einige DRYML-Helpertags erstellt, um die
+Templateerstellung weiter zu vereinfachen.</li>
+</ul>
+:ET
