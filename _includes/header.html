@@ -1,4 +1,6 @@
-<nav class="navbar is-white container" role="navigation" aria-label="main navigation">
+<nav class="navbar is-white has-background-white-bis container" 
+     role="navigation" 
+     aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="https://informatom.com">
       <img src="{{ site.url }}/img/logo.png" alt="Informatom Logo" />
@@ -88,13 +90,21 @@
 
     <div class="navbar-end">
       <div class="navbar-item">
-        <form class="field has-addons" action="/search.html" method="get" role="search">
+        <form class="field has-addons" 
+              action="/search.html" 
+              method="get" 
+              role="search">
           <div class="control">
-            <input class="input" type="search" placeholder="Suchbegriff" id="search-box"
-                   name="query" aria-label="Suchbegriff"/>
+            <input class="input is-rounded is-small"
+                   type="search" 
+                   placeholder="Suchbegriff" 
+                   id="search-box"
+                   name="query" 
+                   aria-label="Suchbegriff"/>
           </div>
           <div class="control">
-            <button type="submit" class="button is-link">Suchen</button>
+            <button type="submit" 
+                    class="button is-link is-small is-rounded">Suchen</button>
           </div>
         </form>
       </div>

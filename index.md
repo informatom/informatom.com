@@ -3,7 +3,8 @@ title: Stefan Haslinger / Informatom EDV-Dienstleistungen e.U.
 layout: page
 ---
 
-<section class="section" markdown="1"><div class="columns" markdown="1"><div class="column" markdown="1">
+<div class="columns">
+  <div class="column boxed" markdown="1">
 ## Willkommen
 
 bei den Informatom EDV-Dienstleistungen e.U.!
@@ -12,9 +13,9 @@ Mein Name ist Stefan Haslinger, und ich möchte Ihnen auf dieser Seite die von m
 näher vorstellen:
 
 Wollen Sie Sich mit mir auf die [Schultern von Riesen setzen?]({{ site.url }}/schultern-von-riesen)
-</div>
+  </div>
 
-<div class="column" markdown="1">
+  <div class="column boxed" markdown="1">
 ### Podcasting
 
 Ich bin leidenschaftlicher Podcaster und entwickle auch Software rund um's Podcasten.
@@ -27,18 +28,20 @@ Lesen Sie mehr zu meinen aktuellen Podcasts [Aua-Uff-Code!](https://aua-uff-co.d
 Lunte gerochen? Gemeinsam mit Melanie Bartos hoste ich das
 [Österreichische Podcasting Meetup](https://www.podcasterei.at/), wo wir Sie gerne kennen lernen
 würden.
-</div>
+  </div>
 
-<div class="column" markdown="1">
-### Der Blog
+  <div class="column boxed" markdown="1">
+### Mein Blog
 
-Meine [Erfahrungen und Fundstücke]({{ site.url }}/blog) aus mehr als 15 Jahren Arbeit mit freier Software.
+Meine [Erfahrungen und Fundstücke]({{ site.url }}/blog) aus mehr als 20 Jahren Arbeit mit freier Software.
 Dort finden Sie auch viel Material über meine Entwicklung
 [Mercator](https://github.com/informatom/mercator), eine open source Guided Selling Webapplikation.
-</div></div></section>
+  </div>
+</div>
 
-<section class="section" markdown="1"><div class="columns" markdown="1"><div class="column" markdown="1">
-### Entwicklung
+<div class="columns">
+  <div class="column boxed" markdown="1">
+### Softwareentwicklung
 
 [![Entwicklung]({{ site.url }}/img/home/mittenin-at-logo.png){:class="thumbnail center-block"}]({{ site.url }}/entwicklung)
 
@@ -52,8 +55,8 @@ direkt mit unseren Kunden …
 [Weiter …]({{ site.url }}/entwicklung)
 </div>
 
-<div class="column" markdown="1">
-### Beratung
+  <div class="column boxed" markdown="1">
+### IT-Beratung
 
 [![Open Source]({{ site.url }}/img/home/open-source-logos.jpg){:class="thumbnail center-block"}]({{ site.url }}/beratung)
 
@@ -63,10 +66,10 @@ Freie Software ist gerade im Bereich der Klein- und Mittelbetriebe eine gute Alt
 interessanter TCO (total cost of ownership).
 
 [Weiter …]({{ site.url }}/beratung)
-</div>
+  </div>
 
-<div class="column" markdown="1">
-### Schulung
+  <div class="column boxed" markdown="1">
+### IT-Schulung
 
 [![Stefan Haslinger]({{ site.url }}/img/home/stefan.jpg){:class="thumbnail center-block"}]({{ site.url }}/schulung)
 
@@ -75,18 +78,21 @@ Ich stelle gerne meine jahrelange Lehrerfahrung in Firmen, Fachhochschulen, Mitt
 Einzelunterricht, Kleingruppenarbeit, Seminar, Übung oder Vortrag – alles ist möglich.
 
 [Weiter …]({{ site.url }}/schulung)
-</div></div></section>
+  </div>
+</div>
 
-<section class="section" markdown="1"><div class="columns" markdown="1"><div class="column" markdown="1">
+<div class="columns">
+  <div class="column boxed" markdown="1">
 ### Der Ruby on Rails-Stack
 
 Ein kompletter, [freier Applikationsstack]({{ site.url }}/stack) ermöglicht mir Software zu schreiben,
 die enterprise-ready ist.
-</div>
+  </div>
 
-<div class="column" markdown="1">
-### Der Elixir und Phoenix Stack
+<div class="column boxed" markdown="1">
+### Der Elixir & Phoenix-Stack
 
 Aus sehr ähnlichen Gründen, aus denen ich 2010 auf Ruby on Rails gesetzt habe, habe ich 2016 begonnen, einen
 [weiteren Stack](/elixir) für meine Entwicklungen zu lernen und zu verwenden.
-</div></div></section>
+  </div>
+</div>
