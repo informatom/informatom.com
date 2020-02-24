@@ -1,4 +1,4 @@
-I"�<div class="columns">
+I"�<div class="columns">
   <div class="column boxed is-two-thirds">
     <h2 id="software-entwicklung">Software Entwicklung</h2>
 
@@ -17,7 +17,7 @@ serverseitige Software rasch zu prototypen, und in hoher Qualität fertigzustell
 entwickelt werden soll und/oder weltweit skaliert werden muss.</p>
       </li>
       <li>
-        <p>Mobile cross-Plattform Entwicklung für Android und IOS Smart Phones und
+        <p>Mobile cross-Plattform Entwicklung für Android und iOS Smart Phones und
 Tablets setze ich im <a href="/dart">Dart und Flutter-Stack</a> um.</p>
       </li>
       <li>
@@ -28,19 +28,19 @@ Webapplikationen.</p>
     </ol>
 
     <p>Warum vier Stacks? Lernen Sie meine Argemente kennen, indem Sie Sich mit mir auf
-die <a href="http://localhost:4000/schultern-von-riesen">Schultern von Riesen</a> setzen.</p>
+die <a href="https://www.informatom.com/schultern-von-riesen">Schultern von Riesen</a> setzen.</p>
   </div>
 
   <div class="column boxed">
     <h3 id="it-schulung">IT-Schulung</h3>
 
-    <p><a href="http://localhost:4000/schulung"><img src="http://localhost:4000/img/home/stefan.jpg" alt="Stefan Haslinger" class="thumbnail center-block" /></a></p>
+    <p><a href="https://www.informatom.com/schulung"><img src="https://www.informatom.com/img/home/stefan.jpg" alt="Stefan Haslinger" class="thumbnail center-block" /></a></p>
 
     <p>Ich stelle gerne meine jahrelange Lehrerfahrung in Firmen, Fachhochschulen, Mittelschulen und
 öffentlichen Bildungseinrichtungen Ihrem Team zur Verfügung.
 Einzelunterricht, Kleingruppenarbeit, Seminar, Übung oder Vortrag – alles ist möglich.</p>
 
-    <p><a href="http://localhost:4000/schulung">Weiter …</a></p>
+    <p><a href="https://www.informatom.com/schulung">Weiter …</a></p>
   </div>
 </div>
 
@@ -91,14 +91,14 @@ großen Teams nicht erreicht werden kann.</p>
   <div class="column boxed">
     <h3 id="it-beratung">IT-Beratung</h3>
 
-    <p><a href="http://localhost:4000/beratung"><img src="http://localhost:4000/img/home/open-source-logos.jpg" alt="Open Source" class="thumbnail center-block" /></a></p>
+    <p><a href="https://www.informatom.com/beratung"><img src="https://www.informatom.com/img/home/open-source-logos.jpg" alt="Open Source" class="thumbnail center-block" /></a></p>
 
     <p>Open Source Einsatz im Firmenumfeld, insbesondere zu Ruby on Rails Anwendungen, Linux als
 Betriebssystem sowie Freie Software am Desktop und am Server stellen meine Hautberatungsthemen dar.
 Freie Software ist gerade im Bereich der Klein- und Mittelbetriebe eine gute Alternative mit
 interessanter TCO (total cost of ownership).</p>
 
-    <p><a href="http://localhost:4000/beratung">Weiter …</a></p>
+    <p><a href="https://www.informatom.com/beratung">Weiter …</a></p>
   </div>
 </div>
 :ET

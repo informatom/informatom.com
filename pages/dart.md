@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Dart
+title: Der Dart und Flutter-Stack
 permalink: dart/
 ---
 <div class="columns">
