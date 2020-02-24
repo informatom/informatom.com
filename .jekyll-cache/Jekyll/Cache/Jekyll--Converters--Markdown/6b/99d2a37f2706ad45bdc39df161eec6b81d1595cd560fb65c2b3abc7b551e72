@@ -1,4 +1,4 @@
-I"f<table class="table is-striped">
+I"a<table class="table is-striped">
   <tbody>
     <tr>
       <td>Name</td>
@@ -18,7 +18,7 @@
     </tr>
     <tr>
       <td> </td>
-      <td><img src="https://www.informatom.com/img/haslinger.jpg" alt="Stefan Haslinger" /></td>
+      <td><img src="http://localhost:4000/img/haslinger.jpg" alt="Stefan Haslinger" /></td>
     </tr>
     <tr>
       <td>seit 02/2011</td>

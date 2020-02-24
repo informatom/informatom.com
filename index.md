@@ -30,9 +30,8 @@ die [Schultern von Riesen]({{ site.url }}/schultern-von-riesen) setzen.
   </div>
 
   <div class="column boxed" markdown="1">
-### IT-Schulung
 
-[![Stefan Haslinger]({{ site.url }}/img/home/stefan.jpg){:class="thumbnail center-block"}]({{ site.url }}/schulung)
+### IT-Schulung [![Stefan Haslinger](/img/home/stefan.jpg){: style="float: right;"}](/schulung)
 
 Ich stelle gerne meine jahrelange Lehrerfahrung in Firmen, Fachhochschulen, Mittelschulen und
 öffentlichen Bildungseinrichtungen Ihrem Team zur Verfügung.
@@ -71,9 +70,8 @@ Dort finden Sie auch viel Material über meine Entwicklung
 
 <div class="columns">
   <div class="column boxed" markdown="1">
-### Mittenin.at
 
-[![mittenin.at](/img/home/mittenin-at-logo.png){:class="thumbnail center-block"}](/entwicklung)
+### Mittenin.at [![mittenin.at](/img/home/mittenin-at-logo.png){: style="float: right;"}](/entwicklung)
 
 Unter der Marke mittenin.at entwickle ich mit Michael Stranka bei größeren
 Projekten als Team. Wir bieten Rapid Application Development
@@ -86,10 +84,9 @@ großen Teams nicht erreicht werden kann.
 [Weiter …](/entwicklung)
 </div>
 
-  <div class="column boxed" markdown="1">
-### IT-Beratung
+<div class="column boxed" markdown="1">
 
-[![Open Source]({{ site.url }}/img/home/open-source-logos.jpg){:class="thumbnail center-block"}]({{ site.url }}/beratung)
+### IT-Beratung [![Open Source](/img/home/open-source-logos.jpg){: style="float: right;"}](/beratung)
 
 Open Source Einsatz im Firmenumfeld, insbesondere zu Ruby on Rails Anwendungen, Linux als
 Betriebssystem sowie Freie Software am Desktop und am Server stellen meine Hautberatungsthemen dar.

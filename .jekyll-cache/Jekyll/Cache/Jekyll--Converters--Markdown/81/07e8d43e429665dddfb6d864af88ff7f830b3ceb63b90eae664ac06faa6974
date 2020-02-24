@@ -1,7 +1,7 @@
-I"6<div class="columns">
+I",<div class="columns">
   <div class="column">
     <p><a href="http://www.youtube.com/watch?v=1wELE433xU4">
-    <img src="https://www.informatom.com/img/screencasts/1.jpg" alt="den Hypervsor vorbereiten" />
+    <img src="http://localhost:4000/img/screencasts/1.jpg" alt="den Hypervsor vorbereiten" />
   </a></p>
 
     <h4 id="den-hypervsor-vorbereiten">Den Hypervsor vorbereiten</h4>
@@ -12,7 +12,7 @@ verwenden werden.</p>
 
   <div class="column">
     <p><a href="https://www.youtube.com/watch?v=X1H1ttNE-qo">
-    <img src="https://www.informatom.com/img/screencasts/2.jpg" alt="Installation Linux Mint" />
+    <img src="http://localhost:4000/img/screencasts/2.jpg" alt="Installation Linux Mint" />
   </a></p>
 
     <h4 id="installation-linux-mint">Installation Linux Mint</h4>
