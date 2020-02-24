@@ -1,4 +1,4 @@
-I"#<div class="columns">
+I"<div class="columns">
   <div class="column boxed is-two-thirds">
     <h2 id="software-entwicklung">Software Entwicklung</h2>
 
@@ -28,19 +28,18 @@ Webapplikationen.</p>
     </ol>
 
     <p>Warum vier Stacks? Lernen Sie meine Argemente kennen, indem Sie Sich mit mir auf
-die <a href="http://localhost:4000/schultern-von-riesen">Schultern von Riesen</a> setzen.</p>
+die <a href="https://www.informatom.com/schultern-von-riesen">Schultern von Riesen</a> setzen.</p>
   </div>
 
   <div class="column boxed">
-    <p class="has-text-right"><a href="/schulung"><img src="/img/home/stefan.jpg" alt="Stefan Haslinger" /></a></p>
 
-    <h3 id="it-schulung">IT-Schulung</h3>
+    <h3 id="it-schulung-">IT-Schulung <a href="/schulung"><img src="/img/home/stefan.jpg" alt="Stefan Haslinger" style="float: right;" /></a></h3>
 
     <p>Ich stelle gerne meine jahrelange Lehrerfahrung in Firmen, Fachhochschulen, Mittelschulen und
 öffentlichen Bildungseinrichtungen Ihrem Team zur Verfügung.
 Einzelunterricht, Kleingruppenarbeit, Seminar, Übung oder Vortrag – alles ist möglich.</p>
 
-    <p><a href="http://localhost:4000/schulung">Weiter …</a></p>
+    <p><a href="https://www.informatom.com/schulung">Weiter …</a></p>
   </div>
 </div>
 
@@ -73,9 +72,8 @@ Dort finden Sie auch viel Material über meine Entwicklung
 
 <div class="columns">
   <div class="column boxed">
-    <h3 id="mitteninat">Mittenin.at</h3>
 
-    <p><a href="/entwicklung"><img src="/img/home/mittenin-at-logo.png" alt="mittenin.at" class="thumbnail center-block" /></a></p>
+    <h3 id="mitteninat-">Mittenin.at <a href="/entwicklung"><img src="/img/home/mittenin-at-logo.png" alt="mittenin.at" style="float: right;" /></a></h3>
 
     <p>Unter der Marke mittenin.at entwickle ich mit Michael Stranka bei größeren
 Projekten als Team. Wir bieten Rapid Application Development
@@ -88,17 +86,16 @@ großen Teams nicht erreicht werden kann.</p>
     <p><a href="/entwicklung">Weiter …</a></p>
   </div>
 
-  <div class="column boxed">
-    <h3 id="it-beratung">IT-Beratung</h3>
+<div class="column boxed">
 
-    <p class="has-text-right"><a href="/beratung"><img src="/img/home/open-source-logos.jpg" alt="Open Source" /></a></p>
+    <h3 id="it-beratung-">IT-Beratung <a href="/beratung"><img src="/img/home/open-source-logos.jpg" alt="Open Source" style="float: right;" /></a></h3>
 
     <p>Open Source Einsatz im Firmenumfeld, insbesondere zu Ruby on Rails Anwendungen, Linux als
 Betriebssystem sowie Freie Software am Desktop und am Server stellen meine Hautberatungsthemen dar.
 Freie Software ist gerade im Bereich der Klein- und Mittelbetriebe eine gute Alternative mit
 interessanter TCO (total cost of ownership).</p>
 
-    <p><a href="http://localhost:4000/beratung">Weiter …</a></p>
+    <p><a href="https://www.informatom.com/beratung">Weiter …</a></p>
   </div>
 </div>
 :ET
