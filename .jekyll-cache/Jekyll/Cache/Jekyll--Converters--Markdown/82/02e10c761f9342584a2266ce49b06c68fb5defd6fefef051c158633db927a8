@@ -1,8 +1,8 @@
-I"�<div class="columns">
+I"G<div class="columns">
   <div class="column boxed">
-    <h2 id="willkommen">Willkommen</h2>
+    <h2 id="software-entwicklung">Software Entwicklung</h2>
 
-    <p>bei den Informatom EDV-Dienstleistungen e.U.!</p>
+    <p>… ist meine Passion, und damit willkommen in meiner Firma Informatom EDV-Dienstleistungen e.U.!</p>
 
     <p>Mein Name ist Stefan Haslinger, und ich möchte Ihnen auf dieser Seite die von mir gegründete Firma
 näher vorstellen:</p>
@@ -13,7 +13,7 @@ näher vorstellen:</p>
   <div class="column boxed">
     <h3 id="podcasting">Podcasting</h3>
 
-    <p>Ich bin leidenschaftlicher Podcaster und entwickle auch Software rund um’s Podcasten.</p>
+    <p>… ist meine Leidenschaft und so podcaste ich nicht nur, sondern entwickle auch Software rund um’s Podcasten.</p>
 
     <p>Lesen Sie mehr zu meinen aktuellen Podcasts <a href="https://aua-uff-co.de/">Aua-Uff-Code!</a>,
 <a href="https://podcast.stefan-haslinger.at/">Stefan will’s wissen</a> und den
@@ -24,7 +24,9 @@ näher vorstellen:</p>
 <a href="https://www.podcasterei.at/">Österreichische Podcasting Meetup</a>, wo wir Sie gerne kennen lernen
 würden.</p>
   </div>
+</div>
 
+<div class="columns">
   <div class="column boxed">
     <h3 id="mein-blog">Mein Blog</h3>
 

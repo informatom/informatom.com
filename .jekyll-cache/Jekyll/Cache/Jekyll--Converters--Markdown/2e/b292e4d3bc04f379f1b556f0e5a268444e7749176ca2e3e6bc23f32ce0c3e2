@@ -1,30 +1,24 @@
----
-title: Auf den Schultern von Riesen
-layout: page
-permalink: schultern-von-riesen/
----
-
-<section class="section">
+I"�<section class="section">
 <div class="columns">
-<div class="column is-two-thirds box" markdown="1">
-### nani gigantium .. wer?
+<div class="column is-two-thirds box">
+      <h3 id="nani-gigantium--wer">nani gigantium .. wer?</h3>
 
-<section class="section" markdown="1">
-> „Dicebat Bernardus Carnotensis nos esse quasi nanos gigantum umeris
-> insidentes, ut possimus plura eis et remotiora videre, non utique
-> proprii visus acumine, aut eminentia corporis, sed quia in altum
-> subvehimur et extollimur magnitudine gigantea“
+      <section class="section">
+&gt; „Dicebat Bernardus Carnotensis nos esse quasi nanos gigantum umeris
+&gt; insidentes, ut possimus plura eis et remotiora videre, non utique
+&gt; proprii visus acumine, aut eminentia corporis, sed quia in altum
+&gt; subvehimur et extollimur magnitudine gigantea“
 
-> „Bernhard von Chartres sagte, wir seien gleichsam Zwerge, die auf den
-> Schultern von Riesen sitzen, um mehr und Entfernteres als diese sehen zu
-> können – freilich nicht dank eigener scharfer Sehkraft oder Körpergröße,
-> sondern weil die Größe der Riesen uns emporhebt.“
+&gt; „Bernhard von Chartres sagte, wir seien gleichsam Zwerge, die auf den
+&gt; Schultern von Riesen sitzen, um mehr und Entfernteres als diese sehen zu
+&gt; können – freilich nicht dank eigener scharfer Sehkraft oder Körpergröße,
+&gt; sondern weil die Größe der Riesen uns emporhebt.“
 
-<div class="has-text-right is-size-6" markdown="1">
-Johannes von Salisbury: Metalogicon 3,4,46-50 aus Wikipedia:
-[Zwerge auf den Schultern von Riesen](http://de.wikipedia.org/wiki/Zwerge_auf_den_Schultern_von_Riesen)
-</div>
-</section>
+<div class="has-text-right is-size-6">
+          <p>Johannes von Salisbury: Metalogicon 3,4,46-50 aus Wikipedia:
+<a href="http://de.wikipedia.org/wiki/Zwerge_auf_den_Schultern_von_Riesen">Zwerge auf den Schultern von Riesen</a></p>
+        </div>
+<br /><br />
 
 Vielleicht kennen Sie das englische Idiom sitting on the shoulder of
 giants, im Deutschen kenne ich dafür keine Entsprechung. Dennoch sehe
@@ -69,42 +63,46 @@ Das bedeutet zum Beispiel
 - Ich verwende soweit wie möglich freie Software und fördere und
   propagiere die Verwendung von freier Software.
 
-</div>
-<div class="column box" markdown="1">
+&lt;/div&gt;
+<div class="column box">
 
-### Warum 4 Stacks?
+          <h3 id="warum-4-stacks">Warum 4 Stacks?</h3>
 
-<section class="section" markdown="1">
-> Wer als Werkzeug nur einen Hammer hat, sieht in jedem Problem einen Nagel.
-</section>
+          <blockquote>
+            <p>Wer als Werkzeug nur einen Hammer hat, sieht in jedem Problem einen Nagel.</p>
+          </blockquote>
 
-Egal, ob wir dieses Zitat (vermutlich fälschlicherweise) Paul Watzlawick oder
+          <p>Egal, ob wir dieses Zitat (vermutlich fälschlicherweise) Paul Watzlawick oder
 (ebenso falsch) Mark Twain zuschreiben, die Quintessenz trifft auch auf die
 Entwicklung von Sotware zu, insbesondere, wenn es sich um Produkte handelt,
-die für viele Jahre in Verwendung sein sollen.
+die für viele Jahre in Verwendung sein sollen.</p>
 
-Die Entwicklung sollte mit geeigneten Tools stattfinden. Deshalb habe ich mir
+          <p>Die Entwicklung sollte mit geeigneten Tools stattfinden. Deshalb habe ich mir
 im Laufe der Jahrzehnte mehrere Stacks angeeignet und schätze für unterschiedliche
-Projekte die unterschiedlichen Paradigmen.
+Projekte die unterschiedlichen Paradigmen.</p>
 
-Im Geschäftsumfeld ist oft ein objektorientierter Ansatz der beste (Ruby on Rails), 
+          <p>Im Geschäftsumfeld ist oft ein objektorientierter Ansatz der beste (Ruby on Rails), 
 muss eine Anwendung auf Millionen von Usern skalieren, ist funktionale Entwicklung
-weniger ressourcenhungrig (Elixir & Phoenix). Für mobile Anwendung reichen oft
+weniger ressourcenhungrig (Elixir &amp; Phoenix). Für mobile Anwendung reichen oft
 Webviews einfach nicht aus und es sollte nativer maschinennaher Code erzeugt werden
-(Dart & Flutter). Hingegen hat Python im Feld der Datenanalyse und der AI einen
+(Dart &amp; Flutter). Hingegen hat Python im Feld der Datenanalyse und der AI einen
 riesigen Schatz an Bibliotheken und mit den Jupyter Notebooks eine rasche,
 interaktive Möglichkeit der Erarbeitung und der Präsentation der Datenmodelle
-und -analysen.
+und -analysen.</p>
 
-### Links
+          <h3 id="links">Links</h3>
 
-- [Zwerge, die auf den Schultern von
-   Riesen](http://de.wikipedia.org/wiki/Zwerge_auf_den_Schultern_von_Riesen)
-- [Software
-  Craftsmanship](http://en.wikipedia.org/wiki/Software_craftsmanship)
-- [Software Craftsmanship
-  Manifesto](http://manifesto.softwarecraftsmanship.org/)
-- [Agile Manifesto](http://agilemanifesto.org/)
-- [Software Stack](http://informatom.com/articles/8/display)
+          <ul>
+            <li><a href="http://de.wikipedia.org/wiki/Zwerge_auf_den_Schultern_von_Riesen">Zwerge, die auf den Schultern von
+ Riesen</a></li>
+            <li><a href="http://en.wikipedia.org/wiki/Software_craftsmanship">Software
+Craftsmanship</a></li>
+            <li><a href="http://manifesto.softwarecraftsmanship.org/">Software Craftsmanship
+Manifesto</a></li>
+            <li><a href="http://agilemanifesto.org/">Agile Manifesto</a></li>
+            <li><a href="http://informatom.com/articles/8/display">Software Stack</a></li>
+          </ul>
 
-</div></div></section>
+        </div>&lt;/div&gt;</section>
+    </div></div></section>
+:ET

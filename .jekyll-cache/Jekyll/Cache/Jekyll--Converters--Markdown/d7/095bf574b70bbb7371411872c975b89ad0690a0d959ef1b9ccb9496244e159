@@ -1,10 +1,4 @@
----
-layout: page
-title: Der Ruby on Rails Stack
-permalink: stack/
----
-
-<div class="columns"><div class="column is-four-fifths" markdown="1">
+I"@<div class="columns"><div class="column is-four-fifths">
 Ein kompletter, freier Applikationsstack ermöglicht uns Software zu
 schreiben, die enterprise-ready ist. Wir, das ist mein kongenialer
 Kooperationspartner Michael Stranka und ich. Ein Applikationsstack ist
@@ -41,7 +35,7 @@ virtuellen Betriebssystem neben Fenstern aus dem nativen Betriebssystem
 (also dem Betriebssystem, das direkt auf der Hardware installiert ist)
 dargestellt werden können. Leider kann es nicht bare metal, also direkt
 auf der Hardware installiert werden, sondern benötigt ein weiteres
-Betriebssystem. Es wird damit als Type 2 Hypervisor bezeichnet.<br/>
+Betriebssystem. Es wird damit als Type 2 Hypervisor bezeichnet.<br />
 VirtualBox ist GPL V2 lizensiert.
 
 Neben Oracle Virtualbox unterstütze ich aufgrund der Nachfrage aus den
@@ -121,7 +115,7 @@ nicht erwähnt wurden:
   Probleme mit dem Betrieb des Debuggers unter Ruby 1.9
 
 </div>
-<div class="column" markdown="1">
+<div class="column">
 
 #### Links
 
@@ -154,3 +148,4 @@ nicht erwähnt wurden:
 - [Aptana RadRails](http://www.aptana.com/products/radrails)
 
 </div></div>
+:ET
