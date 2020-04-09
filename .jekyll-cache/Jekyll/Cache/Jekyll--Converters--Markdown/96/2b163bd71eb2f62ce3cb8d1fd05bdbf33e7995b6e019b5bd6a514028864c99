@@ -1,5 +1,0 @@
-I"L<p>Immer wieder lese ich Artikel, dass es schwer sei Ruby on Rails
-unter Linux Mint oder Ubuntu zu installieren. Dass dem nicht so ist, möchte ich mit diesem Blogpost zeigen. Durch die Verwendung von rvm
-lässt sich die gewünschte Ruby-Version explizit auswählen bzw. auch
-mehrere Ruby-Versionen sind parallel installierbar.</p>
-:ET

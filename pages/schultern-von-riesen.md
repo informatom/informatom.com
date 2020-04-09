@@ -6,7 +6,7 @@ permalink: schultern-von-riesen/
 
 <section class="section">
 <div class="columns">
-<div class="column is-two-thirds box" markdown="1">
+<div class="column is-two-thirds" markdown="1">
 ### nani gigantium .. wer?
 
 <section class="section" markdown="1">
@@ -70,7 +70,7 @@ Das bedeutet zum Beispiel
   propagiere die Verwendung von freier Software.
 
 </div>
-<div class="column box" markdown="1">
+<div class="column" markdown="1">
 
 ### Warum 4 Stacks?
 

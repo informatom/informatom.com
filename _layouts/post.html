@@ -2,13 +2,13 @@
 layout: default
 ---
 
-  <span class="icon"><i class="fas fa-arrow-left"></i></span>
+  <span class="icon"><i class="las la-arrow-left"></i></span>
   Zurück zum <a href="{{ site.url }}/blog">Blog</a>
 
   <h1 class="title">{{ page.title }}</h1>
 
   <p class="subtitle">
-    <span class="icon"><i class="fa fa-calendar-alt"></i></span>
+    <span class="icon"><i class="la la-calendar-alt"></i></span>
     <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
       {% assign m = page.date | date: "%-m" %}
       {{ page.date | date: "%-d" }}.
@@ -34,6 +34,6 @@ layout: default
 
   {{ content }}
 
-  <span class="icon"><i class="fas fa-arrow-left"></i></span>
+  <span class="icon"><i class="las la-arrow-left"></i></span>
   Zurück zum <a href="{{ site.url }}/blog">Blog</a>
 </article>

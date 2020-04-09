@@ -48,5 +48,5 @@ Informatom EDV-Dienstleistungen<br/>
 Vorgartenstrasse 145/2/3<br/>
 1020 Wien, Austria<br/>
 
-<span class="icon"><i class="fas fa-phone"></i></span> +43 680 213 3030<br/>
-[<span class="icon"><i class="fas fa-envelope"></i></span> stefan.haslinger@informatom.com](mailto://stefan.haslinger@informatom.com)
+<span class="icon"><i class="las la-phone"></i></span> +43 680 213 3030<br/>
+[<span class="icon"><i class="las la-envelope"></i></span> stefan.haslinger@informatom.com](mailto://stefan.haslinger@informatom.com)
