@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem "jekyll", "~> 4.0"
-gem "jekyll-bulma", "~> 0.9"
+gem "jekyll-bulma", "~> 0.9.2"
 
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.13"
