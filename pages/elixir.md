@@ -21,22 +21,28 @@ einige Jahre unter Ruby On Rails von mir eingesetzt wurden, wie KVM, PostgresQL 
 
 ## Der Stack
 
-* Hypervisor [KVM](https://www.linux-kvm.org/page/Main_Page)
-* Betriebssystem [Ubuntu Server](https://www.ubuntu.com/server)
-* Webserver [nginx](https://nginx.org/en/)
-* Applikationsserver [Cowboy](https://ninenines.eu/)
-* Datenbankserver [PostgreSQL](https://www.postgresql.org/)
-* Programmiersprache [Elixir](https://elixir-lang.org/)
-* Webframework [Phoenix](http://phoenixframework.org/)
-* Vanilla Javascript [ES6](http://es6-features.org/#Constants) am Frontend
+![Phoenix Application Stack](/img/elixir/phoenix-application.png)
 
+* Hypervisor [KVM](https://www.linux-kvm.org/page/Main_Page) (optional, falls Applikation auf Hardware betrieben muss, aber nicht bare metal)
+* Betriebssystem [Ubuntu Server](https://www.ubuntu.com/server)
+* Proxyserver [nginx](https://nginx.org/en/)
+* Applikationsserver [Cowboy](https://ninenines.eu/)
+* Datenbank Management System [PostgreSQL](https://www.postgresql.org/) (Optionen: MySQL, SQLite)
+* Programmiersprache [Elixir](https://elixir-lang.org/)
+* Webframework [Phoenix](http://phoenixframework.org/) inklusive [Phoenix LiveViews](https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html)
+* CSS-Framework [tailwindcss](https://tailwindcss.com/)
+* Javascript-Bibliothek [Alpine.js](https://alpinejs.dev/)
+* Monitoring [Monit](https://mmonit.com/monit/)
+* Test Framework [ExUnit](https://hexdocs.pm/ex_unit/1.12/ExUnit.html)
+* Backup [Borgbackup](https://www.borgbackup.org/) (verschlüsselt, dedupliziert, komprimiert)
+* Dokumentation in Markdown, auf Wunsch auch als stand alone statische Website in [Jekyll](https://jekyllrb.com/)
 
 Das Versprechen von funktionalen Programmiersprachen und Elixir, das auf der
 [Erlang Virtual Michine](https://en.wikipedia.org/wiki/Erlang_(programming_language)) aufsetzt,
 im Speziellen, ist sehr weit skalierender, gut test- und wartbarer Code.
 
-In meinem bislang größten Projekt, in dem ich den Stack verwende,
-[Panoptikum.io](https://panoptikum.io/), zeigt sich das eindrucksvoll. Sollten Sie an Panoptikum
+In meinem größten offenen Projekt, in dem ich den Stack verwende,
+[Panoptikum.io](https://panoptikum.io/), zeigt sich das eindrucksvoll. Sollten Sie an Hintergrund von Panoptikum
 Interesse haben, beginnen Sie am besten auf der [About-Seite](https://blog.panoptikum.io/),
 im [Blog](https://blog.panoptikum.io/blog/) haben wir im ersten Jahr bereits mehr als 50 Artikel
 über Panoptikum verfasst.
