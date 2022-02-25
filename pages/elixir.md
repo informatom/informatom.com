@@ -21,7 +21,7 @@ einige Jahre unter Ruby On Rails von mir eingesetzt wurden, wie KVM, PostgresQL 
 
 ## Der Stack
 
-![Phoenix Application Stack](/img/elixir/phoenix-application.png)
+![Phoenix Application Stack](/img/elixir/phoenix-application.svg)
 
 * Hypervisor [KVM](https://www.linux-kvm.org/page/Main_Page) (optional, falls Applikation auf Hardware betrieben muss, aber nicht bare metal)
 * Betriebssystem [Ubuntu Server](https://www.ubuntu.com/server)
