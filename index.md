@@ -22,8 +22,10 @@ entwickelt werden soll und/oder weltweit skaliert werden muss.
    Tablets setze ich im [Dart und Flutter-Stack](/dart) um.
 
 4. Der [Python - Stack](/python) eignet sich vorzüglich im wissenschaftlichen
-   Umfeld (Datenanalyse, KI, AI) zum Scripten, aber auch für serverseitige 
+   Umfeld (Datenanalyse, KI, AI) zum Scripten, aber auch für serverseitige
    Webapplikationen.
+
+5. **NEU!** - Der [Nerves-Stack](/nerves) für IOT-Projekte.
 
 Warum vier Stacks? Lernen Sie meine Argemente kennen, indem Sie Sich mit mir auf
 die [Schultern von Riesen]({{ site.url }}/schultern-von-riesen) setzen.
@@ -54,7 +56,7 @@ Podcast Publishing Software [jekyll-octopod](https://jekyll-octopod.github.io/)
 und meinem Podcasting Social Network [Panoptikum.io](https://panoptikum.io/)
 in [meinem Podcasterprofil](https://panoptikum.io/informatom).
 
-Lunte gerochen? Dann kommen Sie doch zum 
+Lunte gerochen? Dann kommen Sie doch zum
 [Österreichische Podcasting Meetup](https://www.podcasterei.at/), das ich
 mehrere Jahre mit Melanie Bartos gehostet habe und noch regelmäßig besuche.
   </div>
