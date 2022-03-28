@@ -28,7 +28,7 @@ per Kabel in einer Daisy Chain an einen
 auf einem [Raspberry Pi](https://www.raspberrypi.org/) aufgesetzt ist. Ich verwende noch den pHat in
 Version 1, was aber für das Projekt keinen Unterschied macht, da das Rely am pHat Version nicht
 verwendet wir, mittlerweile ist dieser nicht mehr in Produktion und durch Version 2 ersetzt.
-Im Prinzip kann jeder Raspberry Pi verwendet werden, der über einen 40pin GPIO Connector verfügt,
+Im Prinzip kann jeder Raspberry Pi verwendet werden, der über einen 40pin GPIO Port verfügt,
 ich verwende einen [Raspberry Pi 3 Model B](https://www.raspberrypi.com/products/raspberry-pi-3-model-b/),
 der für diese Zwecke eigentlich überdimensioniert ist.
 
@@ -41,7 +41,21 @@ Alle Sensoren verwende ich als Qwiic Sensoren von Sparkfun. Links zur Dokumentat
 dieses Projekte, und einiger weiterer Sensoren, die sich in meinem Besitz befinden,  finden sich im
 [Wiki des Projektes](https://code.informatom.com/Informatom/iot_demo_nerves/wiki/Home).
 
-## Meinen eigenen Hardwarertreiber schreiben
+## Kein Löten, nur Stecken
+
+Die beschrieben Kombination kommt ohne jegliches Löten aus, was ich auch für einen Prototypen, der
+in nicht hardwarenahen Firmen präsentiert werden soll, essentiell halte. Ich möchte nicht durch zu
+lötende Kompontent abschrecken. Genau das ist mit SparkFuns Qwiik Platform möglich, die
+Steckverbindungen und Kabel sind genormt, die Stecker sogar verpolungssicher.
+
+Ich bin aber mit Nerves als IOT Platform nicht auf diese Sensorplatform beschränkt. Sensoren lassen
+sich auch direkt mit dem 40Pin GPIO Connector des Raspberry Pi verbinden, wenn sie durch dieses
+Interface angebunden werden können. Es gibt auch zahlreiche andere Hats, die entweder andere
+Sensoranschlüsse bieten oder Sensoren gleich direkt verbaut haben. Einige
+[Nerves Case Studies](https://www.nerves-project.org/case-studies.html) lassen sich auf der Nerves
+Webseite nachlesen.
+
+## Meinen eigenen Hardwaretreiber schreiben
 
 Der VEML6075 ist allerdings nicht der Sensor, der im Buch für das Projekt vorgeschlagen wird,
 dort kommt ein VEML6030 zum Einsatz. Ich dachte naiver weise, ist halt ein neueres Modell,
