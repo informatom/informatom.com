@@ -56,7 +56,7 @@ Bild zugeschnitten, Lizenz [CC BY 2.0](https://creativecommons.org/licenses/by/2
 SparkFun Qwiik VEML 6075 UV Light Sensor Breakout, Quelle: [Sparkfun Produktseite](https://www.sparkfun.com/products/15089),
 Bild zugeschnitten, Lizenz [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/)
 
-Links zur Dokumentation aller Sensoren dieses Projekte, und einiger weiterer Sensoren, die sich in 
+Links zur Dokumentation aller Sensoren dieses Projekte, und einiger weiterer Sensoren, die sich in
 meinem Besitz befinden, finden sich im
 [Wiki des Projektes](https://code.informatom.com/Informatom/iot_demo_nerves/wiki/Home).
 
