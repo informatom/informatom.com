@@ -28,17 +28,36 @@ per Kabel in einer Daisy Chain an einen
 auf einem [Raspberry Pi](https://www.raspberrypi.org/) aufgesetzt ist. Ich verwende noch den pHat in
 Version 1, was aber für das Projekt keinen Unterschied macht, da das Rely am pHat Version nicht
 verwendet wir, mittlerweile ist dieser nicht mehr in Produktion und durch Version 2 ersetzt.
+
+![pHAT](/img/nerves/phat.jpg)<br/>
+SparkFun Qwiic pHAT for Raspberry Pi, Quelle: [Sparkfun Produktseite](https://www.sparkfun.com/products/retired/15351),
+Bild zugeschnitten, Lizenz [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/)
+
 Im Prinzip kann jeder Raspberry Pi verwendet werden, der über einen 40pin GPIO Port verfügt,
 ich verwende einen [Raspberry Pi 3 Model B](https://www.raspberrypi.com/products/raspberry-pi-3-model-b/),
 der für diese Zwecke eigentlich überdimensioniert ist.
 
-Die verwendeten Sensoren sind ein VEML6075 UV-Sensor, ein Environmental Combo Breakout CCS811/BME280
+Die verwendeten Sensoren sind ein VEML6075 UV-Sensor, ein BME680 Air Quality Sensor
 mit Temperatur-, barometrischer Luftdruck-, Luftfeuchtigkeits- und VOC-Gassensor
 (volatile organic compoints = flüchtige organische Verbindungen). Weiters kommt ein SGP30
 Luftgütesensor zum Einsatz.
 
-Alle Sensoren verwende ich als Qwiic Sensoren von Sparkfun. Links zur Dokumentation aller Sensoren
-dieses Projekte, und einiger weiterer Sensoren, die sich in meinem Besitz befinden,  finden sich im
+Als Sensoren verwende ich als Qwiic Sensoren von Sparkfun:
+
+![BME680](/img/nerves/bme680.jpg)<br/>
+SparkFun Qwiik BME 680 Air Quality Sensor Breakout, Quelle: [Sparkfun Produktseite](https://www.sparkfun.com/products/16466),
+Bild zugeschnitten, Lizenz [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/)
+
+![SGP30](/img/nerves/sgp30.jpg)<br/>
+SparkFun Qwiik SPG 30 Air Quality Sensor Breakout, Quelle: [Sparkfun Produktseite](https://www.sparkfun.com/products/16531),
+Bild zugeschnitten, Lizenz [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/)
+
+![VEML6075](/img/nerves/veml6075.jpg)<br/>
+SparkFun Qwiik VEML 6075 UV Light Sensor Breakout, Quelle: [Sparkfun Produktseite](https://www.sparkfun.com/products/15089),
+Bild zugeschnitten, Lizenz [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/)
+
+Links zur Dokumentation aller Sensoren dieses Projekte, und einiger weiterer Sensoren, die sich in 
+meinem Besitz befinden, finden sich im
 [Wiki des Projektes](https://code.informatom.com/Informatom/iot_demo_nerves/wiki/Home).
 
 ## Kein Löten, nur Stecken
