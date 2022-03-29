@@ -130,6 +130,8 @@ Projekt vorgeschlagen, zwei Docker Container verwendet. Somit ist auch die kompl
 sondern völlig gescripted. Das [docker-compose file](https://code.informatom.com/Informatom/iot_demo_phoenix/src/branch/master/docker-compose.yml)
 ist dabei noch überraschend kompakt.
 
+![Grafana Dashboard](/img/nerves/grafana.png)
+
 Grafana kann eine breite Platte an Visualisierungen von Daten bieten. Ein
 [einfaches Dashboard für unsere Daten](https://code.informatom.com/Informatom/iot_demo_phoenix/src/branch/master/grafana_dashboard.json)
 besteht zwar persistiert aus knapp 100 Zeilen json, diese werden aber nicht von Hand geschrieben,
