@@ -4,8 +4,8 @@ title: Meine Nerves Story
 date: 2022-03-28 08:00:00 +0200
 ---
 
-In den letzten Jahren steigerte sich mein Interesse für IOT-Projekte. Ich lernte zu löten,
-habe mir [Raspberry Pi](https://www.raspberrypi.org/)es herumgespielt, diese aber zumeist als NAS,
+In den letzten Jahren steigerte sich mein Interesse für IOT-Projekte. Ich lernte Löten,
+habe mit [Raspberry Pi](https://www.raspberrypi.org/)es herumgespielt, diese aber zumeist als NAS,
 oder Proxies ([Pi-Hole](https://pi-hole.net/)) verwendet.
 Später folgte ein [Airrohr-Feinstaubsensor]((https://sensor.community/de/sensors/airrohr/))
 auf Basis eines [ESP8266](http://esp8266.net/), der seit Jahren gute Dienste leistet und seine Daten
@@ -17,10 +17,10 @@ anderwertig verwendet habe.
 Etwa Mitte 2021 bin ich dann auf das [Nerves Project](https://www.nerves-project.org/)
 gestoßen, implementiert in der von meiner geschätzten Programmiersprache
 [Elixir](https://elixir-lang.org/). Nerves ist ein ausgereiftes Frameworks zur Entwicklung von IOT-Anwendungen.
-Als ich dann von
+Als ich dann vom Buch
 [Build a Weather Station with Elixir and Nerves](https://pragprog.com/titles/passweather/build-a-weather-station-with-elixir-and-nerves/)
-war ich doppelt interessiert und habe versucht, mir die benötigten Sensoren zu beschaffen, was nur
-zum Teil gelang.
+gelesen habe, war ich doppelt interessiert und habe versucht, mir die benötigten Sensoren zu
+beschaffen, was nur zum Teil gelang.
 
 ## Die Komponenten der Wetterstation
 
@@ -44,7 +44,7 @@ der für diese Zwecke eigentlich überdimensioniert ist.
 ![Raspberry Pi 3 mit pHAT Board](/img/nerves/pi+phat.jpg)<br/>
 Bild: pHat auf einem Raspberry Pi 3 aufgesteckt
 
-Als Sensoren verwende ich als Qwiic Sensoren von Sparkfun: Ein VEML6075 UV-Sensor,
+Als Sensoren verwende ich Qwiic Sensoren von Sparkfun: Ein VEML6075 UV-Sensor,
 ein BME680 Air Quality Sensor mit Temperatur-, barometrischer Luftdruck-, Luftfeuchtigkeits- und
 VOC-Gassensor (volatile organic compoints = flüchtige organische Verbindungen). Weiters kommt ein SGP30
 Luftgütesensor zum Einsatz.
@@ -70,15 +70,15 @@ meinem Besitz befinden, finden sich im
 
 ## Kein Löten, nur Stecken
 
-Die beschrieben Kombination kommt ohne jegliches Löten aus, was ich auch für einen Prototypen, der
-in nicht hardwarenahen Firmen präsentiert werden soll, essentiell halte. Ich möchte nicht durch zu
-lötende Kompontent abschrecken. Genau das ist mit SparkFuns Qwiik Platform möglich, die
+Die beschriebene Kombination kommt ohne jegliches Löten aus, was ich auch für einen Prototypen, der
+in nicht hardwarenahen Firmen präsentiert werden soll, für essentiell halte. Man möchte nicht durch zu
+lötende Komponenten abschrecken. Genau das ist mit SparkFuns Qwiik Plattform möglich, die
 Steckverbindungen und Kabel sind genormt, die Stecker sogar verpolungssicher.
 
-Ich bin aber mit Nerves als IOT Platform nicht auf diese Sensorplatform beschränkt. Sensoren lassen
+Ich bin aber mit Nerves als IOT Plattform nicht auf diese Sensorplattform beschränkt. Sensoren lassen
 sich auch direkt mit dem 40Pin GPIO Connector des Raspberry Pi verbinden, wenn sie durch dieses
-Interface angebunden werden können. Es gibt auch zahlreiche andere Hats, die entweder andere
-Sensoranschlüsse bieten oder Sensoren gleich direkt verbaut haben. Einige
+Interface angebunden werden können. Es gibt auch zahlreiche andere Hats (Aufsteckboards), die entweder
+andere Sensoranschlüsse bieten oder Sensoren gleich direkt verbaut haben. Einige
 [Nerves Case Studies](https://www.nerves-project.org/case-studies.html) lassen sich auf der Nerves
 Webseite nachlesen.
 
@@ -90,10 +90,10 @@ der Treiber wird schon passen!“ Das war aber nicht der Fall.
 
 So stand ich vor der Aufgabe, da ich in meinem Leben noch keinen Hardwaretreiber geschrieben
 habe, die Datenblätter, die mit den Sensoren mitgeliefert waren, zu verstehen, ebenso
-den Treiber, der im Buch für den VEML6030 entwickelt. Und hier besteht jetzt die große Stärke
+den Treiber, der im Buch für den VEML6030 entwickelt wurde. Und hier besteht jetzt die große Stärke
 von Open Source und freien Informationen. Ich hatte nach 2 Stunden Lernaufwand erstmals erfolgreich Daten
 vom VEML6075 ausgelesen, nach weiteren 2 Stunden einen Treiber, der sogar eine Spur mehr konnte, als
-der für den VEML6030 im Buch entwickelte. Das macht einen dann auch ein Bisschen stolz.
+der für den VEML6030 im Buch entwickelte. Das macht einen dann auch ein bisschen stolz.
 
 ## Schnelle Fortschritte
 
@@ -103,7 +103,7 @@ Phoenix-Applikation zu schreiben, die einen JSON-Endpoint zum Annehmen der Daten
 anbietet.
 
 Das klappte ganz vorzüglich. Ich konnte mich aber nicht mit dem Gedanken anfreunden, dass dieser
-Endponti völlig offen ist, selbst wenn ich das Projekt nur in WLANs von Firmen präsentieren will,
+Endpunkt völlig offen ist, selbst wenn ich das Projekt nur in WLANs von Firmen präsentieren will,
 ist ein offener Endpunkt für mich gefühlt nicht in Ordnung und ich habe eine kleine
 Token-Authentifizierung dazu geschrieben. Hier kommen wieder die Stärken von Open Source und
 dem Elixir/Phoenix Stack zum tragen. Gerade mal eine zusätzliche Zeile, nämlich die fünfte im
@@ -135,9 +135,9 @@ end
 
 ## Datenablage
 
-Die Datenablage erfolgt aus der Phoenix-Applikation in eine [Timescale-DB](https://www.timescale.com/)
+Die Datenablage erfolgt aus der Phoenix-Applikation in eine [Timescale-DB](https://www.timescale.com/).
 Bei Timescale handelt es sich um ein Add-On zu [PostgresQL](https://www.postgresql.org/), sodass
-in Richting der Phoenix Applikation keine Adaption des Codes erforderlich ist und der standard relational
+in Richtung der Phoenix Applikation keine Adaption des Codes erforderlich ist und der standard relational
 Mapper postgrex verwendet werden kann.
 
 In Richtung der Visualisierung durch Grafana (Details im nächsten Abschnitt) ist ebenfalls keine

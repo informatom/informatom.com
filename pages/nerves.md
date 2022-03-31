@@ -5,15 +5,16 @@ permalink: nerves/
 ---
 
 [Nerves](https://www.nerves-project.org/) ist - nach Eigendefinition - eine quelloffene
-Infrastruktur und Plattform, um die Software für eine Flotte von IOT-Geräten (zu entwickeln, zu
+Infrastruktur und Plattform, um die Software für eine Flotte von
+[IOT](https://de.wikipedia.org/wiki/Internet_der_Dinge)-Geräten zu entwickeln, zu
 verteilen und sicher zu verwalten.
 
 Hier die Potentiale von Nerves Projekten grob umrissen:
 
-* Mit dem <b>Raspberry Pi</b> setzt sie auf eine günstige Hardwareplatform, die mit mehr als 30 Millionen
+* Mit dem <b>Raspberry Pi</b> setzt sie auf eine günstige Hardware Plattform, die mit mehr als 30 Millionen
   verkaufen Geräten weit verbreitet ist. Laut [Electronics Weekly](https://www.electronicsweekly.com/news/business/raspberry-pi-popular-sbc-2021-09/)
   ist es - vor Arduino und BeagleBone - sogar die am weitesten verbreitete SBC (Single Board Computer).
-* Es gibt auch auch noch weitere unterstütze [Hardwareplattformen](https://hexdocs.pm/nerves/targets.html)
+* Es gibt noch weitere unterstütze [Hardware Plattformen](https://hexdocs.pm/nerves/targets.html)
   bis hin zum [Grisp 2](https://www.grisp.org/), einem Entwicklungsboard mit bare metal Erlang
   Virtual Machine.
 
@@ -43,15 +44,15 @@ Hier die Potentiale von Nerves Projekten grob umrissen:
   [Apache ECharts](https://echarts.apache.org/en/index.html) und
   [Vega Lite](https://vega.github.io/vega-lite/) gearbeitet.
 
-Ein ausführlichere Beschreibung meiner Entscheidung für Nerves finden sie im Blogpost:
-[Meine Nerves Story](/2022/03/28/meine-nerves-story.html)
+Wie und warum meine Entscheidung für Nerves gefallen ist, habe ich ausführlich im Blogpost
+[Meine Nerves Story](/2022/03/28/meine-nerves-story.html) beschrieben.
 
 ## Der Stack
 
 Die Visualisierung des einfachsten Stacks, der Datenfluss vom Sensor über die Datenbank bis zum
 Webbrowser ist durch Verbindungslinien gezeichnet. Grün sind Komponenten, die nicht unmittelbar
-im Stack zu finden sind, aber für einen zuverlässigen, nachhaltigen Betrieb einer IOT-Plattform 
-nötig sind.
+im Stack zu finden sind, aber für einen zuverlässigen, nachhaltigen Betrieb einer
+[IOT](https://de.wikipedia.org/wiki/Internet_der_Dinge)-Plattform nötig sind.
 
 ![IOT Stack](/img/nerves/nerves-stack.svg)
 
