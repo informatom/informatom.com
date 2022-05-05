@@ -1,7 +1,7 @@
 ---
 title: Fiori
 layout: page
-permalink: fiori
+permalink: fiori/
 ---
 
 redirecting ...
