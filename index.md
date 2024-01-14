@@ -53,8 +53,8 @@ Lesen Sie mehr zu meinen aktuellen Podcasts [Aua-Uff-Code!](https://aua-uff-co.d
 [Stefan will's wissen](https://podcast.stefan-haslinger.at/) und den
 [3 Schweinehunde](https://3-schweinehun.de/)n, aber auch zur Entwicklung der
 Podcast Publishing Software [jekyll-octopod](https://jekyll-octopod.github.io/)
-und meinem Podcasting Social Network [Panoptikum.io](https://panoptikum.io/)
-in [meinem Podcasterprofil](https://panoptikum.io/informatom).
+und meinem Podcasting Social Network [Panoptikum.social](https://panoptikum.social/)
+in [meinem Podcasterprofil](https://panoptikum.social/informatom).
 
 Lunte gerochen? Dann kommen Sie doch zum
 [Österreichische Podcasting Meetup](https://www.podcasterei.at/), das ich

@@ -42,7 +42,7 @@ Das Versprechen von funktionalen Programmiersprachen und Elixir, das auf der
 im Speziellen, ist sehr weit skalierender, gut test- und wartbarer Code.
 
 In meinem größten offenen Projekt, in dem ich den Stack verwende,
-[Panoptikum.io](https://panoptikum.io/), zeigt sich das eindrucksvoll. Sollten Sie an Hintergrund von Panoptikum
-Interesse haben, beginnen Sie am besten auf der [About-Seite](https://blog.panoptikum.io/),
-im [Blog](https://blog.panoptikum.io/blog/) haben wir im ersten Jahr bereits mehr als 50 Artikel
+[Panoptikum.social](https://panoptikum.social/), zeigt sich das eindrucksvoll. Sollten Sie an Hintergrund von Panoptikum
+Interesse haben, beginnen Sie am besten auf der [About-Seite](https://blog.panoptikum.social/),
+im [Blog](https://blog.panoptikum.social/blog/) haben wir im ersten Jahr bereits mehr als 50 Artikel
 über Panoptikum verfasst.
