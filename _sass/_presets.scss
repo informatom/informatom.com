@@ -1,4 +1,0 @@
-// Bulma 1.x customization no longer works via plain Sass variables here —
-// @use/@forward modules don't share global scope the way @import did.
-// All former presets now live as --bulma-* custom property overrides in
-// _overrides.scss instead.

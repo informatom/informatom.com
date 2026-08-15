@@ -21,7 +21,7 @@ title: Suche
       {% case page.title %}
       {% when "ignore-search" %}
       {% else %}
-        "{{ page.url | slugify }}": {
+        {{ page.url | jsonify }}: {
           "title": "{{ page.title | xml_escape }}",
           "keywords": "{{ page.keywords | xml_escape }}",
           "description": "{{ page.description | xml_escape }}",
@@ -32,7 +32,7 @@ title: Suche
     {% endfor %}
 
     {% for page in site.posts %}
-      "{{ page.url | slugify }}": {
+      {{ page.url | jsonify }}: {
         "title": "{{ page.title | xml_escape }}",
         "keywords": "{{ page.keywords | xml_escape }}",
         "description": "{{ page.description | xml_escape }}",

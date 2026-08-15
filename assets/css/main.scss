@@ -5,9 +5,7 @@
 @charset "utf-8";
 $font-family-base: Ubuntu, Helvetica, Arial, sans-serif;
 
-$spacing-unit: 30px;
-@import "presets",
-        "bulma",
-        "syntax-highlighting",
-        "line-awesome/scss/line-awesome",
-        "overrides";
+@use "bulma";
+@use "syntax-highlighting";
+@use "line-awesome/scss/line-awesome";
+@use "overrides";
