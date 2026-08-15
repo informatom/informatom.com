@@ -1,3 +1,47 @@
+:root {
+  // was $family-sans-serif in _presets.scss
+  --bulma-family-primary: Ubuntu, sans-serif;
+  --bulma-family-secondary: Ubuntu, sans-serif;
+
+  // was $weight-medium/-semibold/-bold (light/normal already matched Bulma's
+  // own defaults, so they're omitted here)
+  --bulma-weight-medium: 450;
+  --bulma-weight-semibold: 500;
+  --bulma-weight-bold: 550;
+
+  // was $text-light — no longer a Sass variable in Bulma 1.x, only a
+  // computed custom property. Bulma 1.x also renamed the source several
+  // components read their muted color from: menu-label, panel-icon,
+  // pagination-disabled, button-static and input-disabled all switched
+  // from reading "text-light" to reading "text-weak", so both need
+  // overriding to fully replicate the old $text-light behavior (e.g. the
+  // footer's menu-label headings).
+  --bulma-text-light: #507329;
+  --bulma-text-weak: #507329;
+
+  // was $blue, which fed Bulma's default $link color. Plain link *text*
+  // color is driven by --bulma-link-on-scheme-l, a separate value Bulma
+  // derives at compile time via a WCAG contrast-ratio algorithm — not a
+  // live function of --bulma-link-l. The h/s/l below are #1d54ad's own
+  // HSL; the on-scheme-l is the exact value Bulma's own algorithm computes
+  // for that color (verified with a throwaway `@use "sass" with (...)`
+  // compile), not a hand guess. Dark mode registers its own on-scheme-l
+  // in a higher-specificity block, so this doesn't need a dark-mode
+  // counterpart.
+  --bulma-link-h: 217deg;
+  --bulma-link-s: 71%;
+  --bulma-link-l: 40%;
+  --bulma-link-on-scheme-l: 39.6078431373%;
+}
+
+// was $navbar-item-img-max-height. Bulma re-declares this custom property
+// scoped to .navbar itself (not just :root), so an element inside .navbar
+// inherits .navbar's own value rather than the :root one — this has to be
+// overridden at the same .navbar scope to actually win.
+.navbar {
+  --bulma-navbar-item-img-max-height: 7rem;
+}
+
 .boxed {
   background-color: #fff;
   border: 1px solid #eee;
