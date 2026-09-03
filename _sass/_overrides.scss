@@ -9,6 +9,7 @@
   --bulma-weight-semibold: 500;
   --bulma-weight-bold: 550;
 
+
   // was $text-light — no longer a Sass variable in Bulma 1.x, only a
   // computed custom property. Bulma 1.x also renamed the source several
   // components read their muted color from: menu-label, panel-icon,
@@ -24,16 +25,31 @@
   // separate value Bulma derives at compile time via a WCAG contrast-ratio
   // algorithm — not a live function of --bulma-link-l. The raw green itself
   // only has a ~2.1:1 contrast ratio against white, so using it directly as
-  // link-on-scheme-l would fail WCAG AA (needs 4.5:1); Bulma's own algorithm
-  // instead darkens it to L 23.92% for light-mode text, giving ~7.8:1 — and
-  // separately computes a near-black L 9% variant (--bulma-link-invert-l)
-  // for text on top of raw-green button backgrounds (e.g. .is-link buttons),
-  // giving ~7.8:1 there too. Both verified with a throwaway
+  // link-on-scheme-l would fail WCAG AA (needs 4.5:1); a throwaway
   // `@use "sass" with ($link: hsl(88.65deg, 47.23%, 53.92%))` compile against
-  // the actual jekyll-bulma-vendored Bulma sources, not a hand guess. Dark
-  // mode registers its own on-scheme-l in a higher-specificity block (using
-  // the raw 53.92% lightness, ~8.4:1 against the dark scheme background), so
-  // this doesn't need a dark-mode counterpart.
+  // the actual jekyll-bulma-vendored Bulma sources gives 23.92% as the
+  // properly-computed WCAG-passing value (~7.8:1) — hand-darkened further
+  // below for extra separation from body text, see that comment.
+  //
+  // --bulma-link-invert-l (button text color, e.g. .is-link buttons like the
+  // navbar search button) needed a *manual* override, not just re-deriving
+  // from the throwaway compile: jekyll-bulma's own bulma.scss shim only does
+  // `@use "sass";` with no @forward, so this site can't actually configure
+  // Bulma's real $link at Sass level via `@use "bulma" with (...)` — only
+  // these post-hoc CSS custom properties. Bulma's derived shade ladder
+  // (link-00-l..link-100-l, and which rung link-invert-l picks) is baked at
+  // Sass-compile-time from the *stock* blue $link, not from these runtime
+  // overrides. Blue reads as "dark" to Bulma's compile-time light/dark check,
+  // so it baked in the near-white rung (98%) as the invert text color — on
+  // our green button background that's ~2.1:1, failing WCAG AA. Re-verified
+  // by actually loading the page in headless Chrome and reading
+  // getComputedStyle on the live search button, not just reasoning about the
+  // compiled CSS. The correct dark invert for this green (confirmed by the
+  // from-scratch throwaway compile with $link set to it directly) is ~9%.
+  --bulma-link-invert-l: 9%;
+  // Dark mode registers its own on-scheme-l in a higher-specificity block
+  // (using the raw 53.92% lightness, ~8.4:1 against the dark scheme
+  // background), so none of the above needs a dark-mode counterpart.
   --bulma-link-h: 88.65deg;
   --bulma-link-s: 47.23%;
   --bulma-link-l: 53.92%;
@@ -58,6 +74,18 @@
   --bulma-navbar-item-img-max-height: 7rem;
 }
 
+// Bulma's default menu-label font-size (0.75em) makes footer section
+// headings like "Meta" look smaller than the links listed under them —
+// bumped to body text size. Has to be re-scoped to .menu, not :root: Bulma
+// itself re-declares --bulma-menu-label-font-size inside .menu {}, and an
+// element's own explicit declaration always wins over an inherited :root
+// value (see the .navbar case above for the same pattern). Font-weight
+// isn't a Bulma-registered menu-label variable, so that part of the fix is
+// a plain .menu-label rule further down instead.
+.menu {
+  --bulma-menu-label-font-size: 1em;
+}
+
 .boxed {
   // was #fff/#eee — hard-coded, so it stayed a light box (with body text
   // switched to a light color) under prefers-color-scheme: dark, wrecking
@@ -80,4 +108,30 @@
 // picture.
 .content a:not(:has(img)) {
   text-decoration: underline;
+}
+
+// see --bulma-menu-label-font-size above for why: keeps the size bump from
+// looking like plain body text by leaning on weight instead.
+.menu-label {
+  font-weight: var(--bulma-weight-semibold);
+}
+
+// The footer's four link columns and the "Stefan Haslinger | ..." line
+// below them otherwise sit right on top of each other — Bulma's .columns
+// grid uses a negative margin trick to counteract each .column's own
+// padding, which here overshoots and leaves *less* than zero visual gap.
+// Scoped to a direct child of .footer, not the bare utility class, since
+// .has-text-centered is also used for unrelated page-title centering in
+// _layouts/page.html.
+.footer > .has-text-centered {
+  margin-top: 2rem;
+}
+
+// index.md's three boxed teasers (IT-Schulung, Mittenin.at, IT-Beratung)
+// float a small image next to the heading via a bare `float: right;`
+// inline style, with no margin — the wrapped text runs flush against the
+// image. Used via `{: .heading-figure}` on the image instead.
+.heading-figure {
+  float: right;
+  margin: 0 0 0.75rem 1rem;
 }
