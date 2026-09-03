@@ -105,6 +105,6 @@ und -analysen.
 - [Software Craftsmanship
   Manifesto](http://manifesto.softwarecraftsmanship.org/)
 - [Agile Manifesto](http://agilemanifesto.org/)
-- [Software Stack](http://informatom.com/articles/8/display)
+- [Software Stack](/stack)
 
 </div></div></section>

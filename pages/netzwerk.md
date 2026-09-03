@@ -43,7 +43,7 @@ reibungsloser und wirtschaftlicher einzusetzen.
 </div><div class="column" markdown="1">
 ### Open Source Experts Group
 
-[![Open Source Experts Group Logo]({{ site.url }}/img/netzwerk/open-source-experts-group-logo.png)](http://http://www.opensource.co.at/)
+[![Open Source Experts Group Logo]({{ site.url }}/img/netzwerk/open-source-experts-group-logo.png)](http://www.opensource.co.at/)
 
 Mit über 300 registrierten Anbieterunternehmen ist die Open Source
 Experts Group Österreichs größter Kompetenzpool von selbständigen
@@ -56,8 +56,7 @@ voranzutreiben.
 </div><div class="column" markdown="1">
 ### UBIT
 
-[![WHO Logo]({{ site.url }}/img/netzwerk/wko-logo.png)](http://https://www.wko.at/Content.Node/branchen/oe/sparte_iuc/Unternehmensberatung-und-Informationstechnologie/Startseite_-_Unternehmenberatung_und_Informationstechnologi.html
-)
+[![WHO Logo]({{ site.url }}/img/netzwerk/wko-logo.png)](https://www.wko.at/Content.Node/branchen/oe/sparte_iuc/Unternehmensberatung-und-Informationstechnologie/Startseite_-_Unternehmenberatung_und_Informationstechnologi.html)
 
 Wie jeder IT-Dienstleistungsbetrieb ist auch die Informatom
 EDV-Dienstleistungen e.U. Mitglied im Fachverband Unternehmensberatung

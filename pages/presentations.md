@@ -10,7 +10,7 @@ permalink: presentations/
   Meetup Gruppe
 * Vortrag über Firmengründung = [Founding a Company](founding) bei der
   [Freelancing in Vienna](https://www.meetup.com/de-DE/Freelancing-in-Vienna) Meetup Gruppe
-* Einführung in [Getting Things Done](gtd) bei der [http://www.it-alliance.at/](IT-Alliance)
+* Einführung in [Getting Things Done](gtd) bei der [IT-Alliance](http://www.it-alliance.at/)
 * [Heat Monitor](heat_monitor): Eine einfache IOT-Anwendung in Ruby
 * [Hobo](hobo) - Vorstellung des Meta-Webapplikations-Frameworks [Hobo](http://www.hobocentral.net/)
 * [Hobo W2UI](hobo_w2ui) - Integration der Javascript UI Bibliothek

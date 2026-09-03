@@ -64,7 +64,7 @@ Verschlüsselte Kontaktaufnahme
 Sie können mir gerne verschlüsselte Emails senden, mein öffentlicher PGP
 Schlüssel lautet
 
-    ----~~BEGIN PGP PUBLIC KEY BLOCK----~~\
+    -----BEGIN PGP PUBLIC KEY BLOCK-----
     Version: GnuPG v1
 
     mQINBFaohicBEADOwS1eb/PIJ68qOXgpswjKG2uVEwaI5NI9BPD6oWNiiRaKkCc1\
