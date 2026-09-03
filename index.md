@@ -90,7 +90,7 @@ großen Teams nicht erreicht werden kann.
 
 <div class="column boxed" markdown="1">
 
-### IT-Beratung [![Open Source](/img/home/open-source-logos.jpg){: .heading-figure}](/beratung)
+### IT-Beratung [![Open Source](/img/home/open-source-logos.png){: .heading-figure}](/beratung)
 
 Open Source Einsatz im Firmenumfeld, insbesondere zu Ruby on Rails Anwendungen, Linux als
 Betriebssystem sowie Freie Software am Desktop und am Server stellen meine Hautberatungsthemen dar.
