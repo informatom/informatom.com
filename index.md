@@ -10,7 +10,7 @@ layout: page
 ... ist meine Passion, und damit willkommen in meiner Firma Informatom
 EDV-Dienstleistungen e.U.! Mein Name ist <nobr>Stefan Haslinger<nobr/>, und ich möchte Ihnen
 auf dieser Seite die von mir gegründete Firma näher vorstellen. Ich entwickle
-aktuell mit 4 Software Stacks:
+aktuell mit 6 Software Stacks:
 
 1. Der objektorientierte, freie [Ruby on Rails-Stack](/stack) ermöglicht mir mit
 serverseitige Software rasch zu prototypen, und in hoher Qualität fertigzustellen.
@@ -25,7 +25,9 @@ entwickelt werden soll und/oder weltweit skaliert werden muss.
    Umfeld (Datenanalyse, KI, AI) zum Scripten, aber auch für serverseitige
    Webapplikationen.
 
-5. **NEU!** - Der [Nerves-Stack](/nerves) für IOT-Projekte.
+5. Der [Nerves-Stack](/nerves) für IOT-Projekte.
+
+6. SAP [Fiori](/fiori)-Entwicklungsprojekte mit SAPUI5 und OpenUI5 sowie SAP-Schnittstellenprojekte
 
 Warum vier Stacks? Lernen Sie meine Argemente kennen, indem Sie Sich mit mir auf
 die [Schultern von Riesen]({{ site.url }}/schultern-von-riesen) setzen.
