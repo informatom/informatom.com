@@ -1,4 +1,4 @@
-<nav class="navbar is-white has-background-white-bis container" 
+<nav class="navbar container"
      role="navigation" 
      aria-label="main navigation">
   <div class="navbar-brand">
@@ -99,7 +99,16 @@
 
     <div class="navbar-end">
       <div class="navbar-item">
-        <form class="field has-addons" 
+        <div class="select is-small is-rounded">
+          <select id="theme-select" aria-label="Farbschema">
+            <option value="system">System</option>
+            <option value="light">Hell</option>
+            <option value="dark">Dunkel</option>
+          </select>
+        </div>
+      </div>
+      <div class="navbar-item">
+        <form class="field has-addons"
               action="/search.html" 
               method="get" 
               role="search">

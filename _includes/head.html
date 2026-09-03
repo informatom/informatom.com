@@ -2,6 +2,20 @@
   <meta charset="utf-8">
   <meta name="viewport"
         content="width=device-width, initial-scale=1">
+  <script>
+    // Applied as early as possible, before CSS paints, so a stored
+    // light/dark preference doesn't flash the system-default theme first.
+    // No attribute at all (the "system" choice) intentionally left alone —
+    // Bulma's own prefers-color-scheme media query already handles that.
+    (function () {
+      try {
+        var theme = localStorage.getItem('theme');
+        if (theme === 'light' || theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+      } catch (e) {}
+    })();
+  </script>
   <title>{%- if page.title -%}
            {{ page.title | escape }}
          {%- else -%}
@@ -26,5 +40,6 @@
         title="{{ site.title }}"
         href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="me" href="https://fosstodon.org/@informatom" />
-  <script src="{{ '/assets/js/dropdown.js' | prepend: site.baseurl | prepend: site.url }}"></script>
+  <script src="{{ '/assets/js/dropdown.js' | prepend: site.baseurl }}"></script>
+  <script src="{{ '/assets/js/theme-toggle.js' | prepend: site.baseurl }}"></script>
 </head>

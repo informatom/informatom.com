@@ -1,3 +1,15 @@
+// was the `has-background-white-bis` utility class on <body> in
+// _layouts/default.html — that utility hard-codes hsl(221, 14%, 98%)
+// !important, completely ignoring light/dark scheme. Moved here as a plain
+// rule reading the scheme-aware token instead, so the whole page background
+// actually responds to prefers-color-scheme and to the manual [data-theme]
+// toggle (assets/js/theme-toggle.js) — without this, dark mode had no
+// visible effect at the page level at all, regardless of any other
+// dark-mode fix.
+body {
+  background-color: var(--bulma-scheme-main-bis);
+}
+
 :root {
   // was $family-sans-serif in _presets.scss
   --bulma-family-primary: Ubuntu, sans-serif;
@@ -47,9 +59,6 @@
   // compiled CSS. The correct dark invert for this green (confirmed by the
   // from-scratch throwaway compile with $link set to it directly) is ~9%.
   --bulma-link-invert-l: 9%;
-  // Dark mode registers its own on-scheme-l in a higher-specificity block
-  // (using the raw 53.92% lightness, ~8.4:1 against the dark scheme
-  // background), so none of the above needs a dark-mode counterpart.
   --bulma-link-h: 88.65deg;
   --bulma-link-s: 47.23%;
   --bulma-link-l: 53.92%;
@@ -63,7 +72,36 @@
   // around ~1.8:1 before the green stops reading as green at all, so this
   // is deliberately not the whole fix). The actual fix is the underline on
   // .content links below; don't remove that and rely on this color alone.
+  //
+  // This 16% is light-mode-only, even though it's declared in a plain
+  // :root block: Bulma's own dark-mode on-scheme-l (baked from stock blue,
+  // same gotcha as --bulma-link-invert-l above) lives at equal selector
+  // specificity (:root inside a prefers-color-scheme media query, or
+  // [data-theme=dark]/.theme-dark) and *earlier* in the compiled file (this
+  // partial loads last) — so without a dark-specific rule of our own, this
+  // one line was quietly winning in dark mode too, same "wrong scope"
+  // gotcha as the .menu-label fix below, just scheme- instead of
+  // component-scoped. See the dark override further down, using Bulma's
+  // own dark selectors so it wins specifically there instead.
   --bulma-link-on-scheme-l: 16%;
+}
+
+// Dark-mode counterpart to --bulma-link-on-scheme-l above, using the exact
+// selectors Bulma itself uses for "dark" (jekyll-bulma's bulma.scss:
+// [data-theme=dark]/.theme-dark for the manual toggle, the media query for
+// OS-level preference — both guarded against an explicit light override,
+// matching Bulma's own :not([data-theme=light])). No extra darkening
+// needed here: the raw, undarkened green (--bulma-link-l, 53.92%) already
+// contrasts well against a dark background on its own (~8.4:1).
+[data-theme=dark],
+.theme-dark {
+  --bulma-link-on-scheme-l: var(--bulma-link-l);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme=light]) {
+    --bulma-link-on-scheme-l: var(--bulma-link-l);
+  }
 }
 
 // was $navbar-item-img-max-height. Bulma re-declares this custom property
