@@ -12,22 +12,22 @@ EDV-Dienstleistungen e.U.! Mein Name ist <nobr>Stefan Haslinger<nobr/>, und ich 
 auf dieser Seite die von mir gegründete Firma näher vorstellen. Ich entwickle
 aktuell mit 6 Software Stacks:
 
-1. Der objektorientierte, freie [Ruby on Rails-Stack](/stack) ermöglicht mir mit
+1. ![](/img/badges/rails.svg){: .stack-badge .badge-rails} Der objektorientierte, freie [Ruby on Rails-Stack](/stack) ermöglicht mir mit
 serverseitige Software rasch zu prototypen, und in hoher Qualität fertigzustellen.
 
-2. Der [Elixir & Phoenix-Stack](/elixir) kommt zum Einsatz, wenn funktional
+2. ![](/img/badges/elixir.svg){: .stack-badge .badge-elixir} Der [Elixir & Phoenix-Stack](/elixir) kommt zum Einsatz, wenn funktional
 entwickelt werden soll und/oder weltweit skaliert werden muss.
 
-3. Mobile cross-Plattform Entwicklung für Android und iOS Smart Phones und
+3. ![](/img/badges/dart.svg){: .stack-badge .badge-dart} Mobile cross-Plattform Entwicklung für Android und iOS Smart Phones und
    Tablets setze ich im [Dart und Flutter-Stack](/dart) um.
 
-4. Der [Python - Stack](/python) eignet sich vorzüglich im wissenschaftlichen
+4. ![](/img/badges/python.svg){: .stack-badge .badge-python} Der [Python - Stack](/python) eignet sich vorzüglich im wissenschaftlichen
    Umfeld (Datenanalyse, KI, AI) zum Scripten, aber auch für serverseitige
    Webapplikationen.
 
-5. Der [Nerves-Stack](/nerves) für IOT-Projekte.
+5. ![](/img/badges/nerves.svg){: .stack-badge .badge-nerves} Der [Nerves-Stack](/nerves) für IOT-Projekte.
 
-6. SAP [Fiori](/fiori)-Entwicklungsprojekte mit SAPUI5 und OpenUI5 sowie SAP-Schnittstellenprojekte
+6. ![](/img/badges/fiori.svg){: .stack-badge .badge-fiori} SAP [Fiori](/fiori)-Entwicklungsprojekte mit SAPUI5 und OpenUI5 sowie SAP-Schnittstellenprojekte
 
 Warum vier Stacks? Lernen Sie meine Argemente kennen, indem Sie Sich mit mir auf
 die [Schultern von Riesen]({{ site.url }}/schultern-von-riesen) setzen.

@@ -4,6 +4,8 @@ title: SAP Fiori Entwicklung
 permalink: fiori/
 ---
 
+![SAP, OpenUI5](/img/fiori/logos.png){: .stack-logos}
+
 Da alle Fiori-Projekte, die ich in den letzten Jahren abgewickelt habe, unter
 NDA stehen, hier nur einige Erläuterungen zum Thema. Ich kann in persönlichen
 Gesprächen in Bezug auf ihre Anforderungen ähnliche Projektaufgaben schildern,

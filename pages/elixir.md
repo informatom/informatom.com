@@ -4,6 +4,8 @@ title: Elixir und das Phoenix Framework
 permalink: elixir/
 ---
 
+![Elixir, Phoenix Framework, PostgreSQL, NginX, Tailwind CSS, Alpine.js](/img/elixir/logos.png){: .stack-logos}
+
 2015 habe ich viel Zeit darauf verwendet neue und wiederentdeckte
 Programmierparadigmen zu evaluieren, unter anderem anhand der
 Sprachen Rust, Go und Elixir. Zunächst nur aus Interesse, in

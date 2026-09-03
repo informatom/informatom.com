@@ -4,6 +4,8 @@ title: Python
 permalink: python/
 ---
 
+![Python, Jupyter, Anaconda](/img/python/logos.png){: .stack-logos}
+
 <div class="columns">
 <div class="column" markdown="1">
 

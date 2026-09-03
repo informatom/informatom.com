@@ -4,6 +4,8 @@ title: Der Ruby on Rails Stack
 permalink: stack/
 ---
 
+![Ruby, Ruby on Rails, Apache, NginX, MySQL, SQLite](/img/stack/logos.png){: .stack-logos}
+
 <div class="columns"><div class="column is-four-fifths" markdown="1">
 Ein kompletter, freier Applikationsstack ermöglicht uns Software zu
 schreiben, die enterprise-ready ist. Wir, das ist mein kongenialer

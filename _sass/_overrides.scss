@@ -173,3 +173,38 @@ body {
   float: right;
   margin: 0 0 0.75rem 1rem;
 }
+
+// Logo-strip banners at the top of each stack page (stack.md, elixir.md,
+// dart.md, python.md, nerves.md, fiori.md), used via `{: .stack-logos}`.
+.stack-logos {
+  display: block;
+  max-height: 72px;
+  width: auto;
+  margin: 0 auto 2rem;
+}
+
+// Small per-stack badge icons inline in index.md's numbered stack list. A
+// shared fixed *width* (via object-fit) made every list item's text start
+// at the same indent, but also force-shrank wider logos (OpenUI5) down to
+// the same box as square ones — not what was wanted. What actually needs
+// to match is logo-width-plus-margin, not the logo width itself: each
+// badge keeps its own natural aspect ratio at a shared height, and gets
+// its own margin-right (below) making up the difference to a common
+// ~2.35em footprint (based on the widest badge, Nerves at ~1.85em).
+.stack-badge {
+  height: 1.5em;
+  width: auto;
+  vertical-align: middle;
+}
+
+.badge-rails, .badge-elixir, .badge-dart, .badge-python {
+  margin-right: 0.85em; // 1:1 aspect ratio → 1.5em wide
+}
+
+.badge-nerves {
+  margin-right: 0.5em; // cropped to just the "N" mark, ~1.23:1 → 1.85em wide
+}
+
+.badge-fiori {
+  margin-right: 0.92em; // cropped OpenUI5 icon only, ~0.96:1 → 1.43em wide
+}

@@ -4,6 +4,8 @@ title: Der Nerves/IOT-Stack
 permalink: nerves/
 ---
 
+![Nerves, Elixir, Raspberry Pi, PostgreSQL, Grafana](/img/nerves/logos.png){: .stack-logos}
+
 [Nerves](https://www.nerves-project.org/) ist - nach Eigendefinition - eine quelloffene
 Infrastruktur und Plattform, um die Software für eine Flotte von
 [IOT](https://de.wikipedia.org/wiki/Internet_der_Dinge)-Geräten zu entwickeln, zu

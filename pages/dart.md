@@ -3,6 +3,9 @@ layout: page
 title: Der Dart und Flutter-Stack
 permalink: dart/
 ---
+
+![Dart, Flutter, Kotlin](/img/dart/logos.png){: .stack-logos}
+
 <div class="columns">
 <div class="column" markdown="1">
 
