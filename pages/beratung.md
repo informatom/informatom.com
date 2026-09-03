@@ -29,9 +29,10 @@ tun, so steht einem zumindest die Option offen, dies durchführen zu
 lassen. Ist die Software darüber hinaus noch frei, so profitiert man von
 allen Modifikationen und Verbesserungen aller Benutzer. Ein
 unschätzbarer Vorteil - insbesondere, wenn die Sicherheit im Vordergrund
-steht. Als Beispiel mögen Webserver dienen, hier hat die freie und
-quelloffene Software Apache die unumstrittene Marktführerschaft. In
-Kürze wird mit NginX die zweite Stelle im Markt einnehmen.
+steht. Als Beispiel mögen Webserver dienen: Hier haben die freie und
+quelloffene Software Apache und NginX gemeinsam die unumstrittene
+Marktführerschaft, mittlerweile hat NginX Apache im Marktanteil
+vielerorts sogar überholt.
 
 Ruby on Rails ist die von mir eingesetze Webapplikationsplatform, sie
 finden zu Ihr einen eigenen [Artikel](/entwicklung) .

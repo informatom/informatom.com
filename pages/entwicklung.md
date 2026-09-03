@@ -41,16 +41,17 @@ Hoffnung, Michaels VB- und .NET-Kenntnisse nutzen zu können, sodass ASP
 
 Letzteres schied relativ rasch aus, das Framework steckte noch sehr in
 den Kinderschuhen. Auch wenn Microsoft mit zum Beispiel Codeplex in den
-letzten Jahren offene Software propagiert, so ist .NET MVC und alle
-darunter liegenden Komponenten noch immer nicht frei.
+letzten Jahren offene Software propagierte, war .NET MVC und alle
+darunter liegenden Komponenten damals noch nicht frei – erst mit ASP.NET
+Core wurde das 2016 quelloffen.
 
 Das schlussendliche shootout zwischen Django und Rubyon Rails ging zu
 gunsten von Rails zunächst mehr aus einer Bauchentscheidung heraus aus.
 Dadurch hatte keiner von uns beiden einen entscheidenden Vorteil. Zum
 Vorteil für uns beide gereit aber die Community und Infrastruktur, die
-sich um Ruby on Rails ausgebildet hatte. Mit über 37 000 Bibliotheken -
-in Ruby Gems genannt - gibt es einen riesigen Schatz von ausgereiften
-Methoden und Komponenten.
+sich um Ruby on Rails ausgebildet hatte. Mit mittlerweile weit über
+180 000 Bibliotheken - in Ruby Gems genannt - gibt es einen riesigen
+Schatz von ausgereiften Methoden und Komponenten.
 
 ### MVC
 
@@ -94,8 +95,8 @@ Rails ist opionated, es hat eine eigene "Meinung", die Webapplikationen
 gebaut werden sollten. Dies unterstreicht das damit, dass es für alle
 Einstellungen eine Voreinstellung gibt - also ein Konvention. Nur wenn
 wir uns nicht an diese Konvention halten, erstellen wir einen
-Konfigurationseintrag. Ruby on Rails ist mittlerweile acht Jahre alt und
-kann bereits seit gut fünf Jahren als ausgereift betrachtet werden. Es
+Konfigurationseintrag. Ruby on Rails ist mittlerweile über zwanzig Jahre alt und
+gilt schon lange als ausgereift. Es
 wurde von Anfang an auf Einsatz im professionellen Umfeld getrimmt und
 wird kontinuierlich von einer großen Community weiterentwickelt. Das
 Kernteam besteht aus großartigen Spezialisten, die den ursprünglichen

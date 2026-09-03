@@ -14,7 +14,6 @@ permalink: impressum/
 |E-Mail|stefan.haslinger@informatom.com|
 |Firmenbuchnummer|FN 357693 w|
 |Umsatzsteuer-Identifikationsnummer|ATU66331917|
-|DVR-Nummer|4009331|
 |Allgemeine Geschäftsbedingungen|[Link zu den AGBs](https://www.informatom.com/agb)|
 |Firmengericht|Handelsgericht Wien|
 |Behörde gem. ECG (E-Commerce Gesetz)|Magistratisches Bezirksamt des II. Bezirkes|

@@ -72,7 +72,7 @@ Das bedeutet zum Beispiel
 </div>
 <div class="column" markdown="1">
 
-### Warum 4 Stacks?
+### Warum 6 Stacks?
 
 <section class="section" markdown="1">
 > Wer als Werkzeug nur einen Hammer hat, sieht in jedem Problem einen Nagel.
@@ -94,7 +94,11 @@ Webviews einfach nicht aus und es sollte nativer maschinennaher Code erzeugt wer
 (Dart & Flutter). Hingegen hat Python im Feld der Datenanalyse und der AI einen
 riesigen Schatz an Bibliotheken und mit den Jupyter Notebooks eine rasche,
 interaktive Möglichkeit der Erarbeitung und der Präsentation der Datenmodelle
-und -analysen.
+und -analysen. Geht es um vernetzte Sensoren und Geräte, ist der Nerves-Stack
+das Mittel der Wahl, da er mit Elixir/Erlang auf eine für IOT-Flotten gebaute
+Plattform setzt. Und im SAP-Umfeld führt schließlich kein Weg an Fiori-
+Entwicklung mit SAPUI5, OpenUI5 und den passenden Schnittstellenprojekten
+vorbei.
 
 ### Links
 

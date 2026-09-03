@@ -7,7 +7,7 @@ permalink: /cv/
 |Name|Stefan Haslinger|
 |Qualifikation|Mag.rer.nat. Ph/M LA, wissenschaftliche Betreuung, Systemadministrator, Lektor, Mittelschullehrer|
 |Persönliches|24.5.1972 in Wien, Österreicher, ledig|
-|Kontakt|mail@stefan-haslinger.at, 0680 213 30 30, ICQ 479773550|
+|Kontakt|stefan.haslinger@informatom.com, +43 680 213 30 30|
 | |![Stefan Haslinger]({{ site.url }}/img/haslinger.jpg)|
 |seit 02/2011|**Gründer** der Informatom EDV-Dienstleistungen e.U. Entwicklung von Webanwendungen mit Ruby on Rails. Kooperation mit Michael Stranka unter der Marke mittenin.at http://mittenin.at|
 |04/2007-03/2012|zunächst **EDV-Mitarbeiter**, dann **Abteilungsleiter Stellvertreter EDV**, zuletzt **Academy Manager** bei Bogner Edelstahl: http://www.bogner.co.at<br/>SAP, insbesondere WM-, MM-, SD-Customizing, ABAP-Reporting;  Intranet, Ticketing, Projektmanagement WM-MDE-Applikationen|
