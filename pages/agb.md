@@ -186,10 +186,10 @@ unverändert mit übertragen werden.
 **§6.3** Sollte für die Herstellung von Interoperabilität der
 gegenständlichen Software die Offenlegung der Schnittstellen
 erforderlich sein, ist dies vom Auftraggeber gegen Kostenvergütung beim
-Antraggeber zu beauftragen. Kommt der Auftragnehmer dieser Forderung
+Auftragnehmer zu beauftragen. Kommt der Auftragnehmer dieser Forderung
 nicht nach und erfolgt eine Dekompilierung gemäß Urheberrechtsgesetz,
 sind die Ergebnisse ausschließlich zur Herstellung der Interoperabilität
-zu verwenden. Mißbrauch hat Schadenersatz zur Folge.
+zu verwenden. Missbrauch hat Schadenersatz zur Folge.
 
 ### 7 Rücktrittsrecht
 
@@ -202,7 +202,7 @@ nicht erbracht wird und den Auftraggeber daran kein Verschulden trifft.
 
 **§7.2** Höhere Gewalt, Arbeitskonflikte, Naturkatastrophen und
 Transportsperren sowie sonstige Umstände, die außerhalb der
-Einflußmöglichkeit des Auftragnehmers liegen, entbinden den
+Einflussmöglichkeit des Auftragnehmers liegen, entbinden den
 Auftragnehmer von der Lieferverpflichtung bzw. gestatten ihm eine
 Neufestsetzung der vereinbarten Lieferzeit.
 
@@ -270,23 +270,31 @@ dagegen verstoßende Vertragspartner ist verpflichtet, pauschalierten
 Schadenersatz in der Höhe eines Jahresgehaltes des Mitarbeiters zu
 zahlen.
 
-### 11 Datenschutz,Geheimhaltung
+### 11 Datenschutz, Geheimhaltung
 
-**§11.1** Der Auftragnehmer verpflichtet seine Mitarbeiter, die
-Bestimmungen gemäß §20 des Datenschutzgesetzes einzuhalten.
+**§11.1** Der Auftragnehmer verarbeitet personenbezogene Daten, die ihm im
+Rahmen der Auftragserfüllung bekannt werden, ausschließlich im Einklang
+mit der Datenschutz-Grundverordnung (DSGVO) und dem österreichischen
+Datenschutzgesetz (DSG) in der jeweils geltenden Fassung.
+
+**§11.2** Der Auftragnehmer verpflichtet sich sowie allfällige von ihm
+beigezogene Mitarbeiter und Erfüllungsgehilfen zur Verschwiegenheit über
+alle im Rahmen der Geschäftsbeziehung bekannt gewordenen personenbezogenen
+und vertraulichen Daten, auch über das Ende der Geschäftsbeziehung
+hinaus.
 
 ### 12 Sonstiges
 
 **§12.1** Sollten einzelne Bestimmungen dieses Vertrages unwirksam sein
 oder unwirksam werden, so wird hiedurch der übrige Inhalt dieses
 Vertrages nicht berührt. Die Vertragspartner werden partnerschaftlich
-zusammenwirken, um eine Regelung zufinden, die den unwirksamen
+zusammenwirken, um eine Regelung zu finden, die den unwirksamen
 Bestimmungen möglichst nahe kommt.
 
-### 13 Schlußbestimmungen
+### 13 Schlussbestimmungen
 
 **§13.1** Soweit nicht anders vereinbart, gelten die zwischen
-Vollkaufleuten zur Anwendungkommenden gesetzlichen Bestimmungen
+Vollkaufleuten zur Anwendung kommenden gesetzlichen Bestimmungen
 ausschließlich nach österreichischem Recht, auch dann, wenn der Auftrag
 im Ausland durchgeführt wird. Für eventuelle Streitigkeiten gilt
 ausschließlich die örtliche Zuständigkeit des sachlich zuständigen

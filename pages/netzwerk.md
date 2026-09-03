@@ -30,17 +30,6 @@ Informatom freut sich, bei folgenden Organsationen und Vereinen
 mitwirken zu können:
 
 <div class="columns" markdown="1"><div class="column" markdown="1">
-### it-lounge
-
-[![IT Lounge Logo]({{ site.url }}/img/netzwerk/it-lounge-logo.png)](http://www.it-lounge.at)
-{: .col-md-6}
-
-Die IT-Lounge GmbH ist eine eigenständige Business Unit der
-Fachdistribution FRANK Linux Systems mit dem Ziel die diversen Lücken
-zwischen Herstellern, IT-Dienstleistern und Unternehmenskunden zu
-schließen um Unternehmen zu helfen neue Technologien/Lösungen schneller,
-reibungsloser und wirtschaftlicher einzusetzen.
-</div><div class="column" markdown="1">
 ### Open Source Experts Group
 
 [![Open Source Experts Group Logo]({{ site.url }}/img/netzwerk/open-source-experts-group-logo.png)](http://www.opensource.co.at/)
