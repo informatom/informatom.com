@@ -5,8 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
       $el.addEventListener('click', function () {
         var target = $el.dataset.target;
         var $target = document.getElementById(target);
-        $el.classList.toggle('is-active');
+        var isActive = $el.classList.toggle('is-active');
         $target.classList.toggle('is-active');
+        $el.setAttribute('aria-expanded', isActive);
       });
     });
   }

@@ -6,7 +6,14 @@
 $spacing-unit: 30px;
 
 .highlight {
+    // background is fixed light regardless of page theme (this whole
+    // Pygments/Rouge palette below is a light-only theme), so the base
+    // text color needs to be pinned too — otherwise it inherits the
+    // page's scheme-aware --bulma-text, which turns light under
+    // prefers-color-scheme: dark and becomes near-illegible on this
+    // still-white background.
     background: #fff;
+    color: #333;
     margin-bottom: math.div($spacing-unit, 2);
 
     .highlighter-rouge & {

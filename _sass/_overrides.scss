@@ -19,19 +19,35 @@
   --bulma-text-light: #507329;
   --bulma-text-weak: #507329;
 
-  // was $blue, which fed Bulma's default $link color. Plain link *text*
-  // color is driven by --bulma-link-on-scheme-l, a separate value Bulma
-  // derives at compile time via a WCAG contrast-ratio algorithm — not a
-  // live function of --bulma-link-l. The h/s/l below are #1d54ad's own
-  // HSL; the on-scheme-l is the exact value Bulma's own algorithm computes
-  // for that color (verified with a throwaway `@use "sass" with (...)`
-  // compile), not a hand guess. Dark mode registers its own on-scheme-l
-  // in a higher-specificity block, so this doesn't need a dark-mode
-  // counterpart.
-  --bulma-link-h: 217deg;
-  --bulma-link-s: 71%;
-  --bulma-link-l: 40%;
-  --bulma-link-on-scheme-l: 39.6078431373%;
+  // was $blue/$link, now the logo's green (#8cc152, sampled from img/logo.png)
+  // instead. Plain link *text* color is driven by --bulma-link-on-scheme-l, a
+  // separate value Bulma derives at compile time via a WCAG contrast-ratio
+  // algorithm — not a live function of --bulma-link-l. The raw green itself
+  // only has a ~2.1:1 contrast ratio against white, so using it directly as
+  // link-on-scheme-l would fail WCAG AA (needs 4.5:1); Bulma's own algorithm
+  // instead darkens it to L 23.92% for light-mode text, giving ~7.8:1 — and
+  // separately computes a near-black L 9% variant (--bulma-link-invert-l)
+  // for text on top of raw-green button backgrounds (e.g. .is-link buttons),
+  // giving ~7.8:1 there too. Both verified with a throwaway
+  // `@use "sass" with ($link: hsl(88.65deg, 47.23%, 53.92%))` compile against
+  // the actual jekyll-bulma-vendored Bulma sources, not a hand guess. Dark
+  // mode registers its own on-scheme-l in a higher-specificity block (using
+  // the raw 53.92% lightness, ~8.4:1 against the dark scheme background), so
+  // this doesn't need a dark-mode counterpart.
+  --bulma-link-h: 88.65deg;
+  --bulma-link-s: 47.23%;
+  --bulma-link-l: 53.92%;
+  // Bulma's own WCAG-computed value would be 23.92% (~7.8:1 against white,
+  // plenty), but that's contrast against the *background* — against this
+  // site's actual body text color ($grey-dark, hsl(221 14% 29%)) it's only
+  // ~1.2:1, i.e. link text and body text are nearly the same perceived
+  // lightness and lean on hue alone to read as different, which fails for
+  // red-green color-blind readers. Hand-darkened a bit further for a little
+  // more separation (still ~1.3:1 vs body text — darkening alone tops out
+  // around ~1.8:1 before the green stops reading as green at all, so this
+  // is deliberately not the whole fix). The actual fix is the underline on
+  // .content links below; don't remove that and rely on this color alone.
+  --bulma-link-on-scheme-l: 16%;
 }
 
 // was $navbar-item-img-max-height. Bulma re-declares this custom property
@@ -43,8 +59,25 @@
 }
 
 .boxed {
-  background-color: #fff;
-  border: 1px solid #eee;
+  // was #fff/#eee — hard-coded, so it stayed a light box (with body text
+  // switched to a light color) under prefers-color-scheme: dark, wrecking
+  // contrast. Bulma's own --bulma-scheme-main/--bulma-border-weak already
+  // track light/dark automatically and match the old colors in light mode.
+  background-color: var(--bulma-scheme-main);
+  border: 1px solid var(--bulma-border-weak);
   border-radius: 15px;
   margin: 8px;
+}
+
+// Links in prose need a non-color cue too (WCAG 1.4.1 "Use of Color") —
+// this theme otherwise relies on color alone everywhere (Bulma's base
+// `a { text-decoration: none; }`, nothing in .content overrides it), which
+// is especially weak for a link color this close in lightness to body
+// text (see --bulma-link-on-scheme-l above). Scoped to .content only —
+// navbar/footer/button links are already set apart by position and
+// component styling, not color alone, so they're left untouched. Excludes
+// image links (logos, screenshots) so an underline doesn't appear under a
+// picture.
+.content a:not(:has(img)) {
+  text-decoration: underline;
 }
