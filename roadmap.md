@@ -43,18 +43,35 @@ erledigt markieren.
 
 ## Schritte
 
-- [ ] **1. Leerraum in kürzeren Boxen fixen** — `.boxed` als Flex-Column, letztes Element
-  (üblicherweise der "Weiter …"-Link) per `margin-top: auto` an den unteren Rand andocken, statt
-  dass er irgendwo nach dem Fließtext hängt und der Rest der (schon gleich hohen) Box leer bleibt.
+- [x] **1. Leerraum in kürzeren Boxen** — **gegenstandslos geworden, nicht umgesetzt.** Ursprüngliche
+  Diagnose ging von einem dangelnden "Weiter …"-Link aus, den man per `margin-top: auto` andocken
+  müsste. Dann wurden im Zuge von Schritt "Überschriften-Links" alle "Weiter …"-Links entfernt
+  (Überschrift ist jetzt selbst der Link) — damit gibt's in keiner Box mehr ein Element, das
+  "andocken" müsste. Verbleibender Leerraum am Ende kürzerer Karten bei durchgehend oben
+  ausgerichteten Überschriften ist normales Card-Grid-Verhalten, kein Bug. Bewusst NICHT
+  vertikal zentriert (`justify-content: center`) — das würde Überschriften kürzerer Boxen von der
+  Oberkante wegschieben und die Zeilen-Ausrichtung zwischen Boxenpaaren zerstören.
 
-- [ ] **2. Visuelle Gewichtung der Startseiten-Kacheln** — "Software Entwicklung" ist inhaltlich
-  das Kerngeschäft, sieht aber genauso aus wie die Nebenthemen-Boxen (Podcasting, Blog). Optionen
-  zum Abwägen: eigene Akzentfarbe/Rahmen, größere Spaltenbreite, oder Position/Reihenfolge im
-  Grid. Entscheidung gemeinsam treffen, bevor umgesetzt wird.
+- [x] **2. Visuelle Gewichtung der Startseiten-Kacheln** — teilweise durch andere Schritte gelöst:
+  IT-Schulung hat jetzt ein großes eigenes Foto (`.box-hero-image`, volle Boxbreite) statt kleinem
+  Icon, IT-Beratung ihre Logo-Reihe — beide dadurch klar unterscheidbar von den reinen Text-Boxen
+  (Podcasting, Mein Blog). "Software Entwicklung" als Kerngeschäft nicht zusätzlich hervorgehoben
+  (z.B. eigene Akzentfarbe) — bewusst nicht gemacht, kein Bedarf mehr gesehen.
 
-- [ ] **3. Icon-/Logo-Sprache vereinheitlichen** — aktuell unterschiedliche Darstellungen (kleine
-  `.stack-badge`-Icons in der nummerierten Liste, großes Logo-Grid bei IT-Beratung, gar kein Icon
-  bei Methodik & RAD). Gemeinsames Format/Größe für "hier sind Partner-/Tech-Logos" finden.
+- [x] **2b. (neu, während der Arbeit ergänzt) Redundante "Weiter …"-Links entfernt** — überall wo
+  die Überschrift bereits (oder neu) verlinkt war, ist der separate "Weiter …"-Link am Boxenende
+  gestrichen worden: IT-Schulung, Methodik & RAD, IT-Beratung. "Mein Blog"-Überschrift neu auf
+  `/blog` verlinkt (hatte vorher gar keinen Link). "Software Entwicklung" und "Podcasting" bewusst
+  unverlinkt gelassen — kein einzelnes Linkziel vorhanden. Nebeneffekt: bei IT-Beratung durfte der
+  Logo-Reihen-Link NICHT mit dem Text-Link verschmolzen werden (zwei Gründe: `.content a:not(:has(img))`
+  hätte die Unterstreichung verloren, sobald ein `<img>` im selben `<a>` steckt; und die Logos
+  sollen ohnehin nicht klickbar sein) — jetzt zwei getrennte Elemente: `[IT-Beratung](/beratung)`
+  als normaler Text-Link, danach ein `aria-hidden="true"`-Span mit den 8 Logos, ohne eigenen Link.
+
+- [x] **3. Icon-/Logo-Sprache vereinheitlichen** — IT-Beratungs vormals 4×2-Grid-PNG durch 8
+  einzelne `.stack-badge`-große SVG-Icons in einer Reihe ersetzt, exakt dieselbe Größe wie die
+  Stack-Badges bei "Software Entwicklung". Damit einheitlich für diese beiden Boxen; Methodik & RAD
+  hat weiterhin kein Icon (kein naheliegendes zu finden).
 
 - [ ] **4. Typografische Hierarchie** — mehr Kontrast zwischen Überschriftsebenen, mindestens eine
   bewusst größere/kräftigere Textstelle pro Seite statt gleichförmiger Fließtext-Optik.

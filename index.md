@@ -12,36 +12,37 @@ EDV-Dienstleistungen e.U.! Mein Name ist <nobr>Stefan Haslinger<nobr/>, und ich 
 auf dieser Seite die von mir gegründete Firma näher vorstellen. Ich entwickle
 aktuell mit 6 Software Stacks:
 
-1. ![](/img/badges/rails.svg){: .stack-badge .badge-rails} Der objektorientierte, freie [Ruby on Rails-Stack](/stack) ermöglicht mir mit
+- ![](/img/badges/rails.svg){: .stack-badge .badge-rails}Der objektorientierte, freie [Ruby on Rails-Stack](/stack) ermöglicht mir mit
 serverseitige Software rasch zu prototypen, und in hoher Qualität fertigzustellen.
 
-2. ![](/img/badges/elixir.svg){: .stack-badge .badge-elixir} Der [Elixir & Phoenix-Stack](/elixir) kommt zum Einsatz, wenn funktional
+- ![](/img/badges/elixir.svg){: .stack-badge .badge-elixir}Der [Elixir & Phoenix-Stack](/elixir) kommt zum Einsatz, wenn funktional
 entwickelt werden soll und/oder weltweit skaliert werden muss.
 
-3. ![](/img/badges/dart.svg){: .stack-badge .badge-dart} Mobile cross-Plattform Entwicklung für Android und iOS Smart Phones und
+- ![](/img/badges/dart.svg){: .stack-badge .badge-dart}Mobile cross-Plattform Entwicklung für Android und iOS Smart Phones und
    Tablets setze ich im [Dart und Flutter-Stack](/dart) um.
 
-4. ![](/img/badges/python.svg){: .stack-badge .badge-python} Der [Python - Stack](/python) eignet sich vorzüglich im wissenschaftlichen
+- ![](/img/badges/python.svg){: .stack-badge .badge-python}Der [Python - Stack](/python) eignet sich vorzüglich im wissenschaftlichen
    Umfeld (Datenanalyse, KI, AI) zum Scripten, aber auch für serverseitige
    Webapplikationen.
 
-5. ![](/img/badges/nerves.svg){: .stack-badge .badge-nerves} Der [Nerves-Stack](/nerves) für IOT-Projekte.
+- ![](/img/badges/nerves.svg){: .stack-badge .badge-nerves}Der [Nerves-Stack](/nerves) für IOT-Projekte.
 
-6. ![](/img/badges/fiori.svg){: .stack-badge .badge-fiori} SAP [Fiori](/fiori)-Entwicklungsprojekte mit SAPUI5 und OpenUI5 sowie SAP-Schnittstellenprojekte
+- ![](/img/badges/fiori.svg){: .stack-badge .badge-fiori}SAP [Fiori](/fiori)-Entwicklungsprojekte mit SAPUI5 und OpenUI5 sowie SAP-Schnittstellenprojekte
+{: .stack-list}
 
-Warum vier Stacks? Lernen Sie meine Argemente kennen, indem Sie Sich mit mir auf
+Warum sechs Stacks? Lernen Sie meine Argumente kennen, indem Sie Sich mit mir auf
 die [Schultern von Riesen]({{ site.url }}/schultern-von-riesen) setzen.
   </div>
 
   <div class="column boxed" markdown="1">
 
-### IT-Schulung [![Stefan Haslinger](/img/home/stefan.jpg){: .heading-figure}](/schulung)
+### [IT-Schulung](/schulung)
+
+[![Stefan Haslinger](/img/home/stefan.jpg){: .box-hero-image}](/schulung)
 
 Ich stelle gerne meine jahrelange Lehrerfahrung in Firmen, Fachhochschulen, Mittelschulen und
 öffentlichen Bildungseinrichtungen Ihrem Team zur Verfügung.
 Einzelunterricht, Kleingruppenarbeit, Seminar, Übung oder Vortrag – alles ist möglich.
-
-[Weiter …]({{ site.url }}/schulung)
   </div>
 </div>
 
@@ -64,7 +65,7 @@ mehrere Jahre mit Melanie Bartos gehostet habe und noch regelmäßig besuche.
   </div>
 
   <div class="column boxed" markdown="1">
-### Mein Blog
+### [Mein Blog](/blog)
 
 Meine [Erfahrungen und Fundstücke](/blog) aus mehr als 20 Jahren Arbeit mit freier Software.
 Dort finden Sie auch viel Material über meine Entwicklung
@@ -82,19 +83,15 @@ serverseitige Applikationen, für mobile Devices auf Dart und Flutter.
 
 Durch den hohen Abstraktionsgrad entwickle ich mit einer Effizienz, die von großen Teams nicht
 erreicht werden kann.
-
-[Weiter …](/methodik-rad)
 </div>
 
 <div class="column boxed" markdown="1">
 
-### IT-Beratung [![Logos von Ubuntu, Firefox, Thunderbird, Chromium, LibreOffice, GIMP, Apache und NGINX](/img/home/open-source-logos.png){: .heading-figure}](/beratung)
+### [IT-Beratung](/beratung) <span class="heading-figure os-logo-row" aria-hidden="true"><img src="/img/badges/os-ubuntu.svg" class="stack-badge" alt=""><img src="/img/badges/os-firefox.svg" class="stack-badge" alt=""><img src="/img/badges/os-thunderbird.svg" class="stack-badge" alt=""><img src="/img/badges/os-chromium.svg" class="stack-badge" alt=""><img src="/img/badges/os-libreoffice.svg" class="stack-badge" alt=""><img src="/img/badges/os-gimp.svg" class="stack-badge" alt=""><img src="/img/badges/os-apache.svg" class="stack-badge" alt=""><img src="/img/badges/os-nginx.svg" class="stack-badge" alt=""></span>
 
 Open Source Einsatz im Firmenumfeld, insbesondere zu Ruby on Rails Anwendungen, Linux als
 Betriebssystem sowie Freie Software am Desktop und am Server stellen meine Hautberatungsthemen dar.
 Freie Software ist gerade im Bereich der Klein- und Mittelbetriebe eine gute Alternative mit
 interessanter TCO (total cost of ownership).
-
-[Weiter …]({{ site.url }}/beratung)
   </div>
 </div>

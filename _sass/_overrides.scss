@@ -165,13 +165,26 @@ body {
   margin-top: 2rem;
 }
 
-// index.md's three boxed teasers (IT-Schulung, Mittenin.at, IT-Beratung)
-// float a small image next to the heading via a bare `float: right;`
-// inline style, with no margin — the wrapped text runs flush against the
-// image. Used via `{: .heading-figure}` on the image instead.
+// index.md's boxed teasers used a bare `float: right;` inline style for a
+// small image next to the heading, with no margin — the wrapped text ran
+// flush against the image. Used via `{: .heading-figure}` on the image
+// instead. (IT-Schulung's photo has since moved to .box-hero-image below
+// instead of floating next to its heading — only IT-Beratung's logo row
+// still uses this.)
 .heading-figure {
   float: right;
   margin: 0 0 0.75rem 1rem;
+}
+
+// A full box-width photo/image, e.g. IT-Schulung's portrait — deliberately
+// large (unlike .heading-figure) so it also helps balance box heights
+// against its row neighbor without needing more text.
+.box-hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
 
 // Logo-strip banners at the top of each stack page (stack.md, elixir.md,
@@ -197,8 +210,17 @@ body {
   vertical-align: middle;
 }
 
-.badge-rails, .badge-elixir, .badge-dart, .badge-python {
+.badge-rails, .badge-elixir, .badge-dart {
   margin-right: 0.85em; // 1:1 aspect ratio → 1.5em wide
+}
+
+// Split out from the group above after swapping in the official two-tone
+// python.org logo (viewBox 111.16x112.39, ~0.989:1) — the old flat
+// simple-icons glyph was an exact 1:1 square, this one isn't quite, so it
+// needs its own slightly larger margin to still land on the same 2.35em
+// footprint (was silently ~0.27px off using the old 1:1-derived 0.85em).
+.badge-python {
+  margin-right: 0.866em;
 }
 
 .badge-nerves {
@@ -230,4 +252,45 @@ body {
   background-color: var(--bulma-scheme-main);
   color: var(--bulma-link-on-scheme);
   z-index: 100;
+}
+
+// index.md's IT-Beratung heading used to carry a single flattened
+// 4x2-grid PNG (img/home/open-source-logos.png) — visually inconsistent
+// with the small inline .stack-badge icons used elsewhere (roadmap.md
+// step 3, unifying icon treatment). Replaced with the same 8 logos as
+// individual .stack-badge-sized icons in a row; this just adds the
+// spacing between them that .stack-badge alone doesn't provide.
+.os-logo-row .stack-badge {
+  margin-right: 0.3em;
+}
+
+.os-logo-row .stack-badge:last-child {
+  margin-right: 0;
+}
+
+// The "6 Software Stacks" list used ordered-list numbers (1.-6.) purely
+// as bullets — the number itself carries no meaning, and crowded the
+// .stack-badge icon right next to it. Numbers off, icon takes over as
+// the marker (the existing per-badge margin-right classes already give
+// each icon+margin the same footprint, so item text still lines up).
+// Needs the .content prefix to actually win: Bulma's own
+// `.content ul { list-style: disc outside; margin-inline-start: 2em; }`
+// is more specific (two classes) than a plain `.stack-list` (one class)
+// and would otherwise override this regardless of source order — same
+// "more-specific Bulma selector" gotcha as .navbar/.menu earlier, just
+// for a plain property instead of a --bulma-* custom property.
+.content .stack-list {
+  list-style: none;
+  margin-inline-start: 0;
+}
+
+// Hanging indent: wrapped lines (2nd+) should align under the text, not
+// back under the icon, so the icon reads as a proper bullet. padding-left
+// reserves the icon+margin's width for every line, text-indent pulls just
+// the *first* line back out by the same amount so the icon can sit there
+// — works because every badge+its margin-right already totals the same
+// 2.35em footprint (see the badge-* rules above).
+.content .stack-list li {
+  padding-left: 2.35em;
+  text-indent: -2.35em;
 }
