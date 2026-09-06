@@ -5,7 +5,7 @@ layout: page
 
 <div class="columns">
   <div class="column boxed is-two-thirds" markdown="1">
-## Software Entwicklung
+### Software Entwicklung
 
 ... ist meine Passion, und damit willkommen in meiner Firma Informatom
 EDV-Dienstleistungen e.U.! Mein Name ist <nobr>Stefan Haslinger<nobr/>, und ich möchte Ihnen
