@@ -11,9 +11,9 @@ Desktop und am Server stellen meine Hautberatungsthemen dar.
 **Freie Software** ist gerade im Bereich der Klein- und Mittelbetriebe
 eine gute Alternative mit interessanter TCO (total cost of ownership).
 Linux und BSD können auf den meisten Laptops, Desktops und Servern
-proprietäre Betriebssysteme ersetzen. Alle Rechner von Informatom und
-mittenin.at sind entweder von Beginn an Linux-Rechner oder wurden auf
-Linux migriert. Am Desktop und Laptop ergänzen Thunderbird, Chromium
+proprietäre Betriebssysteme ersetzen. Alle Rechner von Informatom sind
+entweder von Beginn an Linux-Rechner oder wurden auf Linux migriert.
+Am Desktop und Laptop ergänzen Thunderbird, Chromium
 oder Firefox, Gimp und Libre Office das Betriebssystem und Mail,
 Browser, Grafikeditor und Office Suite. Für beinahe alle
 Anwendungsbereiche gibt es freie Software, die an die proprietären
@@ -35,7 +35,7 @@ Marktführerschaft, mittlerweile hat NginX Apache im Marktanteil
 vielerorts sogar überholt.
 
 Ruby on Rails ist die von mir eingesetze Webapplikationsplatform, sie
-finden zu Ihr einen eigenen [Artikel](/entwicklung) .
+finden zu Ihr einen eigenen [Artikel](/methodik-rad) .
 
 Alle genannten Themen stellen Bereiche dar, in denen ich in
 unterschiedlichem betrieblichen Umfeld die Software selbst eingesetzt

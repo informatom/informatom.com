@@ -16,3 +16,7 @@ plugins:
 
 monthly_archive:
   path: "archiv"
+
+# internal planning docs, not meant to be published
+exclude:
+  - roadmap.md

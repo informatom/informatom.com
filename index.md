@@ -75,17 +75,15 @@ Dort finden Sie auch viel Material über meine Entwicklung
 <div class="columns">
   <div class="column boxed" markdown="1">
 
-### Mittenin.at [![mittenin.at](/img/home/mittenin-at-logo.png){: .heading-figure}](/entwicklung)
+### [Methodik & RAD](/methodik-rad)
 
-Unter der Marke mittenin.at entwickle ich mit Michael Stranka bei größeren
-Projekten als Team. Wir bieten Rapid Application Development
-auf Basis des Ruby on Rails Frameworks für serverseitige Applikationen,
-für mobile Devices entwickeln wir mit Dart und Flutter.
+Ich setze auf **Rapid Application Development** auf Basis des Ruby on Rails Frameworks für
+serverseitige Applikationen, für mobile Devices auf Dart und Flutter.
 
-Durch den hohen Abstraktionsgrad entwickeln wir mit einer Effizienz, die von
-großen Teams nicht erreicht werden kann.
+Durch den hohen Abstraktionsgrad entwickle ich mit einer Effizienz, die von großen Teams nicht
+erreicht werden kann.
 
-[Weiter …](/entwicklung)
+[Weiter …](/methodik-rad)
 </div>
 
 <div class="column boxed" markdown="1">

@@ -7,9 +7,9 @@ permalink: stack/
 ![Ruby, Ruby on Rails, Apache, NginX, MySQL, SQLite](/img/stack/logos.png){: .stack-logos}
 
 Ein kompletter, freier Applikationsstack ermöglicht mir, Software zu schreiben, die
-enterprise-ready ist. Unter der Marke [mittenin.at](/entwicklung) entwickle ich dabei mit meinem
-Kooperationspartner Michael Stranka. Ein Applikationsstack ist eine Ansammlung von Komponenten,
-die dazu nötig ist, ein Programm auf einer bestimmten Hardware auszuführen.
+enterprise-ready ist. Mehr zu meiner Methodik dabei auf der Seite [Methodik & RAD](/methodik-rad).
+Ein Applikationsstack ist eine Ansammlung von Komponenten, die dazu nötig ist, ein Programm auf
+einer bestimmten Hardware auszuführen.
 
 Die Freiheiten, die mit freier Software verbunden sind, sind weitreichend:
 
@@ -39,7 +39,7 @@ von Riesen. Aber das ist [eine andere Geschichte](/schultern-von-riesen).
 
 ### Ruby und Ruby on Rails
 
-Auf diese beiden Komponenten gehe ich auf der Unterseite [Entwicklung](/entwicklung) genauer ein.
+Auf diese beiden Komponenten gehe ich auf der Unterseite [Methodik & RAD](/methodik-rad) genauer ein.
 
 ### Links
 
@@ -55,4 +55,4 @@ Auf diese beiden Komponenten gehe ich auf der Unterseite [Entwicklung](/entwickl
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Borgbackup](https://www.borgbackup.org/)
 - [Jekyll](https://jekyllrb.com/)
-- [Informatom - Entwicklung](/entwicklung)
+- [Informatom - Methodik & RAD](/methodik-rad)
