@@ -10,6 +10,7 @@ permalink: /cv/
 |Kontakt|stefan.haslinger@informatom.com, +43 680 213 30 30|
 | |![Stefan Haslinger]({{ site.url }}/img/haslinger.jpg)|
 |seit 2023|**SAP-Projekte** im Rahmen der Selbständigkeit (Kunden aus Vertraulichkeitsgründen anonymisiert): mehrere SAP R/3→S/4-Upgrade-Projekte als Testmanager, Fiori-Entwickler und organisatorischer Projektleiter; organisatorische Projektleitung einer SAP-CRM-Ablöse; SAP-S/4-Einführungsprojekt mit Schnittstellenentwicklung, -customizing und -beratung (oData, SOAP, iDoc, Custom-Web-Schnittstellen); Entwicklung im Bereich Fiori, CDS und RAP|
+|2012-2022|**B2B-Webshop-Projekt** für einen internationalen Konzern (Kunde aus Vertraulichkeitsgründen anonymisiert): Entwicklung und Betrieb in Ruby on Rails, inklusive Schnittstellen zu Drittsystemen|
 |seit 02/2011|**Gründer** der Informatom EDV-Dienstleistungen e.U. Entwicklung von Webanwendungen mit Ruby on Rails. Kooperation mit Michael Stranka unter der Marke mittenin.at http://mittenin.at|
 |04/2007-03/2012|zunächst **EDV-Mitarbeiter**, dann **Abteilungsleiter Stellvertreter EDV**, zuletzt **Academy Manager** bei Bogner Edelstahl: http://www.bogner.co.at<br/>SAP, insbesondere WM-, MM-, SD-Customizing, ABAP-Reporting;  Intranet, Ticketing, Projektmanagement WM-MDE-Applikationen|
 |02/2005-06/2007|**Lektor** Technikum-Wien: http://www.technikum-wien.at/<br/> Lektorat Betriebssysteme Studiengang Wirtschaftsinformatik|
