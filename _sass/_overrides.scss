@@ -219,3 +219,15 @@ body {
   font-style: normal;
   margin-bottom: 0.5em;
 }
+
+// Skip-to-content link (WCAG 2.4.1 Bypass Blocks) — lets keyboard/screen
+// reader users jump past the navbar's ~20 tab stops straight to the page
+// content. .sr-only/.sr-only-focusable (already shipped by this theme,
+// see main.css) handle the hide-until-focused mechanic; this just makes
+// the focused state visually obvious instead of plain unstyled text.
+.skip-link:focus {
+  padding: 0.5em 1em;
+  background-color: var(--bulma-scheme-main);
+  color: var(--bulma-link-on-scheme);
+  z-index: 100;
+}

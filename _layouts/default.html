@@ -3,9 +3,11 @@
   {% include head.html %}
 
   <body>
+    <a href="#content" class="sr-only sr-only-focusable skip-link">Zum Inhalt springen</a>
+
     {% include header.html %}
 
-    <section class="section">
+    <section class="section" id="content">
       <div class="container content">
         {{ content }}
       </div>
