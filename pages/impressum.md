@@ -8,7 +8,7 @@ permalink: impressum/
 
 |Inhaber|Mag.Stefan Haslinger|
 |Firmenwortlaut|Informatom EDV-Dienstleistungen e.U.|
-|Adresse|Vorgartenstraße 145/2/3, 1020 Wien|
+|Adresse|Vorgartenstraße 145-157/2/3, 1020 Wien|
 |Telefon|+43 680 213 30 30|
 |Web|http://www.informatom.com|
 |E-Mail|stefan.haslinger@informatom.com|

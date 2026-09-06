@@ -45,7 +45,7 @@ Sie erreichen mich unter folgenden Kontaktdaten:
 
 Mag Stefan Haslinger<br/>
 Informatom EDV-Dienstleistungen<br/>
-Vorgartenstrasse 145/2/3<br/>
+Vorgartenstrasse 145-157/2/3<br/>
 1020 Wien, Austria<br/>
 
 <span class="icon"><i class="las la-phone"></i></span> +43 680 213 3030<br/>

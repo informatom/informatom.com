@@ -208,3 +208,14 @@ body {
 .badge-fiori {
   margin-right: 0.92em; // cropped OpenUI5 icon only, ~0.96:1 → 1.43em wide
 }
+
+// The footer's "Adresse" column used three separate <a href="/kontakt">
+// links for name/street/city — a screenreader announced three identical
+// jump targets for what's really one address. Replaced with a plain,
+// semantically-correct <address> block (browsers italicize it by default,
+// reset here to match the surrounding footer text) plus a single actual
+// link ("Karte anzeigen") for the one genuinely distinct action.
+.footer address {
+  font-style: normal;
+  margin-bottom: 0.5em;
+}
