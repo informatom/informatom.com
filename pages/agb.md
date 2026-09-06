@@ -27,11 +27,11 @@ grundsätzlich freibleibend.
 -   Mitwirkung bei der Inbetriebnahme (Umstellungsunterstützung)
 -   Telefonische Beratung
 -   Programmwartung
--   Erstellung von Programmträgern
+-   Elektronische Bereitstellung und Installation von Software (Deployment)
 -   Sonstige Dienstleistungen
 
 
-**§ 2.2** Die Ausarbeitung individueller Organisationskonzepte und
+**§2.2** Die Ausarbeitung individueller Organisationskonzepte und
 Programme erfolgt nach Art und Umfang der vom Auftraggebervollständig
 zur Verfügung gestellten bindenden Informationen, Unterlagen und
 Hilfsmittel. Dazu zählen auch praxisgerechte Testdaten sowie
@@ -85,19 +85,21 @@ berechtigt, vom Auftrag zurückzutreten. Die bis dahin für die Tätigkeit
 des Auftragnehmers abgelaufenen Kosten und Spesen sowie allfällige
 Abbaukosten sind vom Auftraggeber zu ersetzen.
 
-**§2.7** Ein Versand von Programmträgern, Dokumentationen und
-Leistungsbeschreibungen erfolgt auf Kosten und Gefahr des Auftraggebers.
+**§2.7** Software, Dokumentationen und Leistungsbeschreibungen werden
+elektronisch zur Verfügung gestellt, sofern nichts anderes vereinbart ist.
+Ist ausnahmsweise der Versand physischer Hardware (z.B. im Rahmen von
+IOT-Projekten) erforderlich, erfolgt dieser auf Kosten und Gefahr des
+Auftraggebers; eine Versicherung dafür erfolgt nur auf dessen Wunsch.
 Darüber hinaus vom Auftraggeber gewünschte Schulung und Erklärungen
-werden gesondert in Rechnung gestellt. Versicherungen erfolgen nur auf
-Wunsch des Auftraggebers.
+werden gesondert in Rechnung gestellt.
 
 ### 3 Preise, Steuern und Gebühren
 
 **§3.1** Alle Preise verstehen sich in Euro ohne Umsatzsteuer. Sie
 gelten nur für den vorliegenden Auftrag. Die genannten Preise verstehen
-sich ab Geschäftssitz bzw. -stelle des Auftragnehmers. Die Kosten von
-Programmträgern (z.B. Magnetbänder, DVD, USB-Sticks, usw.) sowie
-allfällige Vertragsgebühren werden gesondert in Rechnung gestellt.
+sich ab Geschäftssitz bzw. -stelle des Auftragnehmers. Kosten für benötigte Drittsoftware, Lizenzen, Hosting- bzw. Cloud-Dienste
+oder projektbezogene Hardware (z.B. bei IOT-Projekten) sowie allfällige
+Vertragsgebühren werden gesondert in Rechnung gestellt.
 
 **§3.2** Bei Bibliotheks- (Standard-) Programmen gelten die am Tag der
 Lieferung gültigen Listenpreise. Bei allen anderen Dienstleistungen
@@ -153,8 +155,8 @@ Arbeiten einzustellen und vom Vertrag zurückzutreten. Alle damit
 verbundenen Kosten sowie der Gewinnentgang sind vom Auftraggeber zu
 tragen. Bei Zahlungsverzug werden Verzugszinsen im banküblichen Ausmaß
 verrechnet. Bei Nichteinhaltung zweier Raten bei Teilzahlungen ist der
-Auftragnehmer berechtigt, Terminverlust in Kraft treten zulassen und
-übergebene Akzente fälligzustellen.
+Auftragnehmer berechtigt, Terminverlust in Kraft treten zu lassen und
+übergebene Akzepte fälligzustellen.
 
 **§5.4** Der Auftraggeber ist nicht berechtigt, Zahlungen wegen nicht
 vollständiger Gesamtlieferung, Garantie- oder Gewährleistungsansprüchen
@@ -244,7 +246,7 @@ vorgeschrieben sind, anormale Betriebsbedingungen (insbesondere
 Abweichungen von den Installations- und Lagerbedingungen) sowie auf
 Transportschäden zurückzuführen sind.
 
-**§8.5** Für Programme, die durch eigene Programmierer des Auftragebers
+**§8.5** Für Programme, die durch eigene Programmierer des Auftraggebers
 bzw. Dritte nachträglich verändert werden, entfällt jegliche
 Gewährleistung durch den Auftragnehmer.
 
@@ -294,7 +296,7 @@ Bestimmungen möglichst nahe kommt.
 ### 13 Schlussbestimmungen
 
 **§13.1** Soweit nicht anders vereinbart, gelten die zwischen
-Vollkaufleuten zur Anwendung kommenden gesetzlichen Bestimmungen
+Unternehmern zur Anwendung kommenden gesetzlichen Bestimmungen
 ausschließlich nach österreichischem Recht, auch dann, wenn der Auftrag
 im Ausland durchgeführt wird. Für eventuelle Streitigkeiten gilt
 ausschließlich die örtliche Zuständigkeit des sachlich zuständigen
