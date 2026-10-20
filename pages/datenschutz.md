@@ -50,6 +50,15 @@ Rechtsgrundlage ist mein berechtigtes Interesse am sicheren und fehlerfreien Bet
 (Art. 6 Abs. 1 lit. f DSGVO). Nach Ablauf der Frist werden die Logs automatisch gelöscht.
 
 
+## Hosting
+
+Diese Website läuft auf einem von mir betriebenen virtuellen Server bei der Hetzner Online GmbH,
+Industriestr. 25, 91710 Gunzenhausen, Deutschland. Hetzner verarbeitet die oben genannten Daten
+als Auftragsverarbeiter (Art. 28 DSGVO) ausschließlich in meinem Auftrag; ein entsprechender
+Vertrag zur Auftragsverarbeitung liegt vor. Details finden Sie in der
+[Datenschutzerklärung von Hetzner](https://www.hetzner.com/de/legal/privacy-policy).
+
+
 ## Cookies, lokale Speicherung und Drittanbieter
 
 Diese Website verwendet keine Cookies, keinen Webanalysedienst, kein Tracking, kein Content
