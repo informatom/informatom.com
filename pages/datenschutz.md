@@ -53,7 +53,8 @@ Rechtsgrundlage ist mein berechtigtes Interesse am sicheren und fehlerfreien Bet
 ## Hosting
 
 Diese Website läuft auf einem von mir betriebenen virtuellen Server bei der Hetzner Online GmbH,
-Industriestr. 25, 91710 Gunzenhausen, Deutschland. Hetzner verarbeitet die oben genannten Daten
+Industriestr. 25, 91710 Gunzenhausen, Deutschland. Der Server steht in einem Rechenzentrum in
+Helsinki, Finnland; die Daten verlassen damit nicht die EU. Hetzner verarbeitet die oben genannten Daten
 als Auftragsverarbeiter (Art. 28 DSGVO) ausschließlich in meinem Auftrag; ein entsprechender
 Vertrag zur Auftragsverarbeitung liegt vor. Details finden Sie in der
 [Datenschutzerklärung von Hetzner](https://www.hetzner.com/de/legal/privacy-policy).
